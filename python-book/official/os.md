@@ -1,52 +1,60 @@
-## os
+# os
 
 非常基础的一个库，但是却实现了我一个想了很久了功能，识别目录下的所有文件。
 
-1. 取得当前目录-- os.getcwd()
-5. 更改当前目录-- os.chdir()
-2. 创建一个目录-- os.mkdir()
-3. 创建多级目录-- os.makedirs()
-4. 删除一个目录,只能删除空目录-- os.rmdir("path")
-5. 删除多个目录,删除目录及其下内容-- os.removedirs（"path）
-1. 获取目录中的文件及子目录的列表-- os.listdir("path")		隐藏文件也会显示出来
-3. 删除一个文件-- os.remove()
-3. 删除一个文件-- os.unlink()
-4. 文件或者文件夹重命名-- os.rename(old， new)
-6. 获取文件大小-- os.path.getsize(filename)
-7. 获取文件属性-- os.stat(file)
-8. 修改文件权限与时间戳-- os.chmod(file)
-9. 路径中加入新的内容-- os.path.join(path,file)
-6. 将路径分解为目录名和文件名-- os.path.split()
-7. 将目录分解为目录加文件名和文件名的扩展名-- os.path.splitext()
-7. 获得路径的路径名-- os.path.dirname()
-8. 获得路径的文件名-- os.path.basename()
-8. 判断一个路径是否存在或是否为路径-- os.path.isdir("path")
-9. 判断一个文件是否存在或这否为文件-- os.path.isfile("file")
-10. 判断一个路径（目录或文件）是否存在——os.path.exists()
-11. 判断一个路径是否是绝对路径-- os.path.isabs()
-12. 获得一个绝对路径 -- os.path.abspath() 或者 os.path.realpath()
+1. 取得当前目录-- os.getcwd\(\)
+2. 更改当前目录-- os.chdir\(\)
+3. 创建一个目录-- os.mkdir\(\)
+4. 创建多级目录-- os.makedirs\(\)
+5. 删除一个目录,只能删除空目录-- os.rmdir\("path"\)
+6. 删除多个目录,删除目录及其下内容-- os.removedirs（"path）
+7. 获取目录中的文件及子目录的列表-- os.listdir\("path"\)        隐藏文件也会显示出来
+8. 删除一个文件-- os.remove\(\)
+9. 删除一个文件-- os.unlink\(\)
+10. 文件或者文件夹重命名-- os.rename\(old， new\)
+11. 获取文件大小-- os.path.getsize\(filename\)
+12. 获取文件属性-- os.stat\(file\)
+13. 修改文件权限与时间戳-- os.chmod\(file\)
+14. 路径中加入新的内容-- os.path.join\(path,file\)
+15. 将路径分解为目录名和文件名-- os.path.split\(\)
+16. 将目录分解为目录加文件名和文件名的扩展名-- os.path.splitext\(\)
+17. 获得路径的路径名-- os.path.dirname\(\)
+18. 获得路径的文件名-- os.path.basename\(\)
+19. 判断一个路径是否存在或是否为路径-- os.path.isdir\("path"\)
+20. 判断一个文件是否存在或这否为文件-- os.path.isfile\("file"\)
+21. 判断一个路径（目录或文件）是否存在——os.path.exists\(\)
+22. 判断一个路径是否是绝对路径-- os.path.isabs\(\)
+23. 获得一个绝对路径 -- os.path.abspath\(\) 或者 os.path.realpath\(\)
+
     > 获得当前文件所在的文件夹 `os.path.abspath(os.path.dirname(__file__))` 或者 `os.path.dirname(os.path.abspath(__file__))` 或者 `os.path.abspath(os.curdir)`
-13. 获得一个相对路径 -- os.path.relpath(path, start)
-9. 读取和设置环境变量-- os.getenv() 与os.putenv()
-1o. 使用家环境-- os.path.expanduser('~')
-10. 指示你正在使用的平台-- os.name       对于Windows，它是`nt`，而对于Linux/Unix用户，它是`posix`
-12. 给出当前平台使用的路径分隔符 -- os.sep Windows 使用 `\` Linux 使用 `/`，Mac OS 使用 `:`
-11. 给出当前平台使用的行终止符--os.linesep    Windows 使用`\r\n`,Linux 使用 `\n`,而 Mac OS 使用 `\r`
-12. 给出当前平台使用的分割路径的分隔符 -- os.pathsep   Windows 使用 `;` ，Linux 使用 `:` Mac OS 使用 `::`
-12. 运行shell命令-- os.system()
- >但是这个执行命令行没有返回值，直接输出，不管你有没有print
-13. 执行shell命令-- os.popen()
- >执行命令行，返回一个file open的对象，需要read才能得到执行结果，但是还是没有返回值，如果需要更多的命令行操作，可以使用commands库
-14. 执行 shell 命令 -- os.exec*() 如 os.execlp('ls','') 并替换当前进程
-13. 终止当前进程-- os._exit(0) 还能从子线程中终止主线程。`sys.exit` 则不能这样
-14. 循环遍历目录-- os.walk()  返回一个三元组，第一个是路径，第二个是路径下的目录，第三个是路径下的非目录。
-15. 系统环境变量-- os.environ 返回系统环境变量，或者是在 HTTP 请求中的请求头。
-16. 生成随机字符串-- os.urandom(num) 返回 num 个随机字符串，在 ASCII 中，不一定是可打印字符。
-17. 检查文件系统权限-- os.access(filename,privilege)
-18. 创建一个新的进程 -- os.fork() 只在 linux 和 unix 上使用，windows 用不了
-19. 获得当前进程的 pid -- os.getpid()
-20. 获得父进程的 pid -- os.getppid()
-20. 杀死一个进程 -- os.kill()
+
+24. 获得一个相对路径 -- os.path.relpath\(path, start\)
+25. 读取和设置环境变量-- os.getenv\(\) 与os.putenv\(\)
+
+    1o. 使用家环境-- os.path.expanduser\('~'\)
+
+26. 指示你正在使用的平台-- os.name       对于Windows，它是`nt`，而对于Linux/Unix用户，它是`posix`
+27. 给出当前平台使用的路径分隔符 -- os.sep Windows 使用 `\` Linux 使用 `/`，Mac OS 使用 `:`
+28. 给出当前平台使用的行终止符--os.linesep    Windows 使用`\r\n`,Linux 使用 `\n`,而 Mac OS 使用 `\r`
+29. 给出当前平台使用的分割路径的分隔符 -- os.pathsep   Windows 使用 `;` ，Linux 使用 `:` Mac OS 使用 `::`
+30. 运行shell命令-- os.system\(\)
+
+    > 但是这个执行命令行没有返回值，直接输出，不管你有没有print
+
+31. 执行shell命令-- os.popen\(\)
+
+    > 执行命令行，返回一个file open的对象，需要read才能得到执行结果，但是还是没有返回值，如果需要更多的命令行操作，可以使用commands库
+
+32. 执行 shell 命令 -- os.exec\*\(\) 如 os.execlp\('ls',''\) 并替换当前进程
+33. 终止当前进程-- os.\_exit\(0\) 还能从子线程中终止主线程。`sys.exit` 则不能这样
+34. 循环遍历目录-- os.walk\(\)  返回一个三元组，第一个是路径，第二个是路径下的目录，第三个是路径下的非目录。
+35. 系统环境变量-- os.environ 返回系统环境变量，或者是在 HTTP 请求中的请求头。
+36. 生成随机字符串-- os.urandom\(num\) 返回 num 个随机字符串，在 ASCII 中，不一定是可打印字符。
+37. 检查文件系统权限-- os.access\(filename,privilege\)
+38. 创建一个新的进程 -- os.fork\(\) 只在 linux 和 unix 上使用，windows 用不了
+39. 获得当前进程的 pid -- os.getpid\(\)
+40. 获得父进程的 pid -- os.getppid\(\)
+41. 杀死一个进程 -- os.kill\(\)
 
 ```python
 # coding=utf-8
@@ -138,11 +146,11 @@ print linesep
 os.system('dir')
 ```
 
-保存为os_improve.py
+保存为os\_improve.py
 
-保存为os_demo.py，运行，看一下结果
+保存为os\_demo.py，运行，看一下结果
 
-![os_demo](/images/os_demo.jpg)
+![os\_demo](../../.gitbook/assets/os_demo.jpg)
 
 测试一下系统权限
 
@@ -160,7 +168,7 @@ print "Execute File ? ",os.access(__file__,os.X_OK)
 
 结果是
 
-```
+```text
 File Name:  /home/windard/github/Python_Lib/code/os_access.py
 Exist File ?  True
 Read File ?  True
@@ -170,7 +178,7 @@ Execute File ?  False
 
 试一下关于进程，ubuntu 下
 
-```
+```text
 # coding=utf-8
 
 import os
@@ -202,12 +210,11 @@ def create_child():
     print '这句话,父进程和子进程都会执行'
 
 create_child()
-
 ```
 
 结果是
 
-```
+```text
 主进程 29511
 这是在主进程里，可以看到子进程的 pid:29512 ，和自己的进程:29511 ,父进程也是其他的进程: 9372
 这句话,父进程和子进程都会执行
@@ -223,9 +230,9 @@ shell = "dir"
 print os.system(shell)
 ```
 
-保存为os_shell.py，运行，看一下结果。
+保存为os\_shell.py，运行，看一下结果。
 
-![os_shell.jpg](/images/os_shell.jpg)
+![os\_shell.jpg](../../.gitbook/assets/os_shell.jpg)
 
 试一下用`os.walk()`来遍历文件。
 
@@ -236,21 +243,21 @@ dirlist = r"C:\Users\dell\Desktop\2048"
 filenum = 0
 dirnum  = 0
 for i,j,k in os.walk(dirlist):
-	print i
+    print i
 for i,j,k in os.walk(dirlist):
-	for item in k:
-		print item
-	filenum = filenum + 1
-	for index in range(len(k)):
-		dirnum = dirnum + 1
+    for item in k:
+        print item
+    filenum = filenum + 1
+    for index in range(len(k)):
+        dirnum = dirnum + 1
 
 print filenum
 print dirnum
 ```
 
-保存为os_walk.py，运行，看一下结果。
+保存为os\_walk.py，运行，看一下结果。
 
-![os_walk.jpg](/images/os_walk.jpg)
+![os\_walk.jpg](../../.gitbook/assets/os_walk.jpg)
 
 给一个查看目录下的所有文件的代码，如果有目录则空格表示递进关系
 
@@ -259,33 +266,32 @@ print dirnum
 import os
 
 def showall(path,leavel=0,filenum=0,show=True):
-	newnum = filenum
-	currentpath = path;
-	dirandfile = os.listdir(path)
-	for item in dirandfile:
-		newpath = os.path.join(currentpath,item)
-		if os.path.isdir(newpath):
-			num = showall(newpath,leavel+1,newnum,show)
-			newnum = num
-		else:
-			newnum = newnum + 1
-			tab_stop = ""
-			if show:
-				for tab in range(leavel):
-					tab_stop = tab_stop + " "
-			print tab_stop + newpath
+    newnum = filenum
+    currentpath = path;
+    dirandfile = os.listdir(path)
+    for item in dirandfile:
+        newpath = os.path.join(currentpath,item)
+        if os.path.isdir(newpath):
+            num = showall(newpath,leavel+1,newnum,show)
+            newnum = num
+        else:
+            newnum = newnum + 1
+            tab_stop = ""
+            if show:
+                for tab in range(leavel):
+                    tab_stop = tab_stop + " "
+            print tab_stop + newpath
 
-	return newnum
+    return newnum
 
 if __name__ == '__main__':
-	num = showall('./',show=False)
-	print "File Number : " + str(num)
-
+    num = showall('./',show=False)
+    print "File Number : " + str(num)
 ```
 
 查看系统环境变量
 
-```
+```text
 # coding=utf-8
 
 import os
@@ -293,12 +299,12 @@ import os
 environment = os.environ
 
 for i,j in environment.items():
-	print "%s : %s "%(i,j)
+    print "%s : %s "%(i,j)
 ```
 
 我的电脑的环境变量
 
-```
+```text
 TMP : C:\Users\dell\AppData\Local\Temp
 COMPUTERNAME : YANGWENQIANG
 USERDOMAIN : YANGWENQIANG
@@ -363,10 +369,10 @@ environment = os.environ
 print "Content-type:text/html\r\n\r\n"
 
 for i,j in environment.items():
-	print "%s : %s <br />"%(i,j)
+    print "%s : %s <br />"%(i,j)
 ```
 
-```
+```text
 ALLUSERSPROFILE:C:\ProgramData
 APPDATA:C:\Users\dell\AppData\Roaming
 ASL.LOG:Destination=file
@@ -439,3 +445,4 @@ USERNAME:dell
 USERPROFILE:C:\Users\dell
 WINDIR:C:\WINDOWS
 ```
+

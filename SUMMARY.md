@@ -1,20 +1,22 @@
-# Python-Book
+# Table of contents
+
+* [Introduction](README.md)
 
 ## Python-Book
 
-* [介绍](README.md)
-* [官方库](official/README.md)
-    * [os](official/os.md)
-    * [sys](official/sys.md)
-    * [re](official/re.md)
-    * [json](official/json.md)
-    * [logging](official/logging.md)
-* [第三方库](third/README.md)
-* [私人库](private/README.md)
-* [其他](other_tools.md)
-* [附录](appendix.md)
+* [官方库](python-book/official/README.md)
+  * [os](python-book/official/os.md)
+  * [sys](python-book/official/sys.md)
+  * [re](python-book/official/re.md)
+  * [json](python-book/official/json.md)
+  * [logging](python-book/official/logging.md)
+* [第三方库](python-book/third.md)
+* [私人库](python-book/private.md)
+* [其他](python-book/other_tools.md)
+* [附录](python-book/appendix.md)
 
 ## About
 
 * [Github Project](https://github.com/windard/python_book)
 * [My Blog](https://windard.com/)
+
