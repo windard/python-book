@@ -17,6 +17,6 @@
 
 ## About
 
-* [Github Project](https://github.com/windard/python_book)
+* [Github Project](https://github.com/windard/python-book)
 * [My Blog](https://windard.com/)
 
