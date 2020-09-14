@@ -1,9 +1,7 @@
-# Summary
+# Python-Book
 
-* [Github Project](https://github.com/windard/python_lib)
-* [My Blog](https://windard.com/)
+## Python-Book
 
------
 * [介绍](README.md)
 * [官方库](official/README.md)
     * [os](official/os.md)
@@ -16,3 +14,7 @@
 * [其他](other_tools.md)
 * [附录](appendix.md)
 
+## About
+
+* [Github Project](https://github.com/windard/python_book)
+* [My Blog](https://windard.com/)

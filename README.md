@@ -1,5 +1,10 @@
 # Introduction On Python Library
 
+** Python 无所不能 **
+
+----
+
+![visitors](https://visitor-badge.glitch.me/badge?page_id=github.windard.python_book)
 
 python的强大之处有很大的一方面在于它有各种各样非常强大的库，这里是一些常用的依赖库的使用记录。
 
@@ -12,5 +17,3 @@ python的强大之处有很大的一方面在于它有各种各样非常强大�
 以下是我在Python学习中学到的函数库，也不敢说作为教程，只能算是自己记录下来作为参考。  
 
 > 好记性不如烂笔头。
-
-<div style="text-align: right;"><strong>Python 无所不能</strong> </div> 
