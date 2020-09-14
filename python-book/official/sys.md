@@ -26,7 +26,8 @@ for i in sys.argv[2:]:
 print num
 ```
 
-保存为sys\_argv.py，运行，看一下结果。 ![sys\_argv.jpg](https://github.com/windard/python-book/tree/3a60279817fd30d170c21a3ae893fdd3ee51fd0a/official/images/sys_argv.jpg)
+保存为sys\_argv.py，运行，看一下结果。   
+![sys\_argv.jpg](https://github.com/windard/python-book/tree/3a60279817fd30d170c21a3ae893fdd3ee51fd0a/official/images/sys_argv.jpg)
 
 1. `sys.platform()` 获得当前终端是Windows下还是Linux下。
 2. `sys.exit(n)` 退出程序，它有一个可选的整数参数，当n为0是是正常退出，其他为不正常，可抛异常事件捕获，默认为0。
