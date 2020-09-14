@@ -1,8 +1,15 @@
 {
-    "plugins": ["disqus"],
+    "plugins": [
+        "disqus",
+        "theme-default",
+        "theme-comscore"
+    ],
     "pluginsConfig": {
         "disqus": {
             "shortName": "windard-python-book"
+        },
+        "theme-default": {
+            "showLevel": true
         }
     }  
 }
