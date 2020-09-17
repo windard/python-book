@@ -139,7 +139,7 @@ if match:
     print match.group()
 ```
 
-保存为re\_demo.py，执行，看一下结果。 ![re\_demo](../../.gitbook/assets/re_demo.png)
+保存为re_demo.py，执行，看一下结果。 ![re\_demo](../../.gitbook/assets/re_demo.png)
 
 compile函数`compile(pattern, flags=0)`，这里的参数flags和上面的函数里的flags都是匹配模式，可以使用`|`表示同时生效，可选的参数有： 1. re.I\(re.IGNORECASE\): 忽略大小写  
 2. re.M\(re.MULTILINE\): 多行模式，改变'^'和'$'的行为  
@@ -152,7 +152,10 @@ Match对象 是一次匹配的结果，包含很多关于此次匹配的信息
 
 属性： 1. string: 匹配时使用的文本 2. re: 匹配时使用的Pattern对象 3. pos: 文本中正则表达式开始搜索的索引。 4. endpos: 文本中正则表达式结束搜索的索引。 5. lastindex: 最后一个被捕获的分组在文本中的索引。如果没有被捕获的分组，将为None 6. lastgroup: 最后一个被捕获的分组的别名。如果这个分组没有别名或者没有被捕获的分组，将为None
 
-方法： 1. group\(\[group1, …\]\): 获得一个或多个分组截获的字符串；指定多个参数时将以元组形式返回。group1可以使用编号也可以使用别名；编号0代表整个匹配的子串；不填写参数时，返回group\(0\),相当于全部返回；没有截获字符串的组返回None；截获了多次的组返回最后一次截获的子串 2. groups\(\[default\]\): 以元组形式返回全部分组截获的字符串。相当于调用group\(1,2,…last\)。default表示没有截获字符串的组以这个值替代，默认为None 3. groupdict\(\[default\]\): 返回以有别名的组的别名为键、以该组截获的子串为值的字典，没有别名的组不包含在内。default含义同上 4. start\(\[group\]\): 返回指定的组截获的子串在string中的起始索引（子串第一个字符的索引）。group默认值为0 5. end\(\[group\]\): 返回指定的组截获的子串在string中的结束索引（子串最后一个字符的索引+1）。group默认值为0 6. span\(\[group\]\): 返回\(start\(group\), end\(group\)\) 7. expand\(template\): 将匹配到的分组代入template中然后返回。template中可以使用\id或\g、\g引用分组，但不能使用编号0。\id与\g是等价的；但\10将被认为是第10个分组，如果你想表达\1之后是字符'0'，只能使用\g0
+方法： 
+1. group\(\[group1, …\]\): 获得一个或多个分组截获的字符串；指定多个参数时将以元组形式返回。group1可以使用编号也可以使用别名；编号0代表整个匹配的子串；不填写参数时，返回group\(0\),相当于全部返回；没有截获字符串的组返回None；截获了多次的组返回最后一次截获的子串 
+2. groups\(\[default\]\): 以元组形式返回全部分组截获的字符串。相当于调用group\(1,2,…last\)。default表示没有截获字符串的组以这个值替代，默认为None 
+3. groupdict\(\[default\]\): 返回以有别名的组的别名为键、以该组截获的子串为值的字典，没有别名的组不包含在内。default含义同上 4. start\(\[group\]\): 返回指定的组截获的子串在string中的起始索引（子串第一个字符的索引）。group默认值为0 5. end\(\[group\]\): 返回指定的组截获的子串在string中的结束索引（子串最后一个字符的索引+1）。group默认值为0 6. span\(\[group\]\): 返回\(start\(group\), end\(group\)\) 7. expand\(template\): 将匹配到的分组代入template中然后返回。template中可以使用\id或\g、\g引用分组，但不能使用编号0。\id与\g是等价的；但\10将被认为是第10个分组，如果你想表达\1之后是字符'0'，只能使用\g0
 
 ```python
 # coding=utf-8
@@ -180,9 +183,9 @@ print "m.end(2):", m.end(2)
 print "m.span(2):", m.span(2)
 ```
 
-保存为re\_complex.py，运行，看一下结果。
+保存为re_complex.py，运行，看一下结果。
 
-![re\_complex](../../.gitbook/assets/re_complex.png)
+![re_complex](../../.gitbook/assets/re_complex.png)
 
 ### 贪婪与懒惰
 
@@ -242,6 +245,55 @@ Out[6]: ('laal', '2')
 ```
 
 但是有个问题就是匹配到的子串，只会出现一次，不能返回重复的结果，只会返回最终匹配的结果，需要使用 regex 来得到所有的匹配结果。
+
+### 常用正则
+
+对于常见的nginx日志配置格式
+
+```
+log_format  main  '$remote_addr - $remote_user [$time_local] "$request" '
+                  '$status $body_bytes_sent "$http_referer" '
+                  '"$http_user_agent" "$http_x_forwarded_for"';
+```
+
+使用正则匹配规则就很简单
+
+```python
+obj = re.compile(r'(?P<ip>.*?)- - \[(?P<time>.*?)\] "(?P<request>.*?)" (?P<status>.*?) (?P<bytes>.*?) "(?P<referer>.*?)" "(?P<ua>.*?)" "(?P<forwarded>.*?)"')
+
+```
+
+驼峰转下划线
+
+```
+# -*- coding: utf-8 -*-
+
+import re
+
+
+def convert_camel_to_snake(hump_str):
+    """
+    驼峰形式字符串转成下划线形式
+    :param hump_str: 驼峰形式字符串
+    :return: 字母全小写的下划线形式字符串
+    """
+    # 匹配正则，匹配小写字母和大写字母的分界位置
+    p = re.compile(r'([a-z]|\d)([A-Z])')
+    # 这里第二个参数使用了正则分组的后向引用
+    sub = re.sub(p, r'\1_\2', hump_str).lower()
+    return sub
+
+
+if __name__ == '__main__':
+    print(convert_camel_to_snake("AdId"))
+    print(convert_camel_to_snake("CampaignId"))
+    print(convert_camel_to_snake("coreUserID"))
+    print(convert_camel_to_snake("FromWhereYouGo"))
+    print(convert_camel_to_snake("PackageId"))
+    print(convert_camel_to_snake("SocketServer"))
+    print(convert_camel_to_snake("Python_Lib"))
+
+```
 
 ### 参考链接
 
