@@ -1,6 +1,6 @@
 # 介绍
 
- **Python 无所不能** 
+**Python 无所不能** 
 
 ![visitors](https://visitor-badge.glitch.me/badge?page_id=github.windard.python_book)
 

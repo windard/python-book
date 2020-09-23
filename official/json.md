@@ -41,7 +41,7 @@ print python_str["others"][0]
 
 保存为json\_demo.py，运行，看一下结果。
 
-![json\_demo.jpg](../../.gitbook/assets/json_demo.jpg)
+![json\_demo.jpg](/images/json_demo.jpg)
 
 可以看到第一行是json数据格式，第二行是Python的dist数据格式，也就可以正常的读写。 在将json数据格式转化为Python的数据格式了之后，为了更好的展示，可以使用`pprint`来代替原生的`print`，它会按照key的字幕顺序以一种更加美观的方式输出。
 
@@ -66,7 +66,7 @@ pprint(python_str)
 
 保存为json\_demo\_2.py,运行，看一下结果。
 
-![json\_demo\_2.jpg](../../.gitbook/assets/json_demo_2.jpg)
+![json\_demo\_2.jpg](/images/json_demo_2.jpg)
 
 我们还可以将json数据解析成一个Python对象。
 
@@ -97,13 +97,13 @@ print python_str.others[1]
 
 保存为json\_object.py，运行，看一下结果。
 
-![json\_object.jpg](../../.gitbook/assets/json_object.jpg)
+![json\_object.jpg](/images/json_object.jpg)
 
 在解码json的时候可以采用`pprint`来获得一个比较漂亮的输出，在编码json的时候也可以在`dumps()`函数里加上参数`indent=X`来缩进从而获得一个比较漂亮的输出。
 
 ## 2016-01-13 更新
 
-在 Python 中 eval 和 str\(unicode\) 的功能也可以做 json 数据格式的转化
+在 Python 中 `eval` 和 `str(unicode)` 的功能也可以做 json 数据格式的转化
 
 ```text
 >>> data = {
@@ -134,7 +134,7 @@ NameError: name 'false' is not defined
 
 ## 2017-03-18 更新
 
-json 格式数据与 Python 中的 字典\(dict\) 并不完全一致，json 只能是双引号包围的字符串，而 Python 中的字符串可以用双引号也可以用单引号。
+json 格式数据与 Python 中的 字典 dict 并不完全一致，json 只能是双引号包围的字符串，而 Python 中的字符串可以用双引号也可以用单引号。
 
 ```text
 +-------------------+---------------+
@@ -239,7 +239,9 @@ Out[32]:
 ```
 
 **还需要注意两点**  
-1. 如果不是在 json 字符串的字符串类型中有控制字符，是可以正常解析的，在 json 的两个 key 之间是可以有正常的换行符，比如这样的字符串 `'\n{"price": 542.23,\n "name": "ACME", \t"shares": 100, "others": ["first thing", "second thing",\n "third thing"]}'` 2. 如果不是手动换行符，而是出现了换行，也是一样的换行符，主要是在 json 的每个元素里，不能有换行符。
+1. 控制字符无论在 json 的 key 或者 value 中，都有问题。   
+2. 如果不是在 json 的字符串类型中有控制字符，是可以正常解析的，像在 json 的两个 key 之间是可以有正常的换行符，比如这样的字符串 `'\n{"price": 542.23,\n "name": "ACME", \t"shares": 100, "others": ["first thing", "second thing",\n "third thing"]}'`    
+3. 如果不是手动换行符，而是出现了换行，也是一样的换行符，主要是在 json 的每个元素里，不能有换行符。   
 
 ```text
 In [34]: s = '\n{"price": 542.23,\n "name": "ACME", \t"shares": 100, "others": ["first thing", "second thing",\n "third thing"]}'

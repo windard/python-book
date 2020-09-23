@@ -4,7 +4,7 @@
 
 1. python自带了一个简单web的服务器，当前目录下启动,就可以在`localhost:8080`查看。
 
-```python
+```bash
 python -m SimpleHTTPServer 8080
 ```
 
@@ -12,31 +12,31 @@ python -m SimpleHTTPServer 8080
 
 还有CGI服务器。
 
-```python
+```bash
 python -m CGIHTTPServer 8080
 ```
 
 还有 FTP 服务器
 
-```text
+```bash
 python -m pyftpdlib
 ```
 
 还有在线文档
 
-```text
+```bash
 python -m pydoc -p 8000
 ```
 
 PHP 5.4版本及以上也自带了一个简单的web服务器，在当前目录下启动，就可以在`localhost:8000`查看。
 
-```php
+```bash
 php -S localhost:8000
 ```
 
 真正最简单的 nodejs 服务器
 
-```text
+```bash
 npm install http-server -g
 ```
 
@@ -76,16 +76,16 @@ http.createServer(function (req, res) {
 
 urlencode 和 urldecode
 
-* urllib.urlencode &lt;-&gt; urlparse.parse\_qsl \| query\_string.query\_string
-* urllib.quote &lt;-&gt; urllib.unquote
-* urlparse.urlparse &lt;-&gt; urlparse.urlunparse
+- `urllib.urlencode` <-> `urlparse.parse_qsl` | `query_string.query_string`
+- `urllib.quote` <-> `urllib.unquote`
+- `urlparse.urlparse` <-> `urlparse.urlunparse`
 
 转义
 
-* re.escape 转义非法字符串
-* cgi.escape XSS 转义
+* `re.escape` 转义非法字符串
+* `cgi.escape` XSS 转义
 
-```text
+```python
 # -*- coding: utf-8 -*-
 
 import urlparse
@@ -110,8 +110,19 @@ if __name__ == '__main__':
 
 使用 python 内置的 json 显示
 
-```text
+```bash
 cat test.json | python -m json.tool
 echo '{"name": "lucy", "age": "18"}' | python -mjson.tool
 ```
 
+还有一个很好的 bash 工具 `jq`
+
+```bash
+$ echo '{"name": "lucy", "age": "18"}' |jq
+{
+  "name": "lucy",
+  "age": "18"
+}
+$ echo '{"name": "lucy", "age": "18"}' |jq '.name'
+"lucy"
+```

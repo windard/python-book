@@ -6,7 +6,7 @@
 
 1. `sys.argv` 获得传入的命令行参数。
 
-```text
+```python
 # coding=utf-8
 import sys
 
@@ -26,14 +26,15 @@ for i in sys.argv[2:]:
 print num
 ```
 
-保存为sys\_argv.py，运行，看一下结果。   
-![sys\_argv.jpg](https://github.com/windard/python-book/tree/3a60279817fd30d170c21a3ae893fdd3ee51fd0a/official/images/sys_argv.jpg)
+保存为 `sys_argv.py`，运行，看一下结果。   
+![sys_argv.jpg](/images/sys_argv.jpg)
 
 1. `sys.platform()` 获得当前终端是Windows下还是Linux下。
 2. `sys.exit(n)` 退出程序，它有一个可选的整数参数，当n为0是是正常退出，其他为不正常，可抛异常事件捕获，默认为0。
-
-   > 注意，此处的`sys.exit()`和`os._exit()`和`exit()/quit()`都能够退出Python程序，但是`sys.exit()`一般用在主线程中退出整个Python进程，因为在子线程中其无法结束主线程，而`os._exit()`不抛出异常，不执行清理工作，能够退出主线程，`exit()/quit()`一般在交互式shell中使用。
-
+   > 注意，此处的`sys.exit()`和`os._exit()`和`exit()/quit()`都能够退出Python程序       
+   > 但是`sys.exit()`一般用在主线程中退出整个Python进程，因为在子线程中其无法结束主线程      
+   > 而`os._exit()`不抛出异常，不执行清理工作，能够退出主线程    
+   > `exit()/quit()`一般在交互式shell中使用。
 3. `sys.path` 系统的环境变量，返回列表，还可以用 `python -m site` 查看
 
 ```python
@@ -46,7 +47,7 @@ sys.exit(0)
 print "This won't run"
 ```
 
-保存为sys\_platform.py，运行，看一下结果。 ![sys\_platform.jpg](../../.gitbook/assets/sys_platform.jpg)
+保存为 `sys_platform.py`，运行，看一下结果。 ![sys_platform.jpg](/images/sys_platform.jpg)
 
 ## 进阶操作
 
@@ -85,9 +86,9 @@ for i in modules.keys():
 print sys.copyright
 ```
 
-保存为sys\_modules.py，运行，看一下结果。
+保存为 `sys_modules.py`，运行，看一下结果。
 
-![sys\_modules.jpg](../../.gitbook/assets/sys_modules.jpg)
+![sys_modules.jpg](/images/sys_modules.jpg)
 
 1. `sys.platform` 解释器运行的平台名称
 2. `sys.stdout` 标准输出流
@@ -101,9 +102,9 @@ print data
 sys.stdout.write("hello,world")
 ```
 
-保存为sys\_std.py，运行，看一下结果。
+保存为 `sys_std.py`，运行，看一下结果。
 
-![sys\_std.jpg](../../.gitbook/assets/sys_std.jpg)
+![sys_std.jpg](/images/sys_std.jpg)
 
 1. `sys.getrecursionlimit()` 获得 python 最大递归深度
 2. `sys.setrecursionlimit(15000)` 在 Mac 上默认为 1000
