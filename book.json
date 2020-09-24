@@ -42,9 +42,8 @@
     ],
     "pluginsConfig": {
         "favicon":{
-            "shortcut": "/images/favicon.ico",
-            "bookmark": "/images/favicon.ico",
-            "appleTouch": "/images/apple-touch-icon.png"
+            "shortcut": "favicon.ico",
+            "bookmark": "favicon.ico"
         },
         "insert-logo": {
             "url": "/images/python.png",
