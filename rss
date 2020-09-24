@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
+    <channel>
+        <title><![CDATA[Windard Python Book]]></title>
+        <description><![CDATA[Python Library Book by Windard]]></description>
+        <link>https://python-book.windard.com/</link>
+        <generator>RSS for Node</generator>
+        <lastBuildDate>Thu, 24 Sep 2020 08:23:46 GMT</lastBuildDate>
+        <atom:link href="https://python-book.windard.com/rss" rel="self" type="application/rss+xml"/>
+        <author><![CDATA[Windard Yang]]></author>
+        <managingEditor><![CDATA[windard@qq.com]]></managingEditor>
+        <webMaster><![CDATA[windard@qq.com]]></webMaster>
+        <category><![CDATA[gitbook]]></category>
+        <item>
+            <title><![CDATA[介绍]]></title>
+            <description><![CDATA[Python 无所不能]]></description>
+            <link>https://python-book.windard.com/</link>
+            <guid isPermaLink="true">https://python-book.windard.com/</guid>
+            <dc:creator><![CDATA[Windard Yang]]></dc:creator>
+        </item>
+        <item>
+            <title><![CDATA[官方库]]></title>
+            <description><![CDATA[这里是一些 python 的官方库，无需安装，python 自带。]]></description>
+            <link>https://python-book.windard.com/official/README.html</link>
+            <guid isPermaLink="true">https://python-book.windard.com/official/README.html</guid>
+            <dc:creator><![CDATA[Windard Yang]]></dc:creator>
+        </item>
+        <item>
+            <title><![CDATA[os]]></title>
+            <description><![CDATA[非常基础的一个库，但是却实现了我一个想了很久了功能，识别目录下的所有文件。]]></description>
+            <link>https://python-book.windard.com/official/os.html</link>
+            <guid isPermaLink="true">https://python-book.windard.com/official/os.html</guid>
+            <dc:creator><![CDATA[Windard Yang]]></dc:creator>
+        </item>
+        <item>
+            <title><![CDATA[sys]]></title>
+            <description><![CDATA[这个模块也可以传入命令行参数，但是它的参数必须是指定的，没有argparse那么好用，毕竟，这个库的主要功能不是为了传递命令行参数。]]></description>
+            <link>https://python-book.windard.com/official/sys.html</link>
+            <guid isPermaLink="true">https://python-book.windard.com/official/sys.html</guid>
+            <dc:creator><![CDATA[Windard Yang]]></dc:creator>
+        </item>
+        <item>
+            <title><![CDATA[No title]]></title>
+            <description><![CDATA[python 的正则表达式库，现在几乎所有的编程语言都支持正则表达式了，无可否认，正则表达式确实强大。]]></description>
+            <link>https://python-book.windard.com/official/re.html</link>
+            <guid isPermaLink="true">https://python-book.windard.com/official/re.html</guid>
+            <dc:creator><![CDATA[Windard Yang]]></dc:creator>
+        </item>
+        <item>
+            <title><![CDATA[json]]></title>
+            <description><![CDATA[python这么强大的语言当然也可以用来处理json，两个主要的函数是json.dumps()和json.loads()分别用来将dist字典格式的Python数据编码为json数据格式字符串，和将json数据格式字符串解码为Python的数据格式。]]></description>
+            <link>https://python-book.windard.com/official/json.html</link>
+            <guid isPermaLink="true">https://python-book.windard.com/official/json.html</guid>
+            <dc:creator><![CDATA[Windard Yang]]></dc:creator>
+        </item>
+        <item>
+            <title><![CDATA[logging]]></title>
+            <description><![CDATA[标准的输出日志库，比每次用 print 输出不知道高到哪里去了。]]></description>
+            <link>https://python-book.windard.com/official/logging.html</link>
+            <guid isPermaLink="true">https://python-book.windard.com/official/logging.html</guid>
+            <dc:creator><![CDATA[Windard Yang]]></dc:creator>
+        </item>
+        <item>
+            <title><![CDATA[第三方库]]></title>
+            <link>https://python-book.windard.com/third/README.html</link>
+            <guid isPermaLink="true">https://python-book.windard.com/third/README.html</guid>
+            <dc:creator><![CDATA[Windard Yang]]></dc:creator>
+        </item>
+        <item>
+            <title><![CDATA[No title]]></title>
+            <description><![CDATA[吹爆 requests，HTTP client for human]]></description>
+            <link>https://python-book.windard.com/third/requests.html</link>
+            <guid isPermaLink="true">https://python-book.windard.com/third/requests.html</guid>
+            <dc:creator><![CDATA[Windard Yang]]></dc:creator>
+        </item>
+        <item>
+            <title><![CDATA[私人库]]></title>
+            <link>https://python-book.windard.com/private/README.html</link>
+            <guid isPermaLink="true">https://python-book.windard.com/private/README.html</guid>
+            <dc:creator><![CDATA[Windard Yang]]></dc:creator>
+        </item>
+        <item>
+            <title><![CDATA[其他]]></title>
+            <description><![CDATA[还有CGI服务器。]]></description>
+            <link>https://python-book.windard.com/other_tools.html</link>
+            <guid isPermaLink="true">https://python-book.windard.com/other_tools.html</guid>
+            <dc:creator><![CDATA[Windard Yang]]></dc:creator>
+        </item>
+        <item>
+            <title><![CDATA[附录]]></title>
+            <link>https://python-book.windard.com/appendix.html</link>
+            <guid isPermaLink="true">https://python-book.windard.com/appendix.html</guid>
+            <dc:creator><![CDATA[Windard Yang]]></dc:creator>
+        </item>
+        <item>
+            <title><![CDATA[Gitbook]]></title>
+            <description><![CDATA[虽然我也和想用 Gitbook 官网，但是官网上也不能改主体，也不能改头像，👤还要收费。太过分了，不行就用 GitHub Pages]]></description>
+            <link>https://python-book.windard.com/Complainants.html</link>
+            <guid isPermaLink="true">https://python-book.windard.com/Complainants.html</guid>
+            <dc:creator><![CDATA[Windard Yang]]></dc:creator>
+        </item>
+    </channel>
+</rss>
