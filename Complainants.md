@@ -334,7 +334,7 @@ Google 统计
 
 为代码模块增加复制按钮，为代码块增加行号
 
-![](https://i.niupic.com/images/2020/09/23/8IoE.png)
+![](https://i.niupic.com/images/2020/09/24/8IzP.png)
 
 ```json
 {
@@ -485,11 +485,10 @@ Google 统计
 ```
 
 ### toc
-支持目录展示，在需要的地方插入目录
+支持目录展示，在需要的地方插入目录 
 
-```text
-<!-- toc -->
-```
+![](https://i.niupic.com/images/2020/09/24/8IzQ.png)
+> 在这里我没有办法把上面👆那行代码写出来贴这里，😂，因为它会被识别成要插入目录
 
 ![](https://i.niupic.com/images/2020/09/24/8Iv5.png)
 
