@@ -9,7 +9,7 @@
         "spec": "0.0.1",
         "type": "version"
       },
-      "/github/workspace"
+      "/github/workspace/local_source"
     ]
   ],
   "_from": "gitbook-plugin-anchor-navigation@0.0.1",
@@ -39,7 +39,7 @@
   "_shasum": "f2c9247f3c013ad5982931a75f4ef57348c6ec99",
   "_shrinkwrap": null,
   "_spec": "gitbook-plugin-anchor-navigation@0.0.1",
-  "_where": "/github/workspace",
+  "_where": "/github/workspace/local_source",
   "author": {
     "email": "xxdawei@gmail.com",
     "name": "yaneryou"
