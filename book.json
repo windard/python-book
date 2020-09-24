@@ -32,7 +32,6 @@
         "favicon",
         "lightbox",
         "toc",
-        "autocover",
         "tbfed-pagefooter"
     ],
     "pluginsConfig": {

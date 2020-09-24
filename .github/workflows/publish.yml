@@ -32,3 +32,4 @@ jobs:
           gitbook_epub_name: python-book
           gitbook_mobi: true
           gitbook_mobi_name: python-book
+          publish_cname: python-book.windard.com
