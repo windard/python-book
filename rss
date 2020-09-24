@@ -4,12 +4,13 @@
         <description><![CDATA[Python Library Book by Windard]]></description>
         <link>https://python-book.windard.com/</link>
         <generator>RSS for Node</generator>
-        <lastBuildDate>Thu, 24 Sep 2020 14:12:19 GMT</lastBuildDate>
+        <lastBuildDate>Thu, 24 Sep 2020 14:17:54 GMT</lastBuildDate>
         <atom:link href="https://python-book.windard.com/rss" rel="self" type="application/rss+xml"/>
         <author><![CDATA[Windard Yang]]></author>
         <managingEditor><![CDATA[windard@qq.com]]></managingEditor>
         <webMaster><![CDATA[windard@qq.com]]></webMaster>
         <category><![CDATA[gitbook]]></category>
+        <category><![CDATA[python]]></category>
         <item>
             <title><![CDATA[介绍]]></title>
             <description><![CDATA[Python 无所不能]]></description>
