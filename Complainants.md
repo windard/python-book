@@ -526,3 +526,30 @@ showToc: true
 }
 ```
 
+### autocover
+在生成电子书时，自动生成封面
+
+```json
+{
+    "title": "Windard's Python Book",
+    "description": "Python 学习的记录和总结",
+    "author": "Windard",
+    "plugins": ["autocover"],
+    "pluginsConfig": {
+        "autocover": {
+            "font": {
+                "size": null,
+                "family": "Impact",
+                "color": "#FFF"
+            },
+            "size": {
+                "w": 1800,
+                "h": 2360
+            },
+            "background": {
+                "color": "#09F"
+            }
+        }
+    }
+}
+```
