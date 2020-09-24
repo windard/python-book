@@ -4,7 +4,7 @@
         <description><![CDATA[Python Library Book by Windard]]></description>
         <link>https://python-book.windard.com/</link>
         <generator>RSS for Node</generator>
-        <lastBuildDate>Thu, 24 Sep 2020 09:02:07 GMT</lastBuildDate>
+        <lastBuildDate>Thu, 24 Sep 2020 10:13:05 GMT</lastBuildDate>
         <atom:link href="https://python-book.windard.com/rss" rel="self" type="application/rss+xml"/>
         <author><![CDATA[Windard Yang]]></author>
         <managingEditor><![CDATA[windard@qq.com]]></managingEditor>
@@ -60,7 +60,22 @@
             <dc:creator><![CDATA[Windard Yang]]></dc:creator>
         </item>
         <item>
+            <title><![CDATA[No title]]></title>
+            <description><![CDATA[ast 是 python 自带的 语法树生成器，可以用来解析 python 代码，生成抽象语法树。]]></description>
+            <link>https://python-book.windard.com/official/ast.html</link>
+            <guid isPermaLink="true">https://python-book.windard.com/official/ast.html</guid>
+            <dc:creator><![CDATA[Windard Yang]]></dc:creator>
+        </item>
+        <item>
+            <title><![CDATA[No title]]></title>
+            <description><![CDATA[Python Lex-Yacc, 即 Python 版的 Lex-Yacc 工具，有了它们，你永远不需要自己手动写一个解析程序。]]></description>
+            <link>https://python-book.windard.com/official/ply.html</link>
+            <guid isPermaLink="true">https://python-book.windard.com/official/ply.html</guid>
+            <dc:creator><![CDATA[Windard Yang]]></dc:creator>
+        </item>
+        <item>
             <title><![CDATA[第三方库]]></title>
+            <description><![CDATA[就是需要通过 pip 安装的库，非 python 自带的库。]]></description>
             <link>https://python-book.windard.com/third/README.html</link>
             <guid isPermaLink="true">https://python-book.windard.com/third/README.html</guid>
             <dc:creator><![CDATA[Windard Yang]]></dc:creator>
