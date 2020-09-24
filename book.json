@@ -5,12 +5,6 @@
     "language": "zh-hans",
     "gitbook": "3.2.3",
     "root": ".",
-    "styles": {
-        "website": "./styles/website-sspai.css",
-        "pdf": "./styles/pdf.css",
-        "mobi": "./styles/mobi.css",
-        "epub": "./styles/epub-sspai.css"
-    },
     "plugins": [
         "-lunr",
         "-search",
@@ -58,8 +52,8 @@
             "modify_format": "YYYY-MM-DD HH:mm:ss"
         },
         "donate": {
-            "wechat": "https://xxx.jpg",
-            "alipay": "https://xxx.jpg",
+            "wechat": "https://i.niupic.com/images/2020/09/24/8IzV.png",
+            "alipay": "https://i.niupic.com/images/2020/09/24/8IzJ.png",
             "title": "写的不错~ 👍",
             "button": "打赏",
             "alipayText": "支付宝打赏",
