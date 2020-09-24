@@ -26,10 +26,14 @@ jobs:
         uses: zanderzhao/gitbook-action@v1.2.2
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
+          font_install: sudo apt-get install fonts-noto-cjk ttf-mscorefonts-installer
           gitbook_pdf: true
           gitbook_pdf_name: python-book
+          gitbook_pdf_dir: /
           gitbook_epub: true
           gitbook_epub_name: python-book
+          gitbook_epub_dir: /
           gitbook_mobi: true
           gitbook_mobi_name: python-book
+          gitbook_mobi_dir: /
           publish_cname: python-book.windard.com
