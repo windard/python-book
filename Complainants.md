@@ -554,3 +554,16 @@ showToc: true
     }
 }
 ```
+
+在生成电子书时，如果遇到 svg 图片转化的问题时，比如
+
+```
+error: error while generating page "README.md": 
+Error: Error converting /tmp/tmp-281LPVxSm5Bv6U1/842cb21f.svg into /tmp/tmp-281LPVxSm5Bv6U1/302430b8.png
+``` 
+
+一般是 `svgexport` 的问题，可以试下安装低版本试下，其依赖的 `puppeteer` 高版本有问题。
+
+```
+npm i --unsafe-perm -g svgexport@0.3.2
+```
