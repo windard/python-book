@@ -1,4 +1,4 @@
-.PHONY: all build pdf epub mobi review update clean
+.PHONY: all serve build pdf epub mobi review clean
 
 all: serve
 
@@ -9,13 +9,13 @@ build:
 	gitbook build .
 
 pdf:
-	gitbook pdf . python_book.pdf
+	gitbook pdf . python-book.pdf
 
 epub:
-	gitbook epub . python_book.epub
+	gitbook epub . python-book.epub
 
 mobi:
-	gitbook mobi . python_book.mobi
+	gitbook mobi . python-book.mobi
 
 review:
 	open _book/index.html
