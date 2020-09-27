@@ -30,11 +30,11 @@ jobs:
           font_install: sudo apt-get install -y fonts-noto-cjk ttf-mscorefonts-installer
           gitbook_pdf: true
           gitbook_pdf_name: python-book
-          gitbook_pdf_dir: /
+          gitbook_pdf_dir: .
           gitbook_epub: true
           gitbook_epub_name: python-book
-          gitbook_epub_dir: /
+          gitbook_epub_dir: .
           gitbook_mobi: true
           gitbook_mobi_name: python-book
-          gitbook_mobi_dir: /
+          gitbook_mobi_dir: .
           publish_cname: python-book.windard.com
