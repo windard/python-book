@@ -27,7 +27,7 @@ jobs:
         with:
           source_edit_time: true
           token: ${{ secrets.GITHUB_TOKEN }}
-          prepare_install: npm i -g svgexport@0.3.2
+          prepare_install: npm i --unsafe-perm -g svgexport@0.3.2
           font_install: sudo apt-get install -y fonts-noto-cjk ttf-mscorefonts-installer
           gitbook_pdf: true
           gitbook_pdf_name: python-book
