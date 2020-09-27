@@ -24,6 +24,6 @@ python的强大之处有很大的一方面在于它有各种各样非常强大�
 ---
 
 离线阅读:
-- [下载 pdf](python_book.pdf)
-- [下载 mobi](python_book.mobi)
-- [下载 epub](python_book.epub)
+- [下载 pdf](python-book.pdf)
+- [下载 mobi](python-book.mobi)
+- [下载 epub](python-book.epub)
