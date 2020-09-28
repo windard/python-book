@@ -567,3 +567,13 @@ Error: Error converting /tmp/tmp-281LPVxSm5Bv6U1/842cb21f.svg into /tmp/tmp-281L
 ```
 npm i --unsafe-perm -g svgexport@0.3.2
 ```
+
+### 版本问题
+
+```
+      if (cb) cb.apply(this, arguments)
+                 ^
+TypeError: cb.apply is not a function
+```
+
+一般是 node 版本的问题，比如 `v12.18.4` 或者 `v14.12.0` , 使用 `v12.18.1` 或者 `v13.14.0` 版本就没问题。
