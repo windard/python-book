@@ -4,7 +4,7 @@
     <head>
         <meta charset="UTF-8">
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
-        <title>官方库 · Windard's Python Book</title>
+        <title>concurrent · Windard's Python Book</title>
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="description" content="">
         <meta name="generator" content="GitBook 3.2.3">
@@ -116,10 +116,10 @@
     <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
 
     
-    <link rel="next" href="os.html" />
+    <link rel="next" href="../third/" />
     
     
-    <link rel="prev" href="../" />
+    <link rel="prev" href="threading.html" />
     
 
     
@@ -187,7 +187,7 @@
             
         </li>
     
-        <li class="chapter active" data-level="1.2" data-path="./">
+        <li class="chapter " data-level="1.2" data-path="./">
             
                 <a href="./">
             
@@ -323,7 +323,7 @@
             
         </li>
     
-        <li class="chapter " data-level="1.2.9" data-path="concurrent.html">
+        <li class="chapter active" data-level="1.2.9" data-path="concurrent.html">
             
                 <a href="concurrent.html">
             
@@ -521,7 +521,7 @@
     <!-- Title -->
     <h1>
         <i class="fa fa-circle-o-notch fa-spin"></i>
-        <a href=".." >官方库</a>
+        <a href=".." >concurrent</a>
     </h1>
 </div>
 
@@ -536,13 +536,81 @@
     
                                 <section class="normal markdown-section">
                                 
-                                <h1 id="&#x5B98;&#x65B9;&#x5E93;"><a name="&#x5B98;&#x65B9;&#x5E93;" class="plugin-anchor" href="#&#x5B98;&#x65B9;&#x5E93;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x5B98;&#x65B9;&#x5E93;</h1>
-<p>&#x8FD9;&#x91CC;&#x662F;&#x4E00;&#x4E9B; python &#x7684;&#x5B98;&#x65B9;&#x5E93;&#xFF0C;&#x65E0;&#x9700;&#x5B89;&#x88C5;&#xFF0C;python &#x81EA;&#x5E26;&#x3002;</p>
-<blockquote>
-<p>&#x6240;&#x4EE5;&#x5176;&#x5B9E;&#x4E5F;&#x4E0D;&#x80FD;&#x53EB;&#x5B98;&#x65B9;&#x5E93;&#xFF0C;&#x5E94;&#x8BE5;&#x53EB;&#x5185;&#x7F6E;&#x5E93;</p>
-</blockquote>
+                                <h2 id="concurrent"><a name="concurrent" class="plugin-anchor" href="#concurrent"><i class="fa fa-link" aria-hidden="true"></i></a>concurrent</h2>
+<p>python &#x4E2D;&#x7684;&#x5F02;&#x6B65;&#x5E93;&#xFF0C;&#x96C6;&#x6210; threading &#x548C; multiprocessing &#x4E24;&#x4E2A;&#x5E93;&#x3002;</p>
+<p>&#x53EF;&#x4EE5;&#x4F7F;&#x7528; <code>ThreadPoolExecutor</code> &#x548C; <code>ProcessPoolExecutor</code> &#x6765;&#x505A;&#x7EBF;&#x7A0B;&#x548C;&#x8FDB;&#x7A0B;</p>
+<pre><code class="lang-python"><span class="hljs-comment"># -*- coding: utf-8 -*-</span>
+
+<span class="hljs-keyword">import</span> time
+<span class="hljs-keyword">import</span> requests
+<span class="hljs-keyword">import</span> functools
+<span class="hljs-keyword">from</span> concurrent <span class="hljs-keyword">import</span> futures
+
+
+<span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">time_count</span><span class="hljs-params">(func)</span>:</span>
+<span class="hljs-meta">    @functools.wraps(func)</span>
+    <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">wrapper</span><span class="hljs-params">(*args, **kwargs)</span>:</span>
+        start = time.time()
+        result = func(*args, **kwargs)
+        end = time.time()
+        <span class="hljs-keyword">print</span> <span class="hljs-string">&quot;time&quot;</span>, end - start
+        <span class="hljs-keyword">return</span> result
+    <span class="hljs-keyword">return</span> wrapper
+
+
+urls = [<span class="hljs-string">&apos;https://ele.me&apos;</span>,
+        <span class="hljs-string">&apos;https://baidu.com&apos;</span>,
+        <span class="hljs-string">&apos;https://jd.com&apos;</span>,
+        <span class="hljs-string">&apos;https://v2ex.com&apos;</span>,
+        <span class="hljs-string">&apos;https://windard.com&apos;</span>,
+        <span class="hljs-string">&apos;https://taobao.com&apos;</span>,
+        <span class="hljs-string">&apos;https://zhihu.com&apos;</span>,
+        <span class="hljs-string">&apos;https://vip.com&apos;</span>,
+        <span class="hljs-string">&apos;https://t.tt&apos;</span>]
+
+
+<span class="hljs-meta">@time_count</span>
+<span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">main</span><span class="hljs-params">()</span>:</span>
+    executor = futures.ThreadPoolExecutor()
+    roads = []
+    results = []
+    <span class="hljs-keyword">for</span> url <span class="hljs-keyword">in</span> urls:
+        future = executor.submit(requests.get, url)
+        roads.append(future)
+
+    <span class="hljs-keyword">for</span> future <span class="hljs-keyword">in</span> futures.as_completed(roads):
+        result = future.result()
+        results.append(result.status_code)
+
+    executor.shutdown()
+    <span class="hljs-keyword">return</span> results
+
+
+<span class="hljs-meta">@time_count</span>
+<span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">sync_main</span><span class="hljs-params">()</span>:</span>
+    <span class="hljs-keyword">with</span> futures.ThreadPoolExecutor() <span class="hljs-keyword">as</span> executor:
+        roads = executor.map(requests.get, urls)
+        results = [result.status_code <span class="hljs-keyword">for</span> result <span class="hljs-keyword">in</span> roads]
+    <span class="hljs-keyword">return</span> results
+
+
+<span class="hljs-meta">@time_count</span>
+<span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">async_main</span><span class="hljs-params">()</span>:</span>
+    results = []
+    <span class="hljs-keyword">for</span> url <span class="hljs-keyword">in</span> urls:
+        results.append(requests.get(url).status_code)
+    <span class="hljs-keyword">return</span> results
+
+
+<span class="hljs-keyword">if</span> __name__ == <span class="hljs-string">&apos;__main__&apos;</span>:
+    <span class="hljs-keyword">print</span> main()
+    <span class="hljs-keyword">print</span> async_main()
+    <span class="hljs-keyword">print</span> sync_main()
+</code></pre>
+<p>&#x53C2;&#x8003;&#x94FE;&#x63A5;</p>
+<p><a href="http://www.dongwm.com/archives/%E4%BD%BF%E7%94%A8Python%E8%BF%9B%E8%A1%8C%E5%B9%B6%E5%8F%91%E7%BC%96%E7%A8%8B-PoolExecutor%E7%AF%87/" target="_blank">&#x4F7F;&#x7528;Python&#x8FDB;&#x884C;&#x5E76;&#x53D1;&#x7F16;&#x7A0B;-PoolExecutor&#x7BC7;</a><br><a href="https://python-parallel-programmning-cookbook.readthedocs.io/zh_CN/latest/chapter4/02_Using_the_concurrent.futures_Python_modules.html" target="_blank">&#x4F7F;&#x7528;Python&#x7684; concurrent.futures &#x6A21;&#x5757;</a><br><a href="https://blog.csdn.net/drdairen/article/details/69487643" target="_blank">python&#x5E76;&#x53D1;&#x5E93;&#xFF1A;concurrent.futures&#x7684;&#x4F7F;&#x7528;</a><br><a href="https://segmentfault.com/a/1190000009819359" target="_blank">python&#x5E76;&#x53D1; 1&#xFF1A;&#x4F7F;&#x7528; futures &#x5904;&#x7406;&#x5E76;&#x53D1;</a></p>
 <footer class="page-footer"><span class="copyright">Copyright &#xA9; windard.com 2020 all right reserved&#xFF0C;powered by Gitbook</span><span class="footer-modification">&#x8BE5;&#x6587;&#x4EF6;&#x6700;&#x540E;&#x4FEE;&#x6539;&#x65F6;&#x95F4;&#xFF1A;
-2020-09-24 10:10:53
+2020-09-28 12:45:12
 </span></footer>
                                 
                                 </section>
@@ -570,12 +638,12 @@
 
             
                 
-                <a href="../" class="navigation navigation-prev " aria-label="Previous page: 介绍">
+                <a href="threading.html" class="navigation navigation-prev " aria-label="Previous page: threading">
                     <i class="fa fa-angle-left"></i>
                 </a>
                 
                 
-                <a href="os.html" class="navigation navigation-next " aria-label="Next page: os">
+                <a href="../third/" class="navigation navigation-next " aria-label="Next page: 第三方库">
                     <i class="fa fa-angle-right"></i>
                 </a>
                 
@@ -586,7 +654,7 @@
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"官方库","level":"1.2","depth":1,"next":{"title":"os","level":"1.2.1","depth":2,"path":"official/os.md","ref":"official/os.md","articles":[]},"previous":{"title":"介绍","level":"1.1","depth":1,"path":"README.md","ref":"README.md","articles":[]},"dir":"ltr"},"config":{"plugins":["-lunr","-search","-sharing","donate","github@2.0.0","github-buttons","rss","disqus@0.1.0","theme-default","theme-comscore","code","splitter","anchors","ga@1.0.1","anchor-navigation","sitemap","search-pro","back-to-top-button","pageview-count","chapter-fold","sharing-plus","expandable-chapters-small","insert-logo","favicon","lightbox","toc","tbfed-pagefooter"],"root":".","styles":{"ebook":"styles/ebook.css","epub":"styles/epub.css","mobi":"styles/mobi.css","pdf":"styles/pdf.css","print":"styles/print.css","website":"styles/website.css"},"pluginsConfig":{"tbfed-pagefooter":{"copyright":"Copyright &copy windard.com 2020","modify_label":"该文件最后修改时间：","modify_format":"YYYY-MM-DD HH:mm:ss"},"chapter-fold":{},"disqus":{"useIdentifier":false,"shortName":"windard-python-book"},"pluginsConfig":{"favicon":"/images/favicon.ico"},"github":{"url":"https://github.com/windard/python-book"},"splitter":{},"search-pro":{},"toc":{},"books":{"github_url":"https://github.com/windard/"},"sharing-plus":{"qq":false,"all":["facebook","google","twitter","instapaper","linkedin","pocket","stumbleupon"],"douban":false,"facebook":true,"weibo":false,"instapaper":false,"whatsapp":false,"hatenaBookmark":false,"twitter":true,"messenger":false,"line":false,"vk":false,"pocket":true,"google":false,"viber":false,"stumbleupon":false,"qzone":false,"linkedin":false},"anchor-navigation":{},"code":{"copyButtons":true},"donate":{"alipay":"https://i.niupic.com/images/2020/09/24/8IzJ.png","alipayText":"支付宝打赏","button":"打赏","title":"写的不错~ 👍","wechat":"https://i.niupic.com/images/2020/09/24/8IzV.png","wechatText":"微信打赏"},"fontsettings":{"theme":"white","family":"sans","size":2},"rss":{"categories":["gitbook","python"],"title":"Windard Python Book","description":"Python Library Book by Windard","author":"Windard Yang","feed_url":"https://python-book.windard.com/rss","site_url":"https://python-book.windard.com/","managingEditor":"windard@qq.com","webMaster":"windard@qq.com"},"highlight":{},"favicon":{"shortcut":"favicon.ico","bookmark":"favicon.ico"},"sitemap":{"hostname":"https://python-book.windard.com/"},"lightbox":{"jquery":true,"sameUuid":false},"theme-comscore":{},"back-to-top-button":{},"pageview-count":{},"github-buttons":{"buttons":[{"user":"windard","repo":"python-book","type":"star","size":"small"},{"user":"windard","type":"follow","width":"160","count":true,"size":"small"}]},"expandable-chapters-small":{},"ga":{"configuration":"auto","token":"UA-164926677-2"},"sharing":{"qq":true,"all":["douban","facebook","google","instapaper","linkedin","twitter","weibo","messenger","qq","qzone","viber","whatsapp"],"douban":true,"facebook":true,"weibo":true,"twitter":true,"pocket":false,"google":true,"qzone":true},"theme-default":{"showLevel":true,"styles":{"ebook":"styles/ebook.css","epub":"styles/epub.css","mobi":"styles/mobi.css","pdf":"styles/pdf.css","print":"styles/print.css","website":"styles/website.css"}},"anchors":{},"insert-logo":{"style":"background: none; max-height: 30px; min-height: 30px","url":"/images/python.png"}},"theme":"default","author":"Windard","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"Windard's Python Book","language":"zh-hans","gitbook":"3.2.3","description":"Python 学习的记录和总结"},"file":{"path":"official/README.md","mtime":"2020-09-24T10:10:53.000Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2020-09-28T12:48:00.091Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"concurrent","level":"1.2.9","depth":2,"next":{"title":"第三方库","level":"1.3","depth":1,"path":"third/README.md","ref":"third/README.md","articles":[{"title":"requests","level":"1.3.1","depth":2,"path":"third/requests.md","ref":"third/requests.md","articles":[]},{"title":"redis","level":"1.3.2","depth":2,"path":"third/redis.md","ref":"third/redis.md","articles":[]}]},"previous":{"title":"threading","level":"1.2.8","depth":2,"path":"official/threading.md","ref":"official/threading.md","articles":[]},"dir":"ltr"},"config":{"plugins":["-lunr","-search","-sharing","donate","github@2.0.0","github-buttons","rss","disqus@0.1.0","theme-default","theme-comscore","code","splitter","anchors","ga@1.0.1","anchor-navigation","sitemap","search-pro","back-to-top-button","pageview-count","chapter-fold","sharing-plus","expandable-chapters-small","insert-logo","favicon","lightbox","toc","tbfed-pagefooter"],"root":".","styles":{"ebook":"styles/ebook.css","epub":"styles/epub.css","mobi":"styles/mobi.css","pdf":"styles/pdf.css","print":"styles/print.css","website":"styles/website.css"},"pluginsConfig":{"tbfed-pagefooter":{"copyright":"Copyright &copy windard.com 2020","modify_label":"该文件最后修改时间：","modify_format":"YYYY-MM-DD HH:mm:ss"},"chapter-fold":{},"disqus":{"useIdentifier":false,"shortName":"windard-python-book"},"pluginsConfig":{"favicon":"/images/favicon.ico"},"github":{"url":"https://github.com/windard/python-book"},"splitter":{},"search-pro":{},"toc":{},"books":{"github_url":"https://github.com/windard/"},"sharing-plus":{"qq":false,"all":["facebook","google","twitter","instapaper","linkedin","pocket","stumbleupon"],"douban":false,"facebook":true,"weibo":false,"instapaper":false,"whatsapp":false,"hatenaBookmark":false,"twitter":true,"messenger":false,"line":false,"vk":false,"pocket":true,"google":false,"viber":false,"stumbleupon":false,"qzone":false,"linkedin":false},"anchor-navigation":{},"code":{"copyButtons":true},"donate":{"alipay":"https://i.niupic.com/images/2020/09/24/8IzJ.png","alipayText":"支付宝打赏","button":"打赏","title":"写的不错~ 👍","wechat":"https://i.niupic.com/images/2020/09/24/8IzV.png","wechatText":"微信打赏"},"fontsettings":{"theme":"white","family":"sans","size":2},"rss":{"categories":["gitbook","python"],"title":"Windard Python Book","description":"Python Library Book by Windard","author":"Windard Yang","feed_url":"https://python-book.windard.com/rss","site_url":"https://python-book.windard.com/","managingEditor":"windard@qq.com","webMaster":"windard@qq.com"},"highlight":{},"favicon":{"shortcut":"favicon.ico","bookmark":"favicon.ico"},"sitemap":{"hostname":"https://python-book.windard.com/"},"lightbox":{"jquery":true,"sameUuid":false},"theme-comscore":{},"back-to-top-button":{},"pageview-count":{},"github-buttons":{"buttons":[{"user":"windard","repo":"python-book","type":"star","size":"small"},{"user":"windard","type":"follow","width":"160","count":true,"size":"small"}]},"expandable-chapters-small":{},"ga":{"configuration":"auto","token":"UA-164926677-2"},"sharing":{"qq":true,"all":["douban","facebook","google","instapaper","linkedin","twitter","weibo","messenger","qq","qzone","viber","whatsapp"],"douban":true,"facebook":true,"weibo":true,"twitter":true,"pocket":false,"google":true,"qzone":true},"theme-default":{"showLevel":true,"styles":{"ebook":"styles/ebook.css","epub":"styles/epub.css","mobi":"styles/mobi.css","pdf":"styles/pdf.css","print":"styles/print.css","website":"styles/website.css"}},"anchors":{},"insert-logo":{"style":"background: none; max-height: 30px; min-height: 30px","url":"/images/python.png"}},"theme":"default","author":"Windard","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"Windard's Python Book","language":"zh-hans","gitbook":"3.2.3","description":"Python 学习的记录和总结"},"file":{"path":"official/concurrent.md","mtime":"2020-09-28T12:45:12.000Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2020-09-28T12:48:00.091Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>

@@ -4,7 +4,7 @@
         <description><![CDATA[Python Library Book by Windard]]></description>
         <link>https://python-book.windard.com/</link>
         <generator>RSS for Node</generator>
-        <lastBuildDate>Mon, 28 Sep 2020 12:00:17 GMT</lastBuildDate>
+        <lastBuildDate>Mon, 28 Sep 2020 12:48:03 GMT</lastBuildDate>
         <atom:link href="https://python-book.windard.com/rss" rel="self" type="application/rss+xml"/>
         <author><![CDATA[Windard Yang]]></author>
         <managingEditor><![CDATA[windard@qq.com]]></managingEditor>
@@ -75,6 +75,20 @@
             <dc:creator><![CDATA[Windard Yang]]></dc:creator>
         </item>
         <item>
+            <title><![CDATA[No title]]></title>
+            <description><![CDATA[在 thread 的库里还需要我们自己的去设定锁，并且在主线程里阻塞主线程的进行来判断锁是否已经释放, threading 是比 thread 更高级易于操作的多线程库。]]></description>
+            <link>https://python-book.windard.com/official/threading.html</link>
+            <guid isPermaLink="true">https://python-book.windard.com/official/threading.html</guid>
+            <dc:creator><![CDATA[Windard Yang]]></dc:creator>
+        </item>
+        <item>
+            <title><![CDATA[No title]]></title>
+            <description><![CDATA[python 中的异步库，集成 threading 和 multiprocessing 两个库。]]></description>
+            <link>https://python-book.windard.com/official/concurrent.html</link>
+            <guid isPermaLink="true">https://python-book.windard.com/official/concurrent.html</guid>
+            <dc:creator><![CDATA[Windard Yang]]></dc:creator>
+        </item>
+        <item>
             <title><![CDATA[第三方库]]></title>
             <description><![CDATA[就是需要通过 pip 安装的库，非 python 自带的库。]]></description>
             <link>https://python-book.windard.com/third/README.html</link>
@@ -86,6 +100,12 @@
             <description><![CDATA[吹爆 requests，HTTP client for human]]></description>
             <link>https://python-book.windard.com/third/requests.html</link>
             <guid isPermaLink="true">https://python-book.windard.com/third/requests.html</guid>
+            <dc:creator><![CDATA[Windard Yang]]></dc:creator>
+        </item>
+        <item>
+            <title><![CDATA[redis]]></title>
+            <link>https://python-book.windard.com/third/redis.html</link>
+            <guid isPermaLink="true">https://python-book.windard.com/third/redis.html</guid>
             <dc:creator><![CDATA[Windard Yang]]></dc:creator>
         </item>
         <item>

@@ -9,8 +9,11 @@
 <url> <loc>https://python-book.windard.com/official/logging.html</loc> <changefreq>weekly</changefreq> <priority>0.5</priority> </url>
 <url> <loc>https://python-book.windard.com/official/ast.html</loc> <changefreq>weekly</changefreq> <priority>0.5</priority> </url>
 <url> <loc>https://python-book.windard.com/official/ply.html</loc> <changefreq>weekly</changefreq> <priority>0.5</priority> </url>
+<url> <loc>https://python-book.windard.com/official/threading.html</loc> <changefreq>weekly</changefreq> <priority>0.5</priority> </url>
+<url> <loc>https://python-book.windard.com/official/concurrent.html</loc> <changefreq>weekly</changefreq> <priority>0.5</priority> </url>
 <url> <loc>https://python-book.windard.com/third/</loc> <changefreq>weekly</changefreq> <priority>0.5</priority> </url>
 <url> <loc>https://python-book.windard.com/third/requests.html</loc> <changefreq>weekly</changefreq> <priority>0.5</priority> </url>
+<url> <loc>https://python-book.windard.com/third/redis.html</loc> <changefreq>weekly</changefreq> <priority>0.5</priority> </url>
 <url> <loc>https://python-book.windard.com/private/</loc> <changefreq>weekly</changefreq> <priority>0.5</priority> </url>
 <url> <loc>https://python-book.windard.com/other_tools.html</loc> <changefreq>weekly</changefreq> <priority>0.5</priority> </url>
 <url> <loc>https://python-book.windard.com/appendix.html</loc> <changefreq>weekly</changefreq> <priority>0.5</priority> </url>
