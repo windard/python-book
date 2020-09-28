@@ -2,8 +2,9 @@
 
 **Python 无所不能** 
 
-![visitors](https://windard-visitor-badge.glitch.me/badge?page_id=github.windard.python_book)
-![publish gitbook](https://github.com/windard/python-book/workflows/publish%20gitbook/badge.svg)
+[![visitors](https://windard-visitor-badge.glitch.me/badge?page_id=github.windard.python_book)](https://python-book.windard.com/)
+[![publish gitbook](https://github.com/windard/python-book/workflows/publish%20gitbook/badge.svg)](https://python-book.windard.com/)
+[![build](https://img.shields.io/travis/windard/python-book)](https://travis-ci.org/github/windard/python-book)
 
 python的强大之处有很大的一方面在于它有各种各样非常强大的库，这里是一些常用的依赖库的使用记录。
 
