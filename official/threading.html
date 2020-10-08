@@ -338,6 +338,21 @@
             
         </li>
     
+        <li class="chapter " data-level="1.2.10" data-path="pdb.html">
+            
+                <a href="pdb.html">
+            
+                    
+                        <b>1.2.10.</b>
+                    
+                    pdb
+            
+                </a>
+            
+
+            
+        </li>
+    
 
             </ul>
             
@@ -539,51 +554,354 @@
                                 <h2 id="threading"><a name="threading" class="plugin-anchor" href="#threading"><i class="fa fa-link" aria-hidden="true"></i></a>threading</h2>
 <!-- toc -->
 <ul>
-<li><a href="#%E5%9F%BA%E6%9C%AC%E4%BD%BF%E7%94%A8">&#x57FA;&#x672C;&#x4F7F;&#x7528;</a></li>
 <li><a href="#%E5%88%9B%E5%BB%BA%E5%A4%9A%E7%BA%BF%E7%A8%8B%E7%9A%84%E5%87%A0%E7%A7%8D%E6%96%B9%E6%B3%95">&#x521B;&#x5EFA;&#x591A;&#x7EBF;&#x7A0B;&#x7684;&#x51E0;&#x79CD;&#x65B9;&#x6CD5;</a><ul>
-<li><a href="#%E5%88%9B%E5%BB%BA%E4%B8%80%E4%B8%AAthreading%E7%9A%84%E5%AE%9E%E4%BE%8B%EF%BC%8C%E4%BC%A0%E7%BB%99%E5%AE%83%E4%B8%80%E4%B8%AA%E5%8F%AF%E8%B0%83%E7%94%A8%E7%9A%84%E7%B1%BB%E5%AF%B9%E8%B1%A1">&#x521B;&#x5EFA;&#x4E00;&#x4E2A;threading&#x7684;&#x5B9E;&#x4F8B;&#xFF0C;&#x4F20;&#x7ED9;&#x5B83;&#x4E00;&#x4E2A;&#x53EF;&#x8C03;&#x7528;&#x7684;&#x7C7B;&#x5BF9;&#x8C61;</a></li>
+<li><a href="#%E5%8F%82%E6%95%B0%E4%BC%A0%E5%85%A5">&#x53C2;&#x6570;&#x4F20;&#x5165;</a></li>
+<li><a href="#%E6%B4%BE%E7%94%9F%E5%AD%90%E7%B1%BB">&#x6D3E;&#x751F;&#x5B50;&#x7C7B;</a></li>
 </ul>
 </li>
+<li><a href="#%E9%AB%98%E9%98%B6%E4%BD%BF%E7%94%A8">&#x9AD8;&#x9636;&#x4F7F;&#x7528;</a></li>
+<li><a href="#%E7%94%9F%E4%BA%A7%E8%80%85-%E6%B6%88%E8%B4%B9%E8%80%85%E6%A8%A1%E5%BC%8F">&#x751F;&#x4EA7;&#x8005;-&#x6D88;&#x8D39;&#x8005;&#x6A21;&#x5F0F;</a><ul>
+<li><a href="#%E5%85%AB%E4%B8%AA%E7%BA%BF%E7%A8%8B">&#x516B;&#x4E2A;&#x7EBF;&#x7A0B;</a></li>
+</ul>
+</li>
+<li><a href="#%E8%B5%84%E6%BA%90%E9%94%81%E5%AE%9A">&#x8D44;&#x6E90;&#x9501;&#x5B9A;</a></li>
+<li><a href="#%E6%9C%AC%E5%9C%B0%E5%8F%98%E9%87%8F">&#x672C;&#x5730;&#x53D8;&#x91CF;</a></li>
+<li><a href="#%E7%BA%BF%E7%A8%8B%E6%95%B0%E9%87%8F">&#x7EBF;&#x7A0B;&#x6570;&#x91CF;</a></li>
+<li><a href="#%E7%BA%BF%E7%A8%8B%E6%B1%A0">&#x7EBF;&#x7A0B;&#x6C60;</a></li>
+<li><a href="#%E5%A4%9A%E7%BA%BF%E7%A8%8B%E7%9A%84%E7%BB%93%E6%9D%9F">&#x591A;&#x7EBF;&#x7A0B;&#x7684;&#x7ED3;&#x675F;</a></li>
+<li><a href="#%E5%A4%9A%E7%BA%BF%E7%A8%8B%E7%9A%84%E5%BC%82%E5%B8%B8%E8%BE%93%E5%87%BA">&#x591A;&#x7EBF;&#x7A0B;&#x7684;&#x5F02;&#x5E38;&#x8F93;&#x51FA;</a></li>
+<li><a href="#%E7%BA%BF%E7%A8%8B%E5%AE%9A%E6%97%B6%E5%99%A8">&#x7EBF;&#x7A0B;&#x5B9A;&#x65F6;&#x5668;</a></li>
 </ul>
 <!-- tocstop -->
-<h4 id="&#x57FA;&#x672C;&#x4F7F;&#x7528;"><a name="&#x57FA;&#x672C;&#x4F7F;&#x7528;" class="plugin-anchor" href="#&#x57FA;&#x672C;&#x4F7F;&#x7528;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x57FA;&#x672C;&#x4F7F;&#x7528;</h4>
-<p>&#x5728; thread &#x7684;&#x5E93;&#x91CC;&#x8FD8;&#x9700;&#x8981;&#x6211;&#x4EEC;&#x81EA;&#x5DF1;&#x7684;&#x53BB;&#x8BBE;&#x5B9A;&#x9501;&#xFF0C;&#x5E76;&#x4E14;&#x5728;&#x4E3B;&#x7EBF;&#x7A0B;&#x91CC;&#x963B;&#x585E;&#x4E3B;&#x7EBF;&#x7A0B;&#x7684;&#x8FDB;&#x884C;&#x6765;&#x5224;&#x65AD;&#x9501;&#x662F;&#x5426;&#x5DF2;&#x7ECF;&#x91CA;&#x653E;, threading &#x662F;&#x6BD4; thread &#x66F4;&#x9AD8;&#x7EA7;&#x6613;&#x4E8E;&#x64CD;&#x4F5C;&#x7684;&#x591A;&#x7EBF;&#x7A0B;&#x5E93;&#x3002;</p>
-<p>&#x591A;&#x7EBF;&#x7A0B;&#x4E2D;&#xFF0C;&#x5B50;&#x7EBF;&#x7A0B;&#x9ED8;&#x8BA4;&#x4E0D;&#x662F;&#x5B88;&#x62A4;&#x7EBF;&#x7A0B;&#xFF0C;&#x4E3B;&#x7EBF;&#x7A0B;&#x4F1A;&#x7B49;&#x5F85;&#x5B50;&#x7EBF;&#x7A0B;&#x7ED3;&#x675F;&#x518D;&#x7ED3;&#x675F;&#x3002;&#x5982;&#x679C;&#x8981;&#x8BBE;&#x4E3A;&#x5B88;&#x62A4;&#x7EBF;&#x7A0B;&#x5219;&#x5728;&#x4E3B;&#x7EBF;&#x7A0B;&#x7ED3;&#x675F;&#x540E;&#x5373;&#x7EC8;&#x6B62; <code>threading.Thread.setDaemon(True)</code>.</p>
-<p>&#x591A;&#x7EBF;&#x7A0B;&#x4E2D;&#xFF0C;&#x5B50;&#x7EBF;&#x7A0B;&#x521B;&#x5EFA;&#x540E;&#xFF0C;<code>start</code> &#x5373;&#x5F00;&#x59CB;&#x5B50;&#x7EBF;&#x7A0B;&#xFF0C;&#x4E3B;&#x7EBF;&#x7A0B;&#x7EE7;&#x7EED;&#x8FDB;&#x884C;&#xFF0C;<code>join</code> &#x5373;&#x963B;&#x585E;&#x4E3B;&#x7EBF;&#x7A0B;&#xFF0C;&#x7B49;&#x5F85;&#x5B50;&#x7EBF;&#x7A0B;&#x7ED3;&#x675F;&#x540E;&#x518D;&#x7EE7;&#x7EED;&#x4E3B;&#x7EBF;&#x7A0B;&#x3002;</p>
-<p>&#x5728;&#x624B;&#x52A8;&#x7684;&#x5C06;&#x5B50;&#x7EBF;&#x7A0B;&#x52A0;&#x5165;(join)&#x5230;&#x4E3B;&#x7EBF;&#x7A0B;&#x4E2D;&#x540E;&#xFF0C;&#x4E3B;&#x7EBF;&#x7A0B;&#x5C31;&#x4F1A;&#x7B49;&#x5F85;&#x5B50;&#x7EBF;&#x7A0B;&#x5168;&#x90E8;&#x7ED3;&#x675F;&#x624D;&#x4F1A;&#x7EE7;&#x7EED; join &#x4E4B;&#x540E;&#x7684;&#x7A0B;&#x5E8F;&#x3002;</p>
-<p>&#x5728; <code>join</code> &#x88AB;&#x52A0;&#x5165;&#x5230;&#x4E3B;&#x7EBF;&#x7A0B;&#x4E4B;&#x540E;&#xFF0C;&#x867D;&#x7136;&#x4E3B;&#x7EBF;&#x7A0B;&#x88AB;&#x963B;&#x585E;&#xFF0C;&#x4F46;&#x662F;&#x5E76;&#x4E0D;&#x5F71;&#x54CD;&#x5176;&#x4ED6;&#x7EBF;&#x7A0B;&#xFF0C;&#x5176;&#x4ED6;&#x7EBF;&#x7A0B;&#x53EF;&#x4EE5;&#x7EE7;&#x7EED; <code>join</code> &#x5230;&#x4E3B;&#x7EBF;&#x7A0B;&#x3002;</p>
-<p>&#x5728;&#x672A;&#x8BBE;&#x7F6E;&#x5B88;&#x62A4;&#x7EBF;&#x7A0B;&#xFF0C;&#x672A; <code>join</code> &#x5230;&#x4E3B;&#x7EBF;&#x7A0B;&#x4E2D;&#x7684;&#x65F6;&#x5019;&#xFF0C;&#x4E3B;&#x7EBF;&#x7A0B;&#x4F1A;&#x5148;&#x8FD0;&#x884C;&#x7ED3;&#x675F;&#xFF0C;&#x4F46;&#x662F;&#x4E3B;&#x7A0B;&#x5E8F;&#x672A;&#x7ED3;&#x675F;&#xFF0C;&#x7B49;&#x5F85;&#x5B50;&#x7EBF;&#x7A0B;&#x7ED3;&#x675F;&#x540E;&#x7A0B;&#x5E8F;&#x624D;&#x4F1A;&#x7ED3;&#x675F;&#x3002;</p>
-<p>&#x5B88;&#x62A4;&#x7EBF;&#x7A0B;&#x7684;&#x610F;&#x601D;&#x5C31;&#x662F;&#x8BF4;&#x8FD9;&#x4E2A;&#x7EBF;&#x7A0B;&#x72EC;&#x7ACB;&#x4E8E;&#x4E3B;&#x7EBF;&#x7A0B;&#xFF0C;&#x4E3B;&#x7EBF;&#x7A0B;&#x53EF;&#x4EE5;&#x5148;&#x4E8E;&#x5B88;&#x62A4;&#x7EBF;&#x7A0B;&#x7ED3;&#x675F;&#x800C;&#x4E0D;&#x7528;&#x7B49;&#x5019;&#x5B88;&#x62A4;&#x7EBF;&#x7A0B;&#x7ED3;&#x675F;&#x3002;</p>
-<pre><code class="lang-python"><span class="hljs-comment"># -*- coding: utf-8 -*-</span>
+<h3 id="&#x521B;&#x5EFA;&#x591A;&#x7EBF;&#x7A0B;&#x7684;&#x51E0;&#x79CD;&#x65B9;&#x6CD5;"><a name="&#x521B;&#x5EFA;&#x591A;&#x7EBF;&#x7A0B;&#x7684;&#x51E0;&#x79CD;&#x65B9;&#x6CD5;" class="plugin-anchor" href="#&#x521B;&#x5EFA;&#x591A;&#x7EBF;&#x7A0B;&#x7684;&#x51E0;&#x79CD;&#x65B9;&#x6CD5;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x521B;&#x5EFA;&#x591A;&#x7EBF;&#x7A0B;&#x7684;&#x51E0;&#x79CD;&#x65B9;&#x6CD5;</h3>
+<p><code>threading</code> &#x5E93;&#x4E3B;&#x8981;&#x6709;&#x4E24;&#x79CD;&#x521B;&#x5EFA;&#x591A;&#x7EBF;&#x7A0B;&#x7684;&#x65B9;&#x6CD5;&#xFF0C;&#x548C; <code>Java</code> &#x4E2D;&#x7684;&#x591A;&#x7EBF;&#x7A0B;&#x7C7B;&#x4F3C;&#xFF0C;&#x4E00;&#x79CD;&#x662F;&#x9762;&#x5411;&#x65B9;&#x6CD5;&#x7684;&#xFF0C;&#x4E00;&#x79CD;&#x662F;&#x9762;&#x5411;&#x5BF9;&#x8C61;&#x7684;&#x3002;</p>
+<ol>
+<li>&#x521B;&#x5EFA;&#x4E00;&#x4E2A; <code>threading.Thread</code> &#x7684;&#x5B9E;&#x4F8B;&#xFF0C;&#x5C06;&#x5B50;&#x7EBF;&#x7A0B;&#x903B;&#x8F91;&#x8C03;&#x7528;&#x51FD;&#x6570;&#x4F5C;&#x4E3A;&#x53C2;&#x6570;&#x4F20;&#x5165;&#xFF0C;&#x7136;&#x540E;&#x8C03;&#x7528; <code>start</code> &#x65B9;&#x6CD5;&#x521B;&#x5EFA;&#x5B50;&#x7EBF;&#x7A0B;&#x3002;</li>
+<li>&#x4ECE; <code>threading.Thread</code> &#x6D3E;&#x751F;&#x51FA;&#x4E00;&#x4E2A;&#x5B50;&#x7C7B;&#xFF0C;&#x5B9E;&#x73B0;&#x8FD9;&#x4E2A;&#x7C7B;&#x7684; <code>run</code> &#x65B9;&#x6CD5;&#xFF0C;&#x5728; <code>run</code> &#x65B9;&#x6CD5;&#x4E2D;&#x5B9E;&#x73B0;&#x5B50;&#x7EBF;&#x7A0B;&#x903B;&#x8F91;&#xFF0C;&#x7136;&#x540E;&#x521B;&#x5EFA;&#x8FD9;&#x4E2A;&#x5B50;&#x7C7B;&#x7684;&#x5B9E;&#x4F8B;&#x3002;<blockquote>
+<p>&#x8FD8;&#x6709;&#x7B2C;&#x4E09;&#x79CD;&#xFF0C;&#x521B;&#x5EFA;&#x4E00;&#x4E2A; <code>threading.Thread</code> &#x7684;&#x5B9E;&#x4F8B;&#xFF0C;&#x4F20;&#x7ED9;&#x5B83;&#x4E00;&#x4E2A;&#x53EF;&#x8C03;&#x7528;&#x7684;&#x7C7B;&#x5B9E;&#x4F8B;&#xFF0C;&#x5176;&#x5B9E;&#x539F;&#x7406;&#x662F;&#x548C;&#x7B2C;&#x4E00;&#x79CD;&#x4E00;&#x6837;&#x7684;&#x3002;</p>
+</blockquote>
+</li>
+</ol>
+<h4 id="&#x53C2;&#x6570;&#x4F20;&#x5165;"><a name="&#x53C2;&#x6570;&#x4F20;&#x5165;" class="plugin-anchor" href="#&#x53C2;&#x6570;&#x4F20;&#x5165;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x53C2;&#x6570;&#x4F20;&#x5165;</h4>
+<pre><code class="lang-python"><span class="hljs-comment"># coding=utf-8</span>
 
-<span class="hljs-keyword">from</span> threading <span class="hljs-keyword">import</span> Thread
-<span class="hljs-keyword">import</span> os
-<span class="hljs-keyword">import</span> time
+<span class="hljs-keyword">import</span> threading
+<span class="hljs-keyword">from</span> time <span class="hljs-keyword">import</span> ctime,sleep
 
+<span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">loop</span><span class="hljs-params">(nloop,nsec)</span>:</span>
+    <span class="hljs-keyword">print</span> <span class="hljs-string">&quot;loop&quot;</span>,nloop,<span class="hljs-string">&quot; start at: &quot;</span>,ctime()
+    sleep(nsec)
+    <span class="hljs-keyword">print</span> <span class="hljs-string">&quot;loop&quot;</span>,nloop,<span class="hljs-string">&quot;end    at: &quot;</span>,ctime()
 
-<span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">sleeper</span><span class="hljs-params">(name, seconds)</span>:</span>
-    <span class="hljs-keyword">print</span> <span class="hljs-string">&apos;starting child process with id: &apos;</span>, os.getpid()
-    <span class="hljs-keyword">print</span> <span class="hljs-string">&apos;parent process:&apos;</span>, os.getppid()
-    <span class="hljs-keyword">print</span> <span class="hljs-string">&apos;sleeping for %s &apos;</span> % seconds
-    time.sleep(seconds)
-    <span class="hljs-keyword">print</span> <span class="hljs-string">&quot;%s done sleeping&quot;</span> % name
+<span class="hljs-keyword">print</span> <span class="hljs-string">&quot;all start at: &quot;</span>,ctime()
+loops = [<span class="hljs-number">4</span>,<span class="hljs-number">2</span>]
+threads = []
+nloops = range(len(loops))
 
+<span class="hljs-comment">#&#x521B;&#x5EFA;&#x4E24;&#x4E2A;&#x7EBF;&#x7A0B;</span>
+<span class="hljs-keyword">for</span> i <span class="hljs-keyword">in</span> nloops:
+    t = threading.Thread(target=loop,args=(i,loops[i]))
+    threads.append(t)
 
-<span class="hljs-keyword">if</span> __name__ == <span class="hljs-string">&apos;__main__&apos;</span>:
-    <span class="hljs-keyword">print</span> <span class="hljs-string">&quot;in parent process (id %s)&quot;</span> % os.getpid()
-    p = Thread(target=sleeper, args=(<span class="hljs-string">&apos;bob&apos;</span>, <span class="hljs-number">5</span>))
-    <span class="hljs-keyword">print</span> <span class="hljs-string">&apos;daemon?&apos;</span>, p.isDaemon()
-    p.setDaemon(<span class="hljs-keyword">not</span> p.isDaemon())
-    <span class="hljs-keyword">print</span> <span class="hljs-string">&apos;daemon?&apos;</span>, p.isDaemon()
-    p.start()
-    <span class="hljs-keyword">print</span> <span class="hljs-string">&quot;in parent process after child process start&quot;</span>
-    <span class="hljs-keyword">print</span> <span class="hljs-string">&quot;parent process about to join child process&quot;</span>
-    p.join()
-    <span class="hljs-keyword">print</span> <span class="hljs-string">&quot;in parent process after child process join&quot;</span>
-    <span class="hljs-keyword">print</span> <span class="hljs-string">&quot;parent process exiting with id &quot;</span>, os.getpid()
-    <span class="hljs-keyword">print</span> <span class="hljs-string">&quot;The parent&apos;s parent process:&quot;</span>, os.getppid()
+<span class="hljs-comment">#&#x8BA9;&#x4E24;&#x4E2A;&#x7EBF;&#x7A0B;&#x540C;&#x65F6;&#x5F00;&#x59CB;</span>
+<span class="hljs-keyword">for</span> i <span class="hljs-keyword">in</span> nloops:
+    threads[i].start()
+
+<span class="hljs-keyword">print</span> <span class="hljs-string">&quot;all end   at: &quot;</span>,ctime()
 </code></pre>
-<p>&#x8FD8;&#x662F;&#x4E0A;&#x4E00;&#x4E2A;&#x4F8B;&#x5B50;&#xFF0C;&#x6211;&#x4EEC;&#x7528;threading&#x6765;&#x8BD5;&#x4E00;&#x4E0B;&#x3002;</p>
+<p>&#x4FDD;&#x5B58;&#x4E3A; <code>threading_start.py</code>&#xFF0C;&#x8FD0;&#x884C;&#xFF0C;&#x770B;&#x4E00;&#x4E0B;&#x7ED3;&#x679C;&#x3002;</p>
+<pre><code>$ python threading_start.py
+all start at:  Wed Oct  7 15:13:32 2020
+loop 0  start at:  Wed Oct  7 15:13:32 2020
+ loop 1  start at:  Wed Oct  7 15:13:32 2020
+ all end   at:  Wed Oct  7 15:13:32 2020
+
+loop 1 end    at:  Wed Oct  7 15:13:34 2020
+loop 0 end    at:  Wed Oct  7 15:13:36 2020
+</code></pre><p>&#x4E24;&#x4E2A;&#x5206;&#x522B;&#x8017;&#x65F6;2&#x79D2;&#x548C;4&#x79D2;&#x7684;&#x51FD;&#x6570;&#x540C;&#x65F6;&#x5F00;&#x59CB;&#xFF0C;&#x7136;&#x540E;&#x603B;&#x5171;&#x8017;&#x65F6;&#x8FD8;&#x662F;4&#x79D2;&#xFF0C;&#x7A0B;&#x5E8F;&#x8FD0;&#x884C;&#x7ED3;&#x675F;&#x3002;</p>
+<blockquote>
+<p>&#x8FD9;&#x91CC;&#x9700;&#x8981;&#x6CE8;&#x610F;&#xFF0C;&#x6309;&#x7167;&#x4EE3;&#x7801;&#x903B;&#x8F91;&#x4E3B;&#x7EBF;&#x7A0B;&#x5728;&#x5524;&#x8D77;&#x4E24;&#x4E2A;&#x5B50;&#x7EBF;&#x7A0B;&#x4E4B;&#x540E;&#xFF0C;&#x5176;&#x5B9E;&#x5DF2;&#x7ECF;&#x8FD0;&#x884C;&#x81F3;&#x6700;&#x540E;&#x4E00;&#x884C;&#x5E76;&#x8F93;&#x51FA;&#x7ED3;&#x675F;&#x65F6;&#x95F4;
+&#x4F46;&#x662F;&#x6B64;&#x65F6;&#x7A0B;&#x5E8F;&#x8FD8;&#x672A;&#x7ED3;&#x675F;&#xFF0C;&#x76F4;&#x81F3;&#x6240;&#x6709;&#x7684;&#x5B50;&#x7EBF;&#x7A0B;&#x8FD0;&#x884C;&#x7ED3;&#x675F;&#x4E4B;&#x540E;&#xFF0C;&#x4E3B;&#x7EBF;&#x7A0B;&#x624D;&#x771F;&#x6B63;&#x7ED3;&#x675F;&#x3002;</p>
+</blockquote>
+<p>&#x63A5;&#x4E0B;&#x6765;&#x662F;&#x7B2C;&#x4E09;&#x79CD;&#x4F7F;&#x7528;&#x5B9E;&#x4F8B;&#x8C03;&#x7528;&#x7684;&#x65B9;&#x5F0F;</p>
+<pre><code class="lang-python"><span class="hljs-comment"># coding=utf-8</span>
+
+<span class="hljs-keyword">import</span> threading
+<span class="hljs-keyword">from</span> time <span class="hljs-keyword">import</span> ctime,sleep
+
+<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">ThreadFunc</span><span class="hljs-params">(object)</span>:</span>
+    <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">__init__</span><span class="hljs-params">(self, func, args, name=<span class="hljs-string">&quot;&quot;</span>)</span>:</span>
+        self.args = args
+        self.func = func
+        self.name = name
+
+    <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">__call__</span><span class="hljs-params">(self)</span>:</span>
+        apply(self.func, self.args)
+
+<span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">loop</span><span class="hljs-params">(nloop,nsec)</span>:</span>
+    <span class="hljs-keyword">print</span> <span class="hljs-string">&quot;loop&quot;</span>,nloop,<span class="hljs-string">&quot; start at: &quot;</span>,ctime()
+    sleep(nsec)
+    <span class="hljs-keyword">print</span> <span class="hljs-string">&quot;loop&quot;</span>,nloop,<span class="hljs-string">&quot;end    at: &quot;</span>,ctime()
+
+<span class="hljs-keyword">print</span> <span class="hljs-string">&quot;all start at: &quot;</span>,ctime()
+
+loops = [<span class="hljs-number">4</span>,<span class="hljs-number">2</span>]
+threads = []
+nloops = range(len(loops))
+
+<span class="hljs-keyword">for</span> i <span class="hljs-keyword">in</span> nloops:
+    t = threading.Thread(target=ThreadFunc(loop,(i,loops[i]),loop.__name__))
+    threads.append(t)
+
+<span class="hljs-keyword">for</span> i <span class="hljs-keyword">in</span> nloops:
+    threads[i].start()
+
+<span class="hljs-keyword">for</span> i <span class="hljs-keyword">in</span> nloops:
+    threads[i].join()
+
+<span class="hljs-keyword">print</span> <span class="hljs-string">&quot;all end   at: &quot;</span>,ctime()
+</code></pre>
+<p>&#x4FDD;&#x5B58;&#x4E3A; <code>threading_class.py</code>&#xFF0C;&#x8FD0;&#x884C;&#xFF0C;&#x770B;&#x4E00;&#x4E0B;&#x7ED3;&#x679C;&#x3002;</p>
+<p><a href="../images/threading_class.jpg" data-lightbox="f664ff3c-bead-4f03-b548-b29653a5e522" data-title="threading_class.jpg"><img src="../images/threading_class.jpg" alt="threading_class.jpg"></a></p>
+<p>&#x8FD9;&#x91CC;&#x867D;&#x7136;&#x4F20;&#x5165;&#x7684;&#x662F;&#x5BF9;&#x8C61;&#x5B9E;&#x4F8B;&#xFF0C;&#x4F46;&#x662F;&#x5176;&#x5B9E;&#x8FD8;&#x662F;&#x6309;&#x7167;&#x53C2;&#x6570;&#x4F20;&#x5165;&#x7684;&#x65B9;&#x5F0F;&#x8FDB;&#x884C;&#x7684;&#xFF0C;&#x4E3B;&#x8981;&#x7684;&#x5DEE;&#x5F02;&#x5728;&#x4E8E;&#x4E3B;&#x7EBF;&#x7A0B;&#x88AB;&#x5B50;&#x7EBF;&#x7A0B;&#x963B;&#x585E;&#xFF0C;&#x5728;&#x5B50;&#x7EBF;&#x7A0B;&#x90FD;&#x8FD0;&#x884C;&#x7ED3;&#x675F;&#x4E4B;&#x540E;&#xFF0C;&#x5728;&#x8FD0;&#x884C;&#x81F3;&#x6700;&#x540E;&#x4E00;&#x884C;&#x8F93;&#x51FA;&#x7ED3;&#x675F;&#x65F6;&#x95F4;&#x3002;</p>
+<p>&#x4E3A;&#x4EC0;&#x4E48;&#x5728;&#x8FD9;&#x91CC;&#x4E3B;&#x7EBF;&#x7A0B;&#x4F1A;&#x963B;&#x585E;&#x81F3;&#x5B50;&#x7EBF;&#x7A0B;&#x8FD0;&#x884C;&#x7ED3;&#x675F;&#x5462;&#xFF1F;&#x56E0;&#x4E3A;&#x5728;&#x8C03;&#x7528; <code>start</code> &#x51FD;&#x6570;&#x5524;&#x8D77;&#x5B50;&#x7EBF;&#x7A0B;&#x4E4B;&#x540E;&#xFF0C;&#x6211;&#x4EEC;&#x8FD8;&#x8C03;&#x7528;&#x4E86; <code>join</code> &#x51FD;&#x6570;&#xFF0C;&#x8BA9;&#x5B50;&#x7EBF;&#x7A0B;&#x52A0;&#x5165;&#x4E3B;&#x7EBF;&#x7A0B;&#xFF0C;&#x8BA9;&#x4E3B;&#x7EBF;&#x7A0B;&#x5F3A;&#x884C;&#x7B49;&#x5F85;&#x3002;</p>
+<blockquote>
+<p>&#x8FD9;&#x91CC;&#x5176;&#x5B9E;&#x6709;&#x4E00;&#x4E2A;&#x5C0F;&#x7EC6;&#x8282;&#xFF0C;&#x7B2C;&#x4E00;&#x4E2A;&#x7EBF;&#x7A0B; <code>join</code> &#x65B9;&#x6CD5;&#x4E4B;&#x540E;&#xFF0C;&#x4E3B;&#x7EBF;&#x7A0B;&#x5DF2;&#x7ECF;&#x8FDB;&#x5165;&#x963B;&#x585E;&#x72B6;&#x6001;&#xFF0C;&#x90A3;&#x4E48;&#x4E3A;&#x4EC0;&#x4E48;&#x7B2C;&#x4E8C;&#x4E2A;&#x7EBF;&#x7A0B;&#x8FD8;&#x80FD;&#x7EE7;&#x7EED; <code>join</code> &#x5462;&#xFF1F;<br>&#x56E0;&#x4E3A; <code>jion</code> &#x4E4B;&#x540E;&#xFF0C;&#x5B50;&#x7EBF;&#x7A0B;&#x4F1A;&#x963B;&#x585E;&#x4E3B;&#x7EBF;&#x7A0B;&#xFF0C;&#x6216;&#x8005;&#x8BF4;&#x8C03;&#x7528;&#x7684;&#x7EBF;&#x7A0B;&#xFF0C;&#x4F46;&#x662F;&#x4E0D;&#x5F71;&#x54CD;&#x5176;&#x4ED6;&#x7684;&#x7EBF;&#x7A0B;&#xFF0C;&#x6240;&#x4EE5;&#x5176;&#x4ED6;&#x7684;&#x5B50;&#x7EBF;&#x7A0B;&#x53EF;&#x4EE5;&#x7EE7;&#x7EED; <code>join</code><br>&#x5176;&#x4ED6;&#x5B50;&#x7EBF;&#x7A0B;&#x7684;&#x521B;&#x5EFA;&#x548C;&#x542F;&#x52A8;&#x90FD;&#x662F;&#x5728;&#x4E3B;&#x7EBF;&#x7A0B;&#x4E2D;&#x6267;&#x884C;&#x7684;&#xFF0C;&#x4F46;&#x662F;&#x5176;&#x4ED6;&#x5B50;&#x7EBF;&#x7A0B;&#x7684; <code>join</code> &#x64CD;&#x4F5C;&#xFF0C;&#x5176;&#x5B9E;&#x662F;&#x5728;&#x5B50;&#x7EBF;&#x7A0B;&#x4E2D;&#x6267;&#x884C;&#x7684;</p>
+</blockquote>
+<pre><code class="lang-python"><span class="hljs-comment">#coding=utf-8</span>
+
+<span class="hljs-keyword">import</span> threading
+<span class="hljs-keyword">from</span> time <span class="hljs-keyword">import</span> ctime,sleep
+
+<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">ThreadFunc</span><span class="hljs-params">(object)</span>:</span>
+    <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">__init__</span><span class="hljs-params">(self, func ,args,name=<span class="hljs-string">&quot;&quot;</span>)</span>:</span>
+        self.args = args
+        self.func = func
+        self.name = name
+
+    <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">__call__</span><span class="hljs-params">(self)</span>:</span>
+        apply(self.func,self.args)
+
+<span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">loop</span><span class="hljs-params">(nloop,nsec)</span>:</span>
+    <span class="hljs-keyword">print</span> <span class="hljs-string">&quot;loop&quot;</span>,nloop,<span class="hljs-string">&quot; start at: &quot;</span>,ctime()
+    sleep(nsec)
+    <span class="hljs-keyword">print</span> <span class="hljs-string">&quot;loop&quot;</span>,nloop,<span class="hljs-string">&quot;end    at: &quot;</span>,ctime()
+
+<span class="hljs-keyword">print</span> <span class="hljs-string">&quot;all start at: &quot;</span>,ctime()
+
+loops = [<span class="hljs-number">4</span>,<span class="hljs-number">2</span>]
+threads = []
+nloops = range(len(loops))
+
+<span class="hljs-keyword">for</span> i <span class="hljs-keyword">in</span> nloops:
+    t = threading.Thread(target=ThreadFunc(loop,(i,loops[i]),loop.__name__))
+    threads.append(t)    
+
+<span class="hljs-keyword">for</span> i <span class="hljs-keyword">in</span> nloops:
+    threads[i].start()
+
+<span class="hljs-comment"># for i in nloops:</span>
+<span class="hljs-comment">#     threads[i].join()</span>
+<span class="hljs-comment">#     print i, &quot;is joined at: &quot;, ctime()</span>
+
+<span class="hljs-comment"># &#x751A;&#x81F3;&#x4E00;&#x4E2A;&#x4E00;&#x4E2A; join</span>
+threads[<span class="hljs-number">0</span>].join()
+<span class="hljs-keyword">print</span> <span class="hljs-string">&quot;0 is joined at: &quot;</span>, ctime()
+threads[<span class="hljs-number">1</span>].join()
+<span class="hljs-keyword">print</span> <span class="hljs-string">&quot;1 is joined at: &quot;</span>, ctime()
+
+<span class="hljs-keyword">print</span> <span class="hljs-string">&quot;all end   at: &quot;</span>,ctime()
+</code></pre>
+<p>&#x770B;&#x4E0B;&#x7ED3;&#x679C;&#xFF0C;<code>join</code> &#x8C03;&#x7528;&#x90FD;&#x662F;&#x6B63;&#x5E38;&#x7684;&#xFF0C;&#x4F46;&#x662F;&#x8F93;&#x51FA; <code>join</code> &#x65F6;&#x95F4;&#x90FD;&#x5728;&#x4E3B;&#x7EBF;&#x7A0B;&#x91CC;&#x88AB;&#x963B;&#x585E;&#x5230;&#x6700;&#x540E;&#x4E86;&#x3002;</p>
+<pre><code>$ python code/threading_class_2.py
+all start at:  Wed Oct  7 15:34:05 2020
+loop 0loop 1  start at:  Wed Oct  7 15:34:05 2020
+  start at:  Wed Oct  7 15:34:05 2020
+loop 1 end    at:  Wed Oct  7 15:34:07 2020
+loop 0 end    at:  Wed Oct  7 15:34:09 2020
+0 is joined at:  Wed Oct  7 15:34:09 2020
+1 is joined at:  Wed Oct  7 15:34:09 2020
+all end   at:  Wed Oct  7 15:34:09 2020
+</code></pre><h4 id="&#x6D3E;&#x751F;&#x5B50;&#x7C7B;"><a name="&#x6D3E;&#x751F;&#x5B50;&#x7C7B;" class="plugin-anchor" href="#&#x6D3E;&#x751F;&#x5B50;&#x7C7B;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x6D3E;&#x751F;&#x5B50;&#x7C7B;</h4>
+<pre><code class="lang-python"><span class="hljs-comment"># coding=utf-8</span>
+
+<span class="hljs-keyword">import</span> threading
+<span class="hljs-keyword">from</span> time <span class="hljs-keyword">import</span> ctime,sleep
+
+<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">MyThread</span><span class="hljs-params">(threading.Thread)</span>:</span>
+    <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">__init__</span><span class="hljs-params">(self, func, args, name=<span class="hljs-string">&quot;&quot;</span>)</span>:</span>
+        threading.Thread.__init__(self)
+        self.name = name
+        self.func = func
+        self.args = args
+
+    <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">run</span><span class="hljs-params">(self)</span>:</span>
+        apply(self.func, self.args)
+
+<span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">loop</span><span class="hljs-params">(nloop,nsec)</span>:</span>
+    <span class="hljs-keyword">print</span> <span class="hljs-string">&quot;loop&quot;</span>,nloop,<span class="hljs-string">&quot; start at: &quot;</span>,ctime()
+    sleep(nsec)
+    <span class="hljs-keyword">print</span> <span class="hljs-string">&quot;loop&quot;</span>,nloop,<span class="hljs-string">&quot;end    at: &quot;</span>,ctime()
+
+<span class="hljs-keyword">print</span> <span class="hljs-string">&quot;all start at: &quot;</span>,ctime()
+
+loops = [<span class="hljs-number">4</span>,<span class="hljs-number">2</span>]
+threads = []
+nloops = range(len(loops))
+
+<span class="hljs-keyword">for</span> i <span class="hljs-keyword">in</span> nloops:
+    t = MyThread(loop,(i,loops[i]),loop.__name__)
+    threads.append(t)
+
+<span class="hljs-keyword">for</span> i <span class="hljs-keyword">in</span> nloops:
+    threads[i].start()
+
+<span class="hljs-keyword">for</span> i <span class="hljs-keyword">in</span> nloops:
+    threads[i].join()
+
+<span class="hljs-keyword">print</span> <span class="hljs-string">&quot;all end   at: &quot;</span>,ctime()
+</code></pre>
+<p>&#x4FDD;&#x5B58;&#x4E3A;threading_class_MyThread.py&#xFF0C;&#x8FD0;&#x884C;&#xFF0C;&#x770B;&#x4E00;&#x4E0B;&#x7ED3;&#x679C;&#x662F;&#x548C;&#x6211;&#x4EEC;&#x9884;&#x671F;&#x7684;&#x4E00;&#x6837;&#x3002;</p>
+<p><a href="../images/threading_class_MyThread.jpg" data-lightbox="07fe03db-2449-4bd3-979b-f2bbb0ca397c" data-title="threading_class_MyThread.jpg"><img src="../images/threading_class_MyThread.jpg" alt="threading_class_MyThread.jpg"></a></p>
+<p>&#x4E0A;&#x9762;&#x7684;&#x4EE3;&#x7801;&#x5982;&#x679C;&#x8FD8;&#x662F;&#x6709;&#x51FD;&#x6570;&#x4F20;&#x5165;&#x7684;&#x90E8;&#x5206;&#xFF0C;&#x5982;&#x679C;&#x6709;&#x4E9B;&#x7406;&#x89E3;&#x6DF7;&#x6DC6;&#x7684;&#x8BDD;&#xFF0C;&#x4E5F;&#x53EF;&#x4EE5;&#x5199;&#x6210;&#x8FD9;&#x6837;</p>
+<pre><code class="lang-python"><span class="hljs-comment">#coding=utf-8</span>
+
+<span class="hljs-keyword">import</span> threading
+<span class="hljs-keyword">from</span> time <span class="hljs-keyword">import</span> ctime,sleep
+
+
+<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">ThreadDemo</span><span class="hljs-params">(threading.Thread)</span>:</span>
+    <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">__init__</span><span class="hljs-params">(self, nloop, nsec, name=<span class="hljs-string">&quot;&quot;</span>)</span>:</span>
+        threading.Thread.__init__(self)
+        self.name = name
+        self.nloop = nloop
+        self.nsec = nsec
+
+    <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">run</span><span class="hljs-params">(self)</span>:</span>
+        <span class="hljs-keyword">print</span> <span class="hljs-string">&quot;loop&quot;</span>, self.nloop, <span class="hljs-string">&quot;start  at: &quot;</span>, ctime()
+        sleep(self.nsec)
+        <span class="hljs-keyword">print</span> <span class="hljs-string">&quot;loop&quot;</span>, self.nloop, <span class="hljs-string">&quot;end    at: &quot;</span>, ctime()
+
+
+<span class="hljs-keyword">print</span> <span class="hljs-string">&quot;all start at: &quot;</span>,ctime()
+
+loops = [<span class="hljs-number">4</span>,<span class="hljs-number">2</span>]
+threads = []
+nloops = range(len(loops))
+
+<span class="hljs-keyword">for</span> i <span class="hljs-keyword">in</span> nloops:
+    t = ThreadDemo(i, loops[i], <span class="hljs-string">&quot;loop&quot;</span>)
+    threads.append(t)    
+
+<span class="hljs-keyword">for</span> i <span class="hljs-keyword">in</span> nloops:
+    threads[i].start()
+
+<span class="hljs-keyword">for</span> i <span class="hljs-keyword">in</span> nloops:
+    threads[i].join()
+
+<span class="hljs-keyword">print</span> <span class="hljs-string">&quot;all end   at: &quot;</span>, ctime()
+</code></pre>
+<p>&#x8FD9;&#x91CC;&#x4E3A;&#x4EC0;&#x4E48;&#x521B;&#x5EFA;&#x5B50;&#x7C7B;&#x5B9E;&#x4F8B;&#x4E86;&#x4E4B;&#x540E;&#xFF0C;&#x8FD8;&#x662F;&#x9700;&#x8981;&#x8C03;&#x7528; <code>start</code> &#x65B9;&#x6CD5;&#x5462;&#xFF1F;&#x56E0;&#x4E3A;&#x5B50;&#x7EBF;&#x7A0B; <code>threading.Thread</code> &#x7684;&#x5524;&#x8D77;&#x5C31;&#x662F;&#x9700;&#x8981;&#x4F7F;&#x7528; <code>start</code> &#x65B9;&#x6CD5;&#x3002;</p>
+<p>&#x5177;&#x4F53;&#x8FD0;&#x884C;&#x7684;&#x5B50;&#x7EBF;&#x7A0B;&#x903B;&#x8F91;&#x65E0;&#x8BBA;&#x662F;&#x53C2;&#x6570;&#x4F20;&#x5165;&#xFF0C;&#x8FD8;&#x662F;&#x5B50;&#x7C7B;&#x8986;&#x76D6;&#x91CD;&#x5199;&#xFF0C;&#x5B50;&#x7EBF;&#x7A0B;&#x542F;&#x52A8;&#x90FD;&#x9700;&#x8981; <code>start</code> &#x4E00;&#x4E0B;&#xFF0C;&#x5176;&#x5B9E;&#x770B;&#x4E0B;&#x5E93;&#x4EE3;&#x7801;&#x5C31;&#x80FD;&#x591F;&#x7406;&#x89E3;&#x4E86;&#x3002;</p>
+<pre><code class="lang-python">
+<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Thread</span><span class="hljs-params">(_Verbose)</span>:</span>
+    <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">__init__</span><span class="hljs-params">(self, group=None, target=None, name=None,
+                 args=<span class="hljs-params">()</span>, kwargs=None, verbose=None)</span>:</span>
+        <span class="hljs-string">&quot;&quot;&quot;This constructor should always be called with keyword arguments. Arguments are:
+
+        *group* should be None; reserved for future extension when a ThreadGroup
+        class is implemented.
+
+        *target* is the callable object to be invoked by the run()
+        method. Defaults to None, meaning nothing is called.
+
+        *name* is the thread name. By default, a unique name is constructed of
+        the form &quot;Thread-N&quot; where N is a small decimal number.
+
+        *args* is the argument tuple for the target invocation. Defaults to ().
+
+        *kwargs* is a dictionary of keyword arguments for the target
+        invocation. Defaults to {}.
+
+        If a subclass overrides the constructor, it must make sure to invoke
+        the base class constructor (Thread.__init__()) before doing anything
+        else to the thread.
+
+&quot;&quot;&quot;</span>
+        <span class="hljs-keyword">assert</span> group <span class="hljs-keyword">is</span> <span class="hljs-keyword">None</span>, <span class="hljs-string">&quot;group argument must be None for now&quot;</span>
+        _Verbose.__init__(self, verbose)
+        <span class="hljs-keyword">if</span> kwargs <span class="hljs-keyword">is</span> <span class="hljs-keyword">None</span>:
+            kwargs = {}
+        self.__target = target
+        self.__name = str(name <span class="hljs-keyword">or</span> _newname())
+        self.__args = args
+        self.__kwargs = kwargs
+        self.__daemonic = self._set_daemon()
+        self.__ident = <span class="hljs-keyword">None</span>
+        self.__started = Event()
+        self.__stopped = <span class="hljs-keyword">False</span>
+        self.__block = Condition(Lock())
+        self.__initialized = <span class="hljs-keyword">True</span>
+        <span class="hljs-comment"># sys.stderr is not stored in the class like</span>
+        <span class="hljs-comment"># sys.exc_info since it can be changed between instances</span>
+        self.__stderr = _sys.stderr
+
+    <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">run</span><span class="hljs-params">(self)</span>:</span>
+        <span class="hljs-string">&quot;&quot;&quot;Method representing the thread&apos;s activity.
+
+        You may override this method in a subclass. The standard run() method
+        invokes the callable object passed to the object&apos;s constructor as the
+        target argument, if any, with sequential and keyword arguments taken
+        from the args and kwargs arguments, respectively.
+
+        &quot;&quot;&quot;</span>
+        <span class="hljs-keyword">try</span>:
+            <span class="hljs-keyword">if</span> self.__target:
+                self.__target(*self.__args, **self.__kwargs)
+        <span class="hljs-keyword">finally</span>:
+            <span class="hljs-comment"># Avoid a refcycle if the thread is running a function with</span>
+            <span class="hljs-comment"># an argument that has a member that points to the thread.</span>
+            <span class="hljs-keyword">del</span> self.__target, self.__args, self.__kwargs
+</code></pre>
+<blockquote>
+<p>&#x8FD9;&#x91CC;&#x8FD8;&#x6709;&#x4E00;&#x4E2A;&#x5C0F;&#x7EC6;&#x8282;&#xFF0C;&#x6211;&#x4EEC;&#x5176;&#x5B9E;&#x6709;&#x8FDE;&#x7EED;&#x4E09;&#x6B21;&#x7684;&#x5FAA;&#x73AF; <code>append</code>,<code>start</code>,<code>join</code> &#x64CD;&#x4F5C;&#xFF0C;&#x90A3;&#x4E48;&#x80FD;&#x5426;&#x653E;&#x5728;&#x4E00;&#x4E2A;&#x5FAA;&#x73AF;&#x91CC;&#x5462;&#xFF1F;<br>&#x5C06; <code>append</code> &#x548C; <code>start</code> &#x653E;&#x4E00;&#x8D77;&#x662F;&#x53EF;&#x4EE5;&#x7684;&#xFF0C;&#x56E0;&#x4E3A; <code>start</code> &#x5524;&#x8D77;&#x5B50;&#x7EBF;&#x7A0B;&#x4E4B;&#x540E;&#xFF0C;&#x4E0D;&#x4F1A;&#x963B;&#x585E;&#x4E3B;&#x7EBF;&#x7A0B;&#xFF0C;&#x53EF;&#x4EE5;&#x7EE7;&#x7EED; <code>start</code> &#x4E0B;&#x4E00;&#x4E2A;<br>&#x4F46;&#x662F;&#x4E0D;&#x80FD;&#x5C06; <code>join</code> &#x4E5F;&#x653E;&#x4E00;&#x8D77;&#xFF0C;&#x56E0;&#x4E3A; <code>join</code> &#x4E4B;&#x540E;&#x4E4B;&#x540E;&#x4F1A;&#x963B;&#x585E;&#xFF0C;&#x53EA;&#x6709;&#x4E0B;&#x4E00;&#x4E2A; <code>join</code> &#x624D;&#x80FD;&#x7EE7;&#x7EED;<br>&#x5982;&#x679C; <code>join</code> &#x4E4B;&#x540E;&#x662F;&#x521B;&#x5EFA;&#x65B0;&#x7684;&#x5B50;&#x7EBF;&#x7A0B;&#x6216;&#x8005; <code>start</code> &#x64CD;&#x4F5C;&#x90FD;&#x662F;&#x4F1A;&#x88AB;&#x963B;&#x585E;&#x7684;&#xFF0C;&#x56E0;&#x4E3A;&#x8FD9;&#x4E9B;&#x64CD;&#x4F5C;&#x662F;&#x5728;&#x4E3B;&#x7EBF;&#x7A0B;&#x91CC;&#xFF0C;&#x5C31;&#x6CA1;&#x7528;&#x5230;&#x591A;&#x7EBF;&#x7A0B;&#xFF0C;&#x800C;&#x662F;&#x53D8;&#x6210;&#x4E86;&#x540C;&#x6B65;&#x64CD;&#x4F5C;       </p>
+</blockquote>
+<pre><code class="lang-python"><span class="hljs-comment">#coding=utf-8</span>
+
+<span class="hljs-keyword">import</span> threading
+<span class="hljs-keyword">from</span> time <span class="hljs-keyword">import</span> ctime,sleep
+
+
+<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">ThreadDemo</span><span class="hljs-params">(threading.Thread)</span>:</span>
+    <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">__init__</span><span class="hljs-params">(self, nloop, nsec, name=<span class="hljs-string">&quot;&quot;</span>)</span>:</span>
+        threading.Thread.__init__(self)
+        self.name = name
+        self.nloop = nloop
+        self.nsec = nsec
+
+    <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">run</span><span class="hljs-params">(self)</span>:</span>
+        <span class="hljs-keyword">print</span> <span class="hljs-string">&quot;loop&quot;</span>, self.nloop, <span class="hljs-string">&quot;start  at: &quot;</span>, ctime()
+        sleep(self.nsec)
+        <span class="hljs-keyword">print</span> <span class="hljs-string">&quot;loop&quot;</span>, self.nloop, <span class="hljs-string">&quot;end    at: &quot;</span>, ctime()
+
+
+<span class="hljs-keyword">print</span> <span class="hljs-string">&quot;all start at: &quot;</span>,ctime()
+
+loops = [<span class="hljs-number">4</span>,<span class="hljs-number">2</span>]
+threads = []
+nloops = range(len(loops))
+
+<span class="hljs-keyword">for</span> i <span class="hljs-keyword">in</span> nloops:
+    t = ThreadDemo(i, loops[i], <span class="hljs-string">&quot;loop&quot;</span>)
+    threads.append(t)    
+    t.start()
+
+<span class="hljs-keyword">for</span> i <span class="hljs-keyword">in</span> nloops:
+    threads[i].join()
+
+<span class="hljs-keyword">print</span> <span class="hljs-string">&quot;all end   at: &quot;</span>,ctime()
+</code></pre>
+<p>&#x6216;&#x8005;&#x53C2;&#x6570;&#x4F20;&#x5165;&#x7684;&#x65B9;&#x5F0F;</p>
 <pre><code class="lang-python"><span class="hljs-comment"># coding=utf-8</span>
 
 <span class="hljs-keyword">import</span> threading
@@ -620,8 +938,13 @@ nloops = range(len(loops))
 <span class="hljs-keyword">print</span> <span class="hljs-string">&quot;all end   at: &quot;</span>,ctime()
 </code></pre>
 <p>&#x4FDD;&#x5B58;&#x4E3A;threading_demo.py&#xFF0C;&#x8FD0;&#x884C;&#xFF0C;&#x770B;&#x4E00;&#x4E0B;&#x7ED3;&#x679C;&#x3002;</p>
-<p><a href="images/threading_demo.jpg" data-lightbox="dcb7d41d-de26-489b-9a5f-335771786440" data-title="threading_demo.jpg"><img src="images/threading_demo.jpg" alt="threading_demo.jpg"></a></p>
-<pre><code class="lang-python"><span class="hljs-comment"># coding=utf-8</span>
+<p><a href="../images/threading_demo.jpg" data-lightbox="e8dd1e37-48c6-43fe-ac00-36ce4922753c" data-title="threading_demo.jpg"><img src="../images/threading_demo.jpg" alt="threading_demo.jpg"></a></p>
+<h3 id="&#x9AD8;&#x9636;&#x4F7F;&#x7528;"><a name="&#x9AD8;&#x9636;&#x4F7F;&#x7528;" class="plugin-anchor" href="#&#x9AD8;&#x9636;&#x4F7F;&#x7528;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x9AD8;&#x9636;&#x4F7F;&#x7528;</h3>
+<p>Python &#x4E2D;&#x8FD8;&#x8981;&#x4E00;&#x4E2A;&#x8F83;&#x4E3A;&#x57FA;&#x7840;&#x7684; <code>thread</code> &#x5E93;&#xFF0C;&#x8FD9;&#x4E2A;&#x5E93;&#x91CC;&#x8FD8;&#x9700;&#x8981;&#x6211;&#x4EEC;&#x81EA;&#x5DF1;&#x7684;&#x53BB;&#x8BBE;&#x5B9A;&#x9501;&#xFF0C;&#x5E76;&#x4E14;&#x5728;&#x4E3B;&#x7EBF;&#x7A0B;&#x91CC;&#x963B;&#x585E;&#x4E3B;&#x7EBF;&#x7A0B;&#x7684;&#x8FDB;&#x884C;&#x6765;&#x5224;&#x65AD;&#x9501;&#x662F;&#x5426;&#x5DF2;&#x7ECF;&#x91CA;&#x653E;, <code>threading</code> &#x662F;&#x6BD4; <code>thread</code> &#x66F4;&#x9AD8;&#x7EA7;&#x6613;&#x4E8E;&#x64CD;&#x4F5C;&#x7684;&#x591A;&#x7EBF;&#x7A0B;&#x5E93;&#x3002;</p>
+<p>&#x5728; <code>threading</code> &#x5E93;&#x4E2D;&#x521B;&#x5EFA;&#x7684;&#x5B50;&#x7EBF;&#x7A0B;&#x90FD;&#x662F;&#x975E;&#x5B88;&#x62A4;&#x7EBF;&#x7A0B;&#xFF0C;&#x56E0;&#x4E3A;&#x521B;&#x5EFA;&#x7684;&#x5B50;&#x7EBF;&#x7A0B;&#x7684; <code>Daemon</code> &#x5C5E;&#x6027;&#x7EE7;&#x627F;&#x7236;&#x7EBF;&#x7A0B;&#xFF0C;&#x800C;&#x6211;&#x4EEC;&#x4E00;&#x822C;&#x76F4;&#x63A5;&#x8FD0;&#x884C; Python &#x4EE3;&#x7801;&#x90FD;&#x662F;&#x975E;&#x5B88;&#x62A4;&#x7EBF;&#x7A0B;&#x7684;&#x65B9;&#x5F0F;&#x3002;</p>
+<p>&#x5BF9;&#x4E8E;&#x975E;&#x5B88;&#x62A4;&#x7EBF;&#x7A0B;&#xFF0C;&#x4E3B;&#x7EBF;&#x7A0B;&#x4F1A;&#x7B49;&#x5F85;&#x5B50;&#x7EBF;&#x7A0B;&#x7ED3;&#x675F;&#x518D;&#x7ED3;&#x675F;&#x3002;&#x800C;&#x5982;&#x679C;&#x662F;&#x4E00;&#x4E2A;&#x5B88;&#x62A4;&#x7EBF;&#x7A0B;&#xFF0C;&#x4E3B;&#x7EBF;&#x7A0B;&#x8FD0;&#x884C;&#x7ED3;&#x675F;&#x4E4B;&#x540E;&#x5C31;&#x4F1A;&#x7ACB;&#x5373;&#x7EC8;&#x6B62;&#xFF0C;&#x5E76;&#x4E0D;&#x5173;&#x5FC3;&#x5B50;&#x7EBF;&#x7A0B;&#x7684;&#x8FD0;&#x884C;&#x60C5;&#x51B5;&#x3002;</p>
+<p>&#x6211;&#x4EEC;&#x53EF;&#x4EE5;&#x901A;&#x8FC7; <code>threading.Thread.setDaemon(True)</code> &#x7684;&#x65B9;&#x5F0F;&#x6765;&#x5C06;&#x5B50;&#x7EBF;&#x7A0B;&#x8BBE;&#x7F6E;&#x4E3A;&#x5B88;&#x62A4;&#x7EBF;&#x7A0B;</p>
+<pre><code class="lang-python"><span class="hljs-comment">#coding=utf-8</span>
 
 <span class="hljs-keyword">import</span> threading
 <span class="hljs-keyword">from</span> time <span class="hljs-keyword">import</span> ctime,sleep
@@ -639,7 +962,7 @@ nloops = range(len(loops))
 <span class="hljs-comment">#&#x521B;&#x5EFA;&#x4E24;&#x4E2A;&#x7EBF;&#x7A0B;</span>
 <span class="hljs-keyword">for</span> i <span class="hljs-keyword">in</span> nloops:
     t = threading.Thread(target=loop,args=(i,loops[i]))
-    t.setDaemon(<span class="hljs-keyword">False</span>)
+    t.setDaemon(<span class="hljs-keyword">True</span>)
     threads.append(t)
 
 <span class="hljs-comment">#&#x8BA9;&#x4E24;&#x4E2A;&#x7EBF;&#x7A0B;&#x540C;&#x65F6;&#x5F00;&#x59CB;</span>
@@ -648,78 +971,67 @@ nloops = range(len(loops))
 
 <span class="hljs-keyword">print</span> <span class="hljs-string">&quot;all end   at: &quot;</span>,ctime()
 </code></pre>
-<p>&#x8FD9;&#x6837;&#x7684;&#x5199;&#x6CD5;&#x4E0E;&#x4E0A;&#x9762;&#x7684;&#x6548;&#x679C;&#x4E00;&#x81F4;&#x3002;</p>
-<h4 id="&#x521B;&#x5EFA;&#x591A;&#x7EBF;&#x7A0B;&#x7684;&#x51E0;&#x79CD;&#x65B9;&#x6CD5;"><a name="&#x521B;&#x5EFA;&#x591A;&#x7EBF;&#x7A0B;&#x7684;&#x51E0;&#x79CD;&#x65B9;&#x6CD5;" class="plugin-anchor" href="#&#x521B;&#x5EFA;&#x591A;&#x7EBF;&#x7A0B;&#x7684;&#x51E0;&#x79CD;&#x65B9;&#x6CD5;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x521B;&#x5EFA;&#x591A;&#x7EBF;&#x7A0B;&#x7684;&#x51E0;&#x79CD;&#x65B9;&#x6CD5;</h4>
-<p>&#x4E0A;&#x9762;&#x6211;&#x4EEC;&#x6F14;&#x793A;&#x7684;&#x662F;&#x6700;&#x57FA;&#x672C;&#x7684;&#x521B;&#x5EFA;&#x591A;&#x7EBF;&#x7A0B;&#x7684;&#x65B9;&#x5F0F;&#xFF0C;&#x4E5F;&#x662F;&#x6700;&#x4E0D;&#x63A8;&#x8350;&#x7684;&#x65B9;&#x5F0F;&#x3002;&#x5B9E;&#x9645;&#x4E0A;threading&#x5E93;&#x4E00;&#x5171;&#x4E3A;&#x6211;&#x4EEC;&#x63D0;&#x4F9B;&#x4E09;&#x79CD;&#x521B;&#x5EFA;&#x591A;&#x7EBF;&#x7A0B;&#x7684;&#x65B9;&#x6CD5;&#xFF0C;&#x540E;&#x4E24;&#x79CD;&#x66F4;&#x52A0;&#x7684;&#x4F53;&#x73B0;&#x4E86;Python&#x9762;&#x5411;&#x5BF9;&#x8C61;&#x7684;&#x7279;&#x6027;&#x3002;</p>
-<p>&#x4E09;&#x79CD;&#x521B;&#x5EFA;&#x591A;&#x7EBF;&#x7A0B;&#x7684;&#x65B9;&#x6CD5;</p>
-<ol>
-<li>&#x521B;&#x5EFA;&#x4E00;&#x4E2A;threading&#x7684;&#x5B9E;&#x4F8B;&#xFF0C;&#x4F20;&#x7ED9;&#x5B83;&#x4E00;&#x4E2A;&#x53C2;&#x6570;&#x3002;</li>
-<li>&#x521B;&#x5EFA;&#x4E00;&#x4E2A;threading&#x7684;&#x5B9E;&#x4F8B;&#xFF0C;&#x4F20;&#x7ED9;&#x5B83;&#x4E00;&#x4E2A;&#x53EF;&#x8C03;&#x7528;&#x7684;&#x7C7B;&#x5BF9;&#x8C61;&#x3002;</li>
-<li>&#x4ECE;threading&#x6D3E;&#x751F;&#x51FA;&#x4E00;&#x4E2A;&#x5B50;&#x7C7B;&#xFF0C;&#x521B;&#x5EFA;&#x8FD9;&#x4E2A;&#x5B50;&#x7C7B;&#x7684;&#x5B9E;&#x4F8B;&#x3002;</li>
-</ol>
-<p>&#x90A3;&#x4E48;&#x63A5;&#x4E0B;&#x91CC;&#x6211;&#x4EEC;&#x5206;&#x522B;&#x6F14;&#x793A;&#x4E00;&#x4E0B;&#x53E6;&#x5916;&#x7684;&#x4E24;&#x79CD;&#x65B9;&#x6CD5;&#x3002;</p>
-<h6 id="&#x521B;&#x5EFA;&#x4E00;&#x4E2A;threading&#x7684;&#x5B9E;&#x4F8B;&#xFF0C;&#x4F20;&#x7ED9;&#x5B83;&#x4E00;&#x4E2A;&#x53EF;&#x8C03;&#x7528;&#x7684;&#x7C7B;&#x5BF9;&#x8C61;"><a name="&#x521B;&#x5EFA;&#x4E00;&#x4E2A;threading&#x7684;&#x5B9E;&#x4F8B;&#xFF0C;&#x4F20;&#x7ED9;&#x5B83;&#x4E00;&#x4E2A;&#x53EF;&#x8C03;&#x7528;&#x7684;&#x7C7B;&#x5BF9;&#x8C61;" class="plugin-anchor" href="#&#x521B;&#x5EFA;&#x4E00;&#x4E2A;threading&#x7684;&#x5B9E;&#x4F8B;&#xFF0C;&#x4F20;&#x7ED9;&#x5B83;&#x4E00;&#x4E2A;&#x53EF;&#x8C03;&#x7528;&#x7684;&#x7C7B;&#x5BF9;&#x8C61;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x521B;&#x5EFA;&#x4E00;&#x4E2A;threading&#x7684;&#x5B9E;&#x4F8B;&#xFF0C;&#x4F20;&#x7ED9;&#x5B83;&#x4E00;&#x4E2A;&#x53EF;&#x8C03;&#x7528;&#x7684;&#x7C7B;&#x5BF9;&#x8C61;</h6>
-<p>&#x8FD9;&#x91CC;&#x6211;&#x4EEC;&#x9700;&#x8981;&#x5148;&#x521B;&#x5EFA;&#x4E00;&#x4E2A;&#x7C7B;&#x4F9B;&#x7EBF;&#x7A0B;&#x542F;&#x52A8;&#x7684;&#x65F6;&#x5019;&#x6267;&#x884C;&#xFF0C;&#x7136;&#x540E;&#x5728;&#x7EBF;&#x7A0B;&#x542F;&#x52A8;&#x7684;&#x65F6;&#x5019;&#xFF0C;Thread&#x5BF9;&#x8C61;&#x4F1A;&#x8C03;&#x7528;&#x6211;&#x4EEC;&#x521B;&#x5EFA;&#x7684;&#x5BF9;&#x8C61;&#x7684;&#x6267;&#x884C;&#x51FD;&#x6570;&#x3002;</p>
-<pre><code class="lang-python"><span class="hljs-comment"># coding=utf-8</span>
+<p>&#x8FD0;&#x884C;&#x7ED3;&#x679C;&#x5C31;&#x662F;&#x53EA;&#x6709;&#x5F00;&#x59CB;&#xFF0C;&#x6CA1;&#x6709;&#x7ED3;&#x675F;.</p>
+<pre><code>$ python threading_start_daemon.py
+all start at:  Thu Oct  8 10:28:57 2020
+loop 0loop 1  start at:  Thu Oct  8 10:28:57 2020
+ all end   at:  Thu Oct  8 10:28:57 2020
+  start at:  Thu Oct  8 10:28:57 2020
+</code></pre><blockquote>
+<p>&#x591A;&#x7EBF;&#x7A0B;&#x4E2D;&#xFF0C;&#x5B50;&#x7EBF;&#x7A0B;&#x521B;&#x5EFA;&#x540E;&#xFF0C;<code>start</code> &#x5373;&#x5F00;&#x59CB;&#x5B50;&#x7EBF;&#x7A0B;&#xFF0C;&#x4E3B;&#x7EBF;&#x7A0B;&#x7EE7;&#x7EED;&#x8FDB;&#x884C;&#xFF0C;<code>join</code> &#x5373;&#x963B;&#x585E;&#x4E3B;&#x7EBF;&#x7A0B;&#xFF0C;&#x7B49;&#x5F85;&#x5B50;&#x7EBF;&#x7A0B;&#x7ED3;&#x675F;&#x540E;&#x518D;&#x7EE7;&#x7EED;&#x4E3B;&#x7EBF;&#x7A0B;&#x3002;<br>&#x5728;&#x624B;&#x52A8;&#x7684;&#x5C06;&#x5B50;&#x7EBF;&#x7A0B;&#x52A0;&#x5165;(join)&#x5230;&#x4E3B;&#x7EBF;&#x7A0B;&#x4E2D;&#x540E;&#xFF0C;&#x4E3B;&#x7EBF;&#x7A0B;&#x5C31;&#x4F1A;&#x7B49;&#x5F85;&#x5B50;&#x7EBF;&#x7A0B;&#x5168;&#x90E8;&#x7ED3;&#x675F;&#x624D;&#x4F1A;&#x7EE7;&#x7EED;&#x4E4B;&#x540E;&#x7684;&#x7A0B;&#x5E8F;&#x3002;<br>&#x5728; <code>join</code> &#x88AB;&#x52A0;&#x5165;&#x5230;&#x4E3B;&#x7EBF;&#x7A0B;&#x4E4B;&#x540E;&#xFF0C;&#x867D;&#x7136;&#x4E3B;&#x7EBF;&#x7A0B;&#x88AB;&#x963B;&#x585E;&#xFF0C;&#x4F46;&#x662F;&#x5E76;&#x4E0D;&#x5F71;&#x54CD;&#x5176;&#x4ED6;&#x7EBF;&#x7A0B;&#xFF0C;&#x5176;&#x4ED6;&#x7EBF;&#x7A0B;&#x53EF;&#x4EE5;&#x7EE7;&#x7EED; <code>join</code> &#x5230;&#x4E3B;&#x7EBF;&#x7A0B;&#x3002;<br>&#x5728;&#x672A;&#x8BBE;&#x7F6E;&#x5B88;&#x62A4;&#x7EBF;&#x7A0B;&#xFF0C;&#x672A; <code>join</code> &#x5230;&#x4E3B;&#x7EBF;&#x7A0B;&#x4E2D;&#x7684;&#x65F6;&#x5019;&#xFF0C;&#x4E3B;&#x7EBF;&#x7A0B;&#x4F1A;&#x5148;&#x8FD0;&#x884C;&#x7ED3;&#x675F;&#xFF0C;&#x4F46;&#x662F;&#x4E3B;&#x7A0B;&#x5E8F;&#x672A;&#x7ED3;&#x675F;&#xFF0C;&#x7B49;&#x5F85;&#x5B50;&#x7EBF;&#x7A0B;&#x7ED3;&#x675F;&#x540E;&#x7A0B;&#x5E8F;&#x624D;&#x4F1A;&#x7ED3;&#x675F;&#x3002;<br>&#x5B88;&#x62A4;&#x7EBF;&#x7A0B;&#x7684;&#x610F;&#x601D;&#x5C31;&#x662F;&#x8BF4;&#x8FD9;&#x4E2A;&#x7EBF;&#x7A0B;&#x72EC;&#x7ACB;&#x4E8E;&#x4E3B;&#x7EBF;&#x7A0B;&#xFF0C;&#x4E3B;&#x7EBF;&#x7A0B;&#x53EF;&#x4EE5;&#x5148;&#x4E8E;&#x5B88;&#x62A4;&#x7EBF;&#x7A0B;&#x7ED3;&#x675F;&#x800C;&#x4E0D;&#x7528;&#x7B49;&#x5019;&#x5B88;&#x62A4;&#x7EBF;&#x7A0B;&#x7ED3;&#x675F;&#x3002;  </p>
+</blockquote>
+<p>&#x5BF9;&#x4E8E;&#x5B88;&#x62A4;&#x7EBF;&#x7A0B;&#xFF0C;&#x4E5F;&#x53EF;&#x4EE5;&#x4F7F;&#x7528; <code>join</code> &#x65B9;&#x6CD5;&#xFF0C;&#x540C;&#x6837;&#x53EF;&#x4EE5;&#x963B;&#x585E;&#x4E3B;&#x7EBF;&#x7A0B;&#x3002;</p>
+<blockquote>
+<p>&#x8FD9;&#x91CC;&#x9700;&#x8981;&#x6CE8;&#x610F;&#xFF0C;&#x53EA;&#x80FD;&#x5BF9;&#x672A;&#x542F;&#x52A8;(start)&#x7684;&#x5B50;&#x7EBF;&#x7A0B;&#x8BBE;&#x7F6E;&#x5B88;&#x62A4;&#x8FDB;&#x7A0B;&#xFF0C;&#x5BF9;&#x4E8E;&#x5DF2;&#x7ECF;&#x542F;&#x52A8;&#x5B50;&#x7EBF;&#x7A0B;&#x4E0D;&#x80FD;&#x518D;&#x8BBE;&#x7F6E;&#x4E3A;&#x5B88;&#x62A4;&#x7EBF;&#x7A0B;</p>
+</blockquote>
+<pre><code class="lang-python"><span class="hljs-comment"># -*- coding: utf-8 -*-</span>
 
-<span class="hljs-keyword">import</span> threading
-<span class="hljs-keyword">from</span> time <span class="hljs-keyword">import</span> ctime,sleep
+<span class="hljs-keyword">from</span> threading <span class="hljs-keyword">import</span> Thread
+<span class="hljs-keyword">import</span> os
+<span class="hljs-keyword">import</span> time
 
-<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">ThreadFunc</span><span class="hljs-params">(object)</span>:</span>
-    <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">__init__</span><span class="hljs-params">(self, func ,args,name=<span class="hljs-string">&quot;&quot;</span>)</span>:</span>
-        self.args = args
-        self.func = func
-        self.name = name
 
-    <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">__call__</span><span class="hljs-params">(self)</span>:</span>
-        apply(self.func,self.args)
+<span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">sleeper</span><span class="hljs-params">(name, seconds)</span>:</span>
+    <span class="hljs-keyword">print</span> <span class="hljs-string">&apos;starting child process with id: &apos;</span>, os.getpid()
+    <span class="hljs-keyword">print</span> <span class="hljs-string">&apos;parent process:&apos;</span>, os.getppid()
+    <span class="hljs-keyword">print</span> <span class="hljs-string">&apos;sleeping for %s &apos;</span> % seconds
+    time.sleep(seconds)
+    <span class="hljs-keyword">print</span> <span class="hljs-string">&quot;%s done sleeping&quot;</span> % name
 
-<span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">loop</span><span class="hljs-params">(nloop,nsec)</span>:</span>
-    <span class="hljs-keyword">print</span> <span class="hljs-string">&quot;loop&quot;</span>,nloop,<span class="hljs-string">&quot; start at: &quot;</span>,ctime()
-    sleep(nsec)
-    <span class="hljs-keyword">print</span> <span class="hljs-string">&quot;loop&quot;</span>,nloop,<span class="hljs-string">&quot;end    at: &quot;</span>,ctime()
 
-<span class="hljs-keyword">print</span> <span class="hljs-string">&quot;all start at: &quot;</span>,ctime()
-
-loops = [<span class="hljs-number">4</span>,<span class="hljs-number">2</span>]
-threads = []
-nloops = range(len(loops))
-
-<span class="hljs-keyword">for</span> i <span class="hljs-keyword">in</span> nloops:
-    t = threading.Thread(target=ThreadFunc(loop,(i,loops[i]),loop.__name__))
-    threads.append(t)
-
-<span class="hljs-keyword">for</span> i <span class="hljs-keyword">in</span> nloops:
-    threads[i].start()
-
-<span class="hljs-keyword">for</span> i <span class="hljs-keyword">in</span> nloops:
-    threads[i].join()
-
-<span class="hljs-keyword">print</span> <span class="hljs-string">&quot;all end   at: &quot;</span>,ctime()
+<span class="hljs-keyword">if</span> __name__ == <span class="hljs-string">&apos;__main__&apos;</span>:
+    <span class="hljs-keyword">print</span> <span class="hljs-string">&quot;in parent process (id %s)&quot;</span> % os.getpid()
+    p = Thread(target=sleeper, args=(<span class="hljs-string">&apos;bob&apos;</span>, <span class="hljs-number">5</span>))
+    <span class="hljs-keyword">print</span> <span class="hljs-string">&apos;daemon?&apos;</span>, p.isDaemon()
+    p.setDaemon(<span class="hljs-keyword">not</span> p.isDaemon())
+    <span class="hljs-keyword">print</span> <span class="hljs-string">&apos;daemon?&apos;</span>, p.isDaemon()
+    p.start()
+    <span class="hljs-keyword">print</span> <span class="hljs-string">&quot;in parent process after child process start&quot;</span>
+    <span class="hljs-keyword">print</span> <span class="hljs-string">&quot;parent process about to join child process&quot;</span>
+    p.join()
+    <span class="hljs-keyword">print</span> <span class="hljs-string">&quot;in parent process after child process join&quot;</span>
+    <span class="hljs-keyword">print</span> <span class="hljs-string">&quot;parent process exiting with id &quot;</span>, os.getpid()
+    <span class="hljs-keyword">print</span> <span class="hljs-string">&quot;The parent&apos;s parent process:&quot;</span>, os.getppid()
 </code></pre>
-<p>&#x4FDD;&#x5B58;&#x4E3A;threading_class.py&#xFF0C;&#x8FD0;&#x884C;&#xFF0C;&#x770B;&#x4E00;&#x4E0B;&#x7ED3;&#x679C;&#x3002;</p>
-<p><a href="images/threading_class.jpg" data-lightbox="3169f3a1-d91c-477d-884a-f85479d5397f" data-title="threading_class.jpg"><img src="images/threading_class.jpg" alt="threading_class.jpg"></a></p>
-<h4 id="&#x4ECE;threading&#x6D3E;&#x751F;&#x51FA;&#x4E00;&#x4E2A;&#x5B50;&#x7C7B;&#xFF0C;&#x521B;&#x5EFA;&#x8FD9;&#x4E2A;&#x5B50;&#x7C7B;&#x7684;&#x5B9E;&#x4F8B;"><a name="&#x4ECE;threading&#x6D3E;&#x751F;&#x51FA;&#x4E00;&#x4E2A;&#x5B50;&#x7C7B;&#xFF0C;&#x521B;&#x5EFA;&#x8FD9;&#x4E2A;&#x5B50;&#x7C7B;&#x7684;&#x5B9E;&#x4F8B;" class="plugin-anchor" href="#&#x4ECE;threading&#x6D3E;&#x751F;&#x51FA;&#x4E00;&#x4E2A;&#x5B50;&#x7C7B;&#xFF0C;&#x521B;&#x5EFA;&#x8FD9;&#x4E2A;&#x5B50;&#x7C7B;&#x7684;&#x5B9E;&#x4F8B;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x4ECE;threading&#x6D3E;&#x751F;&#x51FA;&#x4E00;&#x4E2A;&#x5B50;&#x7C7B;&#xFF0C;&#x521B;&#x5EFA;&#x8FD9;&#x4E2A;&#x5B50;&#x7C7B;&#x7684;&#x5B9E;&#x4F8B;</h4>
-<p>&#x521B;&#x5EFA;&#x4E00;&#x4E2A;&#x7EE7;&#x627F;&#x81EA;Thread&#x7684;&#x4E4B;&#x7C7B;&#xFF0C;&#x7136;&#x540E;&#x6784;&#x9020;&#x8FD9;&#x4E2A;&#x4E4B;&#x7C7B;&#x7684;&#x5B9E;&#x4F8B;&#xFF0C;&#x8FD9;&#x65F6;&#xFF0C;Thread&#x7684;start&#x65B9;&#x6CD5;&#x5728;&#x5C31;&#x8981;&#x5728;&#x4E4B;&#x7C7B;&#x91CC;&#x91CD;&#x5199;&#x4E3A;run&#x65B9;&#x6CD5;&#x3002;</p>
-<pre><code class="lang-python"><span class="hljs-comment"># coding=utf-8</span>
+<p>&#x6216;&#x8005;&#x8FD9;&#x6837;</p>
+<pre><code class="lang-python"><span class="hljs-comment">#coding=utf-8</span>
 
 <span class="hljs-keyword">import</span> threading
 <span class="hljs-keyword">from</span> time <span class="hljs-keyword">import</span> ctime,sleep
 
-<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">MyThread</span><span class="hljs-params">(threading.Thread)</span>:</span>
-    <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">__init__</span><span class="hljs-params">(self,func,args,name=<span class="hljs-string">&quot;&quot;</span>)</span>:</span>
+
+<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">DaemonThreadDemo</span><span class="hljs-params">(threading.Thread)</span>:</span>
+    <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">__init__</span><span class="hljs-params">(self, nloop, nsec, name=<span class="hljs-string">&quot;&quot;</span>)</span>:</span>
         threading.Thread.__init__(self)
         self.name = name
-        self.func = func
-        self.args = args
+        self.nloop = nloop
+        self.nsec = nsec
 
     <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">run</span><span class="hljs-params">(self)</span>:</span>
-        apply(self.func,self.args)
+        <span class="hljs-keyword">print</span> <span class="hljs-string">&quot;loop&quot;</span>, self.nloop, <span class="hljs-string">&quot;start  at: &quot;</span>, ctime()
+        sleep(self.nsec)
+        <span class="hljs-keyword">print</span> <span class="hljs-string">&quot;loop&quot;</span>, self.nloop, <span class="hljs-string">&quot;end    at: &quot;</span>, ctime()
 
-<span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">loop</span><span class="hljs-params">(nloop,nsec)</span>:</span>
-    <span class="hljs-keyword">print</span> <span class="hljs-string">&quot;loop&quot;</span>,nloop,<span class="hljs-string">&quot; start at: &quot;</span>,ctime()
-    sleep(nsec)
-    <span class="hljs-keyword">print</span> <span class="hljs-string">&quot;loop&quot;</span>,nloop,<span class="hljs-string">&quot;end    at: &quot;</span>,ctime()
 
 <span class="hljs-keyword">print</span> <span class="hljs-string">&quot;all start at: &quot;</span>,ctime()
 
@@ -728,24 +1040,19 @@ threads = []
 nloops = range(len(loops))
 
 <span class="hljs-keyword">for</span> i <span class="hljs-keyword">in</span> nloops:
-    t = MyThread(loop,(i,loops[i]),loop.__name__)
-    threads.append(t)
-
-<span class="hljs-keyword">for</span> i <span class="hljs-keyword">in</span> nloops:
-    threads[i].start()
+    t = DaemonThreadDemo(i, loops[i], <span class="hljs-string">&quot;loop&quot;</span>)
+    t.setDaemon(<span class="hljs-keyword">True</span>)
+    t.start()
+    threads.append(t)    
 
 <span class="hljs-keyword">for</span> i <span class="hljs-keyword">in</span> nloops:
     threads[i].join()
 
 <span class="hljs-keyword">print</span> <span class="hljs-string">&quot;all end   at: &quot;</span>,ctime()
 </code></pre>
-<p>&#x4FDD;&#x5B58;&#x4E3A;threading_class_MyThread.py&#xFF0C;&#x8FD0;&#x884C;&#xFF0C;&#x770B;&#x4E00;&#x4E0B;&#x7ED3;&#x679C;&#x3002;</p>
-<p><a href="images/threading_class_MyThread.jpg" data-lightbox="7587f89b-1c59-4884-9718-f9b37b7021dc" data-title="threading_class_MyThread.jpg"><img src="images/threading_class_MyThread.jpg" alt="threading_class_MyThread.jpg"></a></p>
-<h4 id="&#x751F;&#x4EA7;&#x8005;-&#x6D88;&#x8D39;&#x8005;&#x6A21;&#x5F0F;"><a name="&#x751F;&#x4EA7;&#x8005;-&#x6D88;&#x8D39;&#x8005;&#x6A21;&#x5F0F;" class="plugin-anchor" href="#&#x751F;&#x4EA7;&#x8005;-&#x6D88;&#x8D39;&#x8005;&#x6A21;&#x5F0F;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x751F;&#x4EA7;&#x8005;-&#x6D88;&#x8D39;&#x8005;&#x6A21;&#x5F0F;</h4>
-<p>&#x7136;&#x540E;&#x6211;&#x4EEC;&#x518D;&#x6765;&#x4ECB;&#x7ECD;&#x4E00;&#x79CD;&#x591A;&#x7EBF;&#x7A0B;&#x6A21;&#x5F0F;&#xFF0C;&#x751F;&#x4EA7;&#x8005;-&#x6D88;&#x8D39;&#x8005;&#x6A21;&#x5F0F;&#xFF0C;&#x8FD9;&#x4E5F;&#x662F;&#x73B0;&#x5B9E;&#x751F;&#x6D3B;&#x4E2D;&#x6700;&#x5E38;&#x7528;&#x7684;&#x591A;&#x7EBF;&#x7A0B;&#x6A21;&#x5F0F;&#x3002;
-&#x5047;&#x8BBE;&#x6211;&#x4EEC;&#x6709;&#x8FD9;&#x6837;&#x4E00;&#x6761;&#x5DE5;&#x7A0B;&#xFF0C;&#x4E00;&#x5171;&#x6709;&#x4E24;&#x9053;&#x5DE5;&#x5E8F;&#x3002;&#x5FC5;&#x987B;&#x7B49;&#x5230;&#x7B2C;&#x4E00;&#x9053;&#x5DE5;&#x5E8F;&#x7ED3;&#x675F;&#x4E86;&#x624D;&#x80FD;&#x8FDB;&#x884C;&#x7B2C;&#x4E8C;&#x9053;&#x5DE5;&#x5E8F;&#x3002;&#x8FD9;&#x65F6;&#x6211;&#x4EEC;&#x5C31;&#x5F15;&#x5165;&#x4E86;&#x751F;&#x4EA7;&#x8005;&#x548C;&#x6D88;&#x8D39;&#x8005;&#x7684;&#x6982;&#x5FF5;&#xFF0C;&#x7B2C;&#x4E00;&#x9053;&#x5DE5;&#x5E8F;&#x662F;&#x751F;&#x4EA7;&#x8005;&#xFF0C;&#x7B2C;&#x4E8C;&#x9053;&#x5DE5;&#x5E8F;&#x662F;&#x6D88;&#x8D39;&#x8005;&#xFF0C;&#x5206;&#x522B;&#x662F;&#x4E24;&#x4E2A;&#x7EBF;&#x7A0B;&#x3002;
-&#x9996;&#x5148;&#x6211;&#x4EEC;&#x9700;&#x8981;&#x4F7F;&#x7528;Queue&#x961F;&#x5217;&#x6A21;&#x5757;&#xFF0C;&#x8BA9;&#x591A;&#x4E2A;&#x7EBF;&#x7A0B;&#x4E4B;&#x95F4;&#x5171;&#x4EAB;&#x6570;&#x636E;&#x3002;&#x751F;&#x4EA7;&#x8005;&#x4E0D;&#x505C;&#x7684;&#x5F80;&#x961F;&#x5217;&#x91CC;&#x9762;&#x52A0;&#x5165;&#x8D27;&#x7269;&#xFF0C;&#x6D88;&#x8D39;&#x8005;&#x4E0D;&#x505C;&#x7684;&#x4ECE;&#x961F;&#x5217;&#x91CC;&#x6D88;&#x8D39;&#x8D27;&#x7269;&#x3002;
-&#x5047;&#x8BBE;&#x6211;&#x4EEC;&#x4E00;&#x5171;&#x6709;100&#x4E2A;&#x8D27;&#x7269;&#xFF0C;&#x751F;&#x4EA7;&#x8005;&#x4E0E;&#x6D88;&#x8D39;&#x8005;&#x6240;&#x9700;&#x65F6;&#x95F4;&#x90FD;&#x662F;1&#x79D2;&#x4EE5;&#x5185;&#x7684;&#x968F;&#x673A;&#x65F6;&#x95F4;&#x3002;</p>
+<h3 id="&#x751F;&#x4EA7;&#x8005;-&#x6D88;&#x8D39;&#x8005;&#x6A21;&#x5F0F;"><a name="&#x751F;&#x4EA7;&#x8005;-&#x6D88;&#x8D39;&#x8005;&#x6A21;&#x5F0F;" class="plugin-anchor" href="#&#x751F;&#x4EA7;&#x8005;-&#x6D88;&#x8D39;&#x8005;&#x6A21;&#x5F0F;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x751F;&#x4EA7;&#x8005;-&#x6D88;&#x8D39;&#x8005;&#x6A21;&#x5F0F;</h3>
+<p>&#x7136;&#x540E;&#x6211;&#x4EEC;&#x518D;&#x6765;&#x4ECB;&#x7ECD;&#x4E00;&#x79CD;&#x591A;&#x7EBF;&#x7A0B;&#x6A21;&#x5F0F;&#xFF0C;&#x751F;&#x4EA7;&#x8005;-&#x6D88;&#x8D39;&#x8005;&#x6A21;&#x5F0F;&#xFF0C;&#x8FD9;&#x4E5F;&#x662F;&#x73B0;&#x5B9E;&#x751F;&#x6D3B;&#x4E2D;&#x6700;&#x5E38;&#x7528;&#x7684;&#x591A;&#x7EBF;&#x7A0B;&#x6A21;&#x5F0F;&#x3002;<br>&#x5047;&#x8BBE;&#x6211;&#x4EEC;&#x6709;&#x8FD9;&#x6837;&#x4E00;&#x6761;&#x5DE5;&#x7A0B;&#xFF0C;&#x4E00;&#x5171;&#x6709;&#x4E24;&#x9053;&#x5DE5;&#x5E8F;&#x3002;&#x5FC5;&#x987B;&#x7B49;&#x5230;&#x7B2C;&#x4E00;&#x9053;&#x5DE5;&#x5E8F;&#x7ED3;&#x675F;&#x4E86;&#x624D;&#x80FD;&#x8FDB;&#x884C;&#x7B2C;&#x4E8C;&#x9053;&#x5DE5;&#x5E8F;&#x3002;&#x8FD9;&#x65F6;&#x6211;&#x4EEC;&#x5C31;&#x5F15;&#x5165;&#x4E86;&#x751F;&#x4EA7;&#x8005;&#x548C;&#x6D88;&#x8D39;&#x8005;&#x7684;&#x6982;&#x5FF5;&#xFF0C;&#x7B2C;&#x4E00;&#x9053;&#x5DE5;&#x5E8F;&#x662F;&#x751F;&#x4EA7;&#x8005;&#xFF0C;&#x7B2C;&#x4E8C;&#x9053;&#x5DE5;&#x5E8F;&#x662F;&#x6D88;&#x8D39;&#x8005;&#xFF0C;&#x5206;&#x522B;&#x662F;&#x4E24;&#x4E2A;&#x7EBF;&#x7A0B;&#x3002;</p>
+<p>&#x9996;&#x5148;&#x6211;&#x4EEC;&#x9700;&#x8981;&#x4F7F;&#x7528;Queue&#x961F;&#x5217;&#x6A21;&#x5757;&#xFF0C;&#x8BA9;&#x591A;&#x4E2A;&#x7EBF;&#x7A0B;&#x4E4B;&#x95F4;&#x5171;&#x4EAB;&#x6570;&#x636E;&#x3002;&#x751F;&#x4EA7;&#x8005;&#x4E0D;&#x505C;&#x7684;&#x5F80;&#x961F;&#x5217;&#x91CC;&#x9762;&#x52A0;&#x5165;&#x8D27;&#x7269;&#xFF0C;&#x6D88;&#x8D39;&#x8005;&#x4E0D;&#x505C;&#x7684;&#x4ECE;&#x961F;&#x5217;&#x91CC;&#x6D88;&#x8D39;&#x8D27;&#x7269;&#x3002;<br>&#x5047;&#x8BBE;&#x6211;&#x4EEC;&#x4E00;&#x5171;&#x6709;100&#x4E2A;&#x8D27;&#x7269;&#xFF0C;&#x751F;&#x4EA7;&#x8005;&#x4E0E;&#x6D88;&#x8D39;&#x8005;&#x6240;&#x9700;&#x65F6;&#x95F4;&#x90FD;&#x662F;1&#x79D2;&#x4EE5;&#x5185;&#x7684;&#x968F;&#x673A;&#x65F6;&#x95F4;&#x3002;</p>
 <pre><code class="lang-python"><span class="hljs-comment"># coding=utf-8</span>
 
 <span class="hljs-keyword">import</span> threading
@@ -789,9 +1096,9 @@ threads = []
 <span class="hljs-keyword">print</span> <span class="hljs-string">&quot;all end   at: &quot;</span>,ctime()
 </code></pre>
 <p>&#x4FDD;&#x5B58;&#x4E3A;&#x4E3A;threading_queue.py&#xFF0C;&#x8FD0;&#x884C;&#xFF0C;&#x770B;&#x4E00;&#x4E0B;&#x7ED3;&#x679C;&#x3002;</p>
-<h6 id="&#x516B;&#x4E2A;&#x7EBF;&#x7A0B;"><a name="&#x516B;&#x4E2A;&#x7EBF;&#x7A0B;" class="plugin-anchor" href="#&#x516B;&#x4E2A;&#x7EBF;&#x7A0B;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x516B;&#x4E2A;&#x7EBF;&#x7A0B;</h6>
-<p>&#x6700;&#x540E;&#x603B;&#x82B1;&#x8D39;&#x5927;&#x6982;50&#x79D2;&#x5DE6;&#x53F3;&#xFF0C;&#x5DF2;&#x7ECF;&#x80FD;&#x591F;&#x628A;&#x6548;&#x7387;&#x63D0;&#x9AD8;&#x4E00;&#x500D;&#x4E86;&#x3002;&#x53EF;&#x662F;&#x4EC5;&#x4EC5;&#x8FD9;&#x6837;&#x600E;&#x4E48;&#x591F;&#xFF0C;&#x8FD9;&#x624D;&#x4E24;&#x4E2A;&#x7EBF;&#x7A0B;&#xFF0C;&#x8BA9;&#x6211;&#x4EEC;&#x6765;&#x5F00;&#x516B;&#x4E2A;&#x7EBF;&#x7A0B;&#x8BD5;&#x4E00;&#x4E0B;&#xFF0C;&#x751F;&#x4EA7;&#x8005;&#x548C;&#x6D88;&#x8D39;&#x8005;&#x5404;&#x56DB;&#x4E2A;&#x7EBF;&#x7A0B;&#x3002;
-&#x679C;&#x7136;&#x5728;&#x628A;&#x751F;&#x4EA7;&#x8005;&#x6D88;&#x8D39;&#x8005;&#x7EBF;&#x7A0B;&#x589E;&#x591A;&#x7684;&#x65F6;&#x5019;&#xFF0C;&#x76F8;&#x6BD4;&#x8F83;&#x6548;&#x7387;&#x63D0;&#x9AD8;&#x4E86;&#x5F88;&#x591A;&#x3002;</p>
+<h4 id="&#x516B;&#x4E2A;&#x7EBF;&#x7A0B;"><a name="&#x516B;&#x4E2A;&#x7EBF;&#x7A0B;" class="plugin-anchor" href="#&#x516B;&#x4E2A;&#x7EBF;&#x7A0B;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x516B;&#x4E2A;&#x7EBF;&#x7A0B;</h4>
+<p>&#x6700;&#x540E;&#x603B;&#x82B1;&#x8D39;&#x5927;&#x6982;50&#x79D2;&#x5DE6;&#x53F3;&#xFF0C;&#x5DF2;&#x7ECF;&#x80FD;&#x591F;&#x628A;&#x6548;&#x7387;&#x63D0;&#x9AD8;&#x4E00;&#x500D;&#x4E86;&#x3002;&#x53EF;&#x662F;&#x4EC5;&#x4EC5;&#x8FD9;&#x6837;&#x600E;&#x4E48;&#x591F;&#xFF0C;&#x8FD9;&#x624D;&#x4E24;&#x4E2A;&#x7EBF;&#x7A0B;&#xFF0C;&#x8BA9;&#x6211;&#x4EEC;&#x6765;&#x5F00;&#x516B;&#x4E2A;&#x7EBF;&#x7A0B;&#x8BD5;&#x4E00;&#x4E0B;&#xFF0C;&#x751F;&#x4EA7;&#x8005;&#x548C;&#x6D88;&#x8D39;&#x8005;&#x5404;&#x56DB;&#x4E2A;&#x7EBF;&#x7A0B;&#x3002;   </p>
+<p>&#x53EF;&#x4EE5;&#x770B;&#x5230;&#x5728;&#x628A;&#x751F;&#x4EA7;&#x8005;&#x6D88;&#x8D39;&#x8005;&#x7EBF;&#x7A0B;&#x589E;&#x591A;&#x7684;&#x65F6;&#x5019;&#xFF0C;&#x679C;&#x7136;&#x76F8;&#x6BD4;&#x8F83;&#x6548;&#x7387;&#x63D0;&#x9AD8;&#x4E86;&#x5F88;&#x591A;&#x3002;</p>
 <pre><code class="lang-python"><span class="hljs-comment"># coding=utf-8</span>
 
 <span class="hljs-keyword">import</span> threading
@@ -836,7 +1143,7 @@ threads = []
 </code></pre>
 <p>&#x4FDD;&#x5B58;&#x4E3A;threading_queue_last.py&#x3002;
 &#x6211;&#x4EEC;&#x8FD9;&#x662F;&#x628A;&#x751F;&#x4EA7;&#x8005;&#x6D88;&#x8D39;&#x8005;&#x540C;&#x65F6;&#x6267;&#x884C;&#xFF0C;&#x5982;&#x679C;&#x5728;&#x751F;&#x4EA7;&#x8005;&#x82B1;&#x8D39;&#x65F6;&#x95F4;&#x8F83;&#x77ED;&#xFF0C;&#x53EA;&#x8981;&#x65F6;&#x95F4;&#x5728;&#x6D88;&#x8D39;&#x8005;&#x7684;&#x65F6;&#x5019;&#xFF0C;&#x6211;&#x4EEC;&#x53EF;&#x4EE5;&#x5148;&#x8BA9;&#x751F;&#x4EA7;&#x8005;&#x751F;&#x4EA7;&#x5168;&#x90E8;&#x7684;&#x8D27;&#x7269;&#xFF0C;&#x7136;&#x540E;&#x5F00;&#x591A;&#x4E2A;&#x5B50;&#x7EBF;&#x7A0B;&#x8BA9;&#x6D88;&#x8D39;&#x8005;&#x5C06;&#x5176;&#x6D88;&#x8D39;&#x5B8C;&#x4E3A;&#x6B62;&#x3002;</p>
-<h4 id="&#x8D44;&#x6E90;&#x9501;&#x5B9A;"><a name="&#x8D44;&#x6E90;&#x9501;&#x5B9A;" class="plugin-anchor" href="#&#x8D44;&#x6E90;&#x9501;&#x5B9A;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x8D44;&#x6E90;&#x9501;&#x5B9A;</h4>
+<h3 id="&#x8D44;&#x6E90;&#x9501;&#x5B9A;"><a name="&#x8D44;&#x6E90;&#x9501;&#x5B9A;" class="plugin-anchor" href="#&#x8D44;&#x6E90;&#x9501;&#x5B9A;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x8D44;&#x6E90;&#x9501;&#x5B9A;</h3>
 <p>&#x524D;&#x9762;&#x6211;&#x4EEC;&#x5DF2;&#x7ECF;&#x770B;&#x5230;&#x56E0;&#x4E3A;&#x7EBF;&#x7A0B;&#x540C;&#x6B65;&#x7684;&#x539F;&#x56E0;&#xFF0C;&#x8F93;&#x51FA;&#x7684;&#x65F6;&#x5019;&#x603B;&#x662F;&#x663E;&#x5F97;&#x4E0D;&#x90A3;&#x4E48;&#x6574;&#x9F50;&#xFF0C;&#x5C31;&#x662F;&#x56E0;&#x4E3A;&#x591A;&#x7EBF;&#x7A0B;&#x5728;&#x62A2;&#x5360;&#x540C;&#x4E00;&#x4E2A;&#x8D44;&#x6E90;&#x7684;&#x539F;&#x56E0;&#x3002;&#x800C;&#x5982;&#x679C;&#x6211;&#x4EEC;&#x5728;&#x5BF9;&#x540C;&#x4E00;&#x4E2A;&#x6570;&#x636E;&#x8FDB;&#x884C;&#x64CD;&#x4F5C;&#x65F6;&#xFF0C;&#x56E0;&#x4E3A;&#x591A;&#x7EBF;&#x7A0B;&#x7684;&#x539F;&#x56E0;&#xFF0C;&#x53EF;&#x80FD;&#x4E00;&#x4E2A;&#x7EBF;&#x7A0B;&#x5BF9;&#x5176;&#x8FDB;&#x884C;&#x64CD;&#x4F5C;&#x8FD8;&#x672A;&#x7ED3;&#x675F;&#x53E6;&#x4E00;&#x4E2A;&#x7EBF;&#x7A0B;&#x5C31;&#x5F3A;&#x884C;&#x8FDB;&#x884C;&#x4E86;&#x4E0B;&#x4E00;&#x8F6E;&#x66F4;&#x6539;&#xFF0C;&#x8FD9;&#x6837;&#x7684;&#x8BDD;&#x80AF;&#x5B9A;&#x4F1A;&#x6709;&#x4E00;&#x4E9B;&#x95EE;&#x9898;&#x3002;
 &#x6240;&#x4EE5;&#x8FD9;&#x5C31;&#x9700;&#x8981;&#x8D44;&#x6E90;&#x9501;&#x5B9A;&#xFF0C;&#x5F53;&#x4E00;&#x4E2A;&#x8D44;&#x6E90;&#x88AB;&#x9501;&#x5B9A;&#x7684;&#x65F6;&#x5019;&#xFF0C;&#x540C;&#x65F6;&#x53EA;&#x80FD;&#x6709;&#x4E00;&#x4E2A;&#x8D44;&#x6E90;&#x5BF9;&#x5176;&#x8FDB;&#x884C;&#x64CD;&#x4F5C;&#xFF0C;&#x8FD9;&#x6837;&#x5C31;&#x4FDD;&#x8BC1;&#x4E86;&#x591A;&#x7EBF;&#x7A0B;&#x7684;&#x5B89;&#x5168;&#x6027;&#x3002;</p>
 <p>&#x6211;&#x4EEC;&#x5148;&#x6765;&#x770B;&#x4E00;&#x4E0B;&#x6CA1;&#x6709;&#x8D44;&#x6E90;&#x9501;&#x7684;&#x60C5;&#x51B5;</p>
@@ -878,7 +1185,7 @@ counter = <span class="hljs-number">0</span>
         t.start()
 </code></pre>
 <p>&#x4FDD;&#x5B58;&#x4E3A;Threading_nolock.py&#xFF0C;&#x8FD0;&#x884C;&#xFF0C;&#x770B;&#x4E00;&#x4E0B;&#x7ED3;&#x679C;&#x3002;</p>
-<p><a href="images/threading_nolock.jpg" data-lightbox="8f19deff-0481-48aa-92b0-ffe188fbbf06" data-title="threading_nolock.jpg"><img src="images/threading_nolock.jpg" alt="threading_nolock.jpg"></a></p>
+<p><a href="../images/threading_nolock.jpg" data-lightbox="3ee0e588-5cd1-41e0-b87c-3f63b8e1a2af" data-title="threading_nolock.jpg"><img src="../images/threading_nolock.jpg" alt="threading_nolock.jpg"></a></p>
 <p>&#x73B0;&#x5728;&#x6211;&#x4EEC;&#x5C06;&#x5176;&#x4E0A;&#x9501;&#x3002;</p>
 <pre><code class="lang-python"><span class="hljs-comment"># coding=utf-8</span>
 
@@ -923,7 +1230,7 @@ lock = threading.Lock()
         t.start()
 </code></pre>
 <p>&#x4FDD;&#x5B58;&#x4E3A;threading_lock.py&#xFF0C;&#x8FD0;&#x884C;&#xFF0C;&#x770B;&#x4E00;&#x4E0B;&#x7ED3;&#x679C;&#x3002;</p>
-<p><a href="images/threading_lock.jpg" data-lightbox="f6a81e67-19be-44c6-854d-a52cdfa5e626" data-title="threading_lock.jpg"><img src="images/threading_lock.jpg" alt="threading_lock.jpg"></a></p>
+<p><a href="../images/threading_lock.jpg" data-lightbox="6e9491c1-7cfe-4649-9bb2-709b0802c5b0" data-title="threading_lock.jpg"><img src="../images/threading_lock.jpg" alt="threading_lock.jpg"></a></p>
 <p>&#x4F7F;&#x7528;&#x7EBF;&#x7A0B;&#x9501;&#x7684;&#x8BDD;&#x9700;&#x8981;&#x624B;&#x52A8;&#x7684;&#x83B7;&#x53D6;&#x548C;&#x91CA;&#x653E;&#xFF0C;&#x4E5F;&#x53EF;&#x4EE5;&#x91C7;&#x7528;&#x7B80;&#x6D01;&#x7684;&#x65B9;&#x6CD5;,&#x4F7F;&#x7528; &#x4E0A;&#x4E0B;&#x6587;&#x7BA1;&#x7406;&#x5668;&#x3002;</p>
 <pre><code>def run(self):
     with lock:
@@ -931,8 +1238,8 @@ lock = threading.Lock()
         counter -= 1
         print &quot;  &quot;+str(counter)+&quot;  &quot;
 </code></pre><p>Lock &#x4E0E; RLock &#x7684;&#x533A;&#x522B;&#xFF0C;Lock &#x53EA;&#x80FD;&#x9501;&#x4E00;&#x6B21;&#xFF0C;&#x518D;&#x6B21;&#x8BF7;&#x6C42;&#x5C31;&#x4F1A;&#x6302;&#x8D77;&#xFF0C;RLock &#x81EA;&#x5E26;&#x8BA1;&#x6570;&#x5668;&#xFF0C;&#x5728;&#x4E00;&#x4E2A;&#x7EBF;&#x7A0B;&#x4E2D;&#x53EF;&#x4EE5;&#x8BF7;&#x6C42;&#x591A;&#x6B21;&#xFF0C;&#x7B49;&#x8BA1;&#x6570;&#x5668;&#x5168;&#x90E8;&#x91CA;&#x653E;&#x4E4B;&#x540E;&#xFF0C;&#x5176;&#x4ED6;&#x7EBF;&#x7A0B;&#x624D;&#x80FD;&#x53D6;&#x5F97;&#x8D44;&#x6E90;&#x3002;</p>
-<h4 id="&#x672C;&#x5730;&#x53D8;&#x91CF;"><a name="&#x672C;&#x5730;&#x53D8;&#x91CF;" class="plugin-anchor" href="#&#x672C;&#x5730;&#x53D8;&#x91CF;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x672C;&#x5730;&#x53D8;&#x91CF;</h4>
-<p>threadLocal &#x7EBF;&#x7A0B;&#x5C40;&#x90E8;&#x53D8;&#x91CF;&#xFF0C;&#x907F;&#x514D;&#x4E86;&#x4F7F;&#x7528;&#x5168;&#x5C40;&#x53D8;&#x91CF;&#x9700;&#x52A0;&#x9501;&#x7684;&#x56F0;&#x5883;&#x548C;&#x5C40;&#x90E8;&#x53D8;&#x91CF;&#x8C03;&#x7528;&#x4E0D;&#x6E05;&#x7684;&#x9EBB;&#x70E6;&#x3002;&#x4FDD;&#x8BC1;&#x5728;&#x6BCF;&#x4E2A;&#x7EBF;&#x7A0B;&#x4E2D;&#x7684;&#x53D8;&#x91CF;&#x90FD;&#x662F;&#x5728;&#x7EBF;&#x7A0B;&#x5185;&#x53EF;&#x8BFB;&#x53EF;&#x5199;&#x7684;&#xFF0C;&#x800C;&#x4E0D;&#x4F1A;&#x88AB;&#x5176;&#x4ED6;&#x7EBF;&#x7A0B;&#x6C61;&#x67D3;&#x3002;</p>
+<h3 id="&#x672C;&#x5730;&#x53D8;&#x91CF;"><a name="&#x672C;&#x5730;&#x53D8;&#x91CF;" class="plugin-anchor" href="#&#x672C;&#x5730;&#x53D8;&#x91CF;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x672C;&#x5730;&#x53D8;&#x91CF;</h3>
+<p>threadLocal &#x7EBF;&#x7A0B;&#x5C40;&#x90E8;&#x53D8;&#x91CF;&#xFF0C;&#x53C8;&#x79F0;&#x7EBF;&#x7A0B;&#x4E0A;&#x4E0B;&#x6587;&#xFF0C;&#x907F;&#x514D;&#x4E86;&#x4F7F;&#x7528;&#x5168;&#x5C40;&#x53D8;&#x91CF;&#x9700;&#x52A0;&#x9501;&#x7684;&#x56F0;&#x5883;&#x548C;&#x5C40;&#x90E8;&#x53D8;&#x91CF;&#x8C03;&#x7528;&#x4E0D;&#x6E05;&#x7684;&#x9EBB;&#x70E6;&#x3002;&#x4FDD;&#x8BC1;&#x5728;&#x6BCF;&#x4E2A;&#x7EBF;&#x7A0B;&#x4E2D;&#x7684;&#x53D8;&#x91CF;&#x90FD;&#x662F;&#x5728;&#x7EBF;&#x7A0B;&#x5185;&#x53EF;&#x8BFB;&#x53EF;&#x5199;&#x7684;&#xFF0C;&#x800C;&#x4E0D;&#x4F1A;&#x88AB;&#x5176;&#x4ED6;&#x7EBF;&#x7A0B;&#x6C61;&#x67D3;&#x3002;</p>
 <pre><code class="lang-python"><span class="hljs-comment"># -*- coding: utf-8 -*-</span>
 
 <span class="hljs-keyword">import</span> threading
@@ -967,7 +1274,31 @@ local = threading.local()
 <ul>
 <li>&#x5C06;&#x5C40;&#x90E8;&#x53D8;&#x91CF;&#x53D8;&#x6210;&#x5B9E;&#x4F8B;&#x5C5E;&#x6027;&#x3002;</li>
 </ul>
-<h4 id="&#x7EBF;&#x7A0B;&#x6570;&#x91CF;"><a name="&#x7EBF;&#x7A0B;&#x6570;&#x91CF;" class="plugin-anchor" href="#&#x7EBF;&#x7A0B;&#x6570;&#x91CF;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x7EBF;&#x7A0B;&#x6570;&#x91CF;</h4>
+<p><strong>&#x6CE8;&#x610F;&#xFF0C;&#x7EBF;&#x7A0B;&#x4E0A;&#x4E0B;&#x6587;&#x4E2D;&#x7684;&#x53D8;&#x91CF;&#x4E0D;&#x4EC5;&#x4E0D;&#x80FD;&#x5728;&#x4E24;&#x4E2A;&#x5B50;&#x7EBF;&#x7A0B;&#x4E4B;&#x95F4;&#x4F20;&#x9012;&#xFF0C;&#x4E5F;&#x4E0D;&#x80FD;&#x5728;&#x4E3B;&#x7EBF;&#x7A0B;&#x548C;&#x5B50;&#x7EBF;&#x7A0B;&#x4E4B;&#x95F4;&#x4F20;&#x9012;</strong></p>
+<pre><code class="lang-python"><span class="hljs-comment"># -*- coding: utf-8 -*-</span>
+
+<span class="hljs-keyword">import</span> threading
+local = threading.local()
+
+
+<span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">show_local</span><span class="hljs-params">()</span>:</span>
+    <span class="hljs-keyword">print</span> <span class="hljs-string">&quot;I&apos;m child&quot;</span>
+    <span class="hljs-keyword">print</span> <span class="hljs-string">&quot;local is %r&quot;</span> % local
+    <span class="hljs-keyword">print</span> <span class="hljs-string">&quot;local value %s&quot;</span> % hasattr(local, <span class="hljs-string">&quot;name&quot;</span>)
+
+
+<span class="hljs-keyword">if</span> __name__ == <span class="hljs-string">&apos;__main__&apos;</span>:
+    <span class="hljs-keyword">print</span> <span class="hljs-string">&quot;I&apos;m child&quot;</span>
+    <span class="hljs-keyword">print</span> <span class="hljs-string">&quot;local is %r&quot;</span> % local
+    <span class="hljs-keyword">print</span> <span class="hljs-string">&quot;local value %s&quot;</span> % hasattr(local, <span class="hljs-string">&quot;name&quot;</span>)
+    local.name = <span class="hljs-string">&quot;father&quot;</span>
+    <span class="hljs-keyword">print</span> <span class="hljs-string">&quot;local value %s&quot;</span> % local.name
+
+    threading.Thread(target=show_local).start()
+
+    <span class="hljs-keyword">print</span> <span class="hljs-string">&quot;local value %s&quot;</span> % local.name
+</code></pre>
+<h3 id="&#x7EBF;&#x7A0B;&#x6570;&#x91CF;"><a name="&#x7EBF;&#x7A0B;&#x6570;&#x91CF;" class="plugin-anchor" href="#&#x7EBF;&#x7A0B;&#x6570;&#x91CF;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x7EBF;&#x7A0B;&#x6570;&#x91CF;</h3>
 <p>&#x83B7;&#x5F97;&#x4ECD;&#x7136;&#x5B58;&#x6D3B;&#x7684;&#x7EBF;&#x7A0B;&#x6570;&#x91CF;&#xFF0C;&#x5176;&#x4E2D;&#x5305;&#x62EC;&#x4E3B;&#x7EBF;&#x7A0B;</p>
 <pre><code class="lang-python"><span class="hljs-comment"># -*- coding: utf-8 -*-</span>
 
@@ -992,16 +1323,16 @@ local = threading.local()
         <span class="hljs-keyword">print</span> threading.enumerate(), len(threading.enumerate())
         time.sleep(<span class="hljs-number">1</span>)
 </code></pre>
-<h4 id="&#x7EBF;&#x7A0B;&#x6C60;"><a name="&#x7EBF;&#x7A0B;&#x6C60;" class="plugin-anchor" href="#&#x7EBF;&#x7A0B;&#x6C60;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x7EBF;&#x7A0B;&#x6C60;</h4>
+<h3 id="&#x7EBF;&#x7A0B;&#x6C60;"><a name="&#x7EBF;&#x7A0B;&#x6C60;" class="plugin-anchor" href="#&#x7EBF;&#x7A0B;&#x6C60;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x7EBF;&#x7A0B;&#x6C60;</h3>
 <p>&#x7EBF;&#x7A0B;&#x6C60;&#xFF1A;&#x57FA;&#x672C;&#x601D;&#x60F3;&#x8FD8;&#x662F;&#x4E00;&#x79CD;&#x5BF9;&#x8C61;&#x6C60;&#x7684;&#x601D;&#x60F3;&#xFF0C;&#x5F00;&#x8F9F;&#x4E00;&#x5757;&#x5185;&#x5B58;&#x7A7A;&#x95F4;&#xFF0C;&#x91CC;&#x9762;&#x5B58;&#x653E;&#x4E86;&#x4F17;&#x591A;(&#x672A;&#x6B7B;&#x4EA1;)&#x7684;&#x7EBF;&#x7A0B;&#xFF0C;&#x6C60;&#x4E2D;&#x7EBF;&#x7A0B;&#x6267;&#x884C;&#x8C03;&#x5EA6;&#x7531;&#x6C60;&#x7BA1;&#x7406;&#x5668;&#x6765;&#x5904;&#x7406;&#x3002;&#x5F53;&#x6709;&#x7EBF;&#x7A0B;&#x4EFB;&#x52A1;&#x65F6;&#xFF0C;&#x4ECE;&#x6C60;&#x4E2D;&#x53D6;&#x4E00;&#x4E2A;&#xFF0C;&#x6267;&#x884C;&#x5B8C;&#x6210;&#x540E;&#x7EBF;&#x7A0B;&#x5BF9;&#x8C61;&#x5F52;&#x6C60;&#xFF0C;&#x8FD9;&#x6837;&#x53EF;&#x4EE5;&#x907F;&#x514D;&#x53CD;&#x590D;&#x521B;&#x5EFA;&#x7EBF;&#x7A0B;&#x5BF9;&#x8C61;&#x6240;&#x5E26;&#x6765;&#x7684;&#x6027;&#x80FD;&#x5F00;&#x9500;&#xFF0C;&#x8282;&#x7701;&#x4E86;&#x7CFB;&#x7EDF;&#x7684;&#x8D44;&#x6E90;&#x3002;</p>
 <p>&#x7EBF;&#x7A0B;&#x6C60;&#x7684;&#x4F18;&#x70B9;</p>
 <ol>
-<li>&#x907F;&#x514D;&#x7EBF;&#x7A0B;&#x7684;&#x521B;&#x5EFA;&#x548C;&#x9500;&#x6BC1;&#x5E26;&#x6765;&#x7684;&#x6027;&#x80FD;&#x5F00;&#x9500;&#x3002;</li>
-<li>&#x907F;&#x514D;&#x5927;&#x91CF;&#x7684;&#x7EBF;&#x7A0B;&#x95F4;&#x56E0;&#x4E92;&#x76F8;&#x62A2;&#x5360;&#x7CFB;&#x7EDF;&#x8D44;&#x6E90;&#x5BFC;&#x81F4;&#x7684;&#x963B;&#x585E;&#x73B0;&#x8C61;&#x3002;</li>
-<li>&#x80FD;&#x591F;&#x5BF9;&#x7EBF;&#x7A0B;&#x8FDB;&#x884C;&#x7B80;&#x5355;&#x7684;&#x7BA1;&#x7406;&#x5E76;&#x63D0;&#x4F9B;&#x5B9A;&#x65F6;&#x6267;&#x884C;&#x3001;&#x95F4;&#x9694;&#x6267;&#x884C;&#x7B49;&#x529F;&#x80FD;&#x3002;</li>
+<li>&#x907F;&#x514D;&#x7EBF;&#x7A0B;&#x7684;&#x521B;&#x5EFA;&#x548C;&#x9500;&#x6BC1;&#x5E26;&#x6765;&#x7684;&#x6027;&#x80FD;&#x5F00;&#x9500;&#x3002;   </li>
+<li>&#x907F;&#x514D;&#x5927;&#x91CF;&#x7684;&#x7EBF;&#x7A0B;&#x95F4;&#x56E0;&#x4E92;&#x76F8;&#x62A2;&#x5360;&#x7CFB;&#x7EDF;&#x8D44;&#x6E90;&#x5BFC;&#x81F4;&#x7684;&#x963B;&#x585E;&#x73B0;&#x8C61;&#x3002;   </li>
+<li>&#x80FD;&#x591F;&#x5BF9;&#x7EBF;&#x7A0B;&#x8FDB;&#x884C;&#x7B80;&#x5355;&#x7684;&#x7BA1;&#x7406;&#x5E76;&#x63D0;&#x4F9B;&#x5B9A;&#x65F6;&#x6267;&#x884C;&#x3001;&#x95F4;&#x9694;&#x6267;&#x884C;&#x7B49;&#x529F;&#x80FD;&#x3002;   </li>
 </ol>
 <p>&#x9700;&#x8981;&#x6267;&#x884C;&#x7684;&#x7EBF;&#x7A0B;&#x6570;&#x5927;&#x4E8E;&#x540C;&#x65F6;&#x6267;&#x884C;&#x7684;&#x7EBF;&#x7A0B;&#x3002;&#x5982;&#x679C;&#x9700;&#x8981;&#x6267;&#x884C;&#x7684;&#x7EBF;&#x7A0B;&#x6570;&#x4E0E;&#x540C;&#x65F6;&#x6267;&#x884C;&#x7684;&#x7EBF;&#x7A0B;&#x6570;&#x76F8;&#x540C;&#xFF0C;&#x5373;&#x7EBF;&#x7A0B;&#x6C60;&#x5927;&#x5C0F;&#x76F8;&#x540C;&#xFF0C;&#x7EBF;&#x7A0B;&#x6C60;&#x662F;&#x4E0D;&#x662F;&#x5C31;&#x6CA1;&#x6709;&#x592A;&#x5927;&#x610F;&#x4E49;&#xFF1F;</p>
-<p>&#x6240;&#x4EE5;&#x7EBF;&#x7A0B;&#x6C60;&#x7684;&#x5E94;&#x7528;&#x573A;&#x666F;&#x5C31;&#x548C;&#x961F;&#x5217;&#x7684;&#x5E94;&#x7528;&#x573A;&#x666F;&#x7C7B;&#x4F3C;</p>
+<p>&#x6240;&#x4EE5;&#x7EBF;&#x7A0B;&#x6C60;&#x7684;&#x5E94;&#x7528;&#x573A;&#x666F;&#x5C31;&#x548C;&#x961F;&#x5217;&#x7684;&#x5E94;&#x7528;&#x573A;&#x666F;&#x7C7B;&#x4F3C;   </p>
 <ul>
 <li>&#x5982;&#x679C;&#x6267;&#x884C;&#x7684;&#x51FD;&#x6570;&#x7684;&#x53C2;&#x6570;&#x7531;&#x751F;&#x4EA7;&#x8005;&#x63D0;&#x4F9B;&#xFF0C;&#x6570;&#x91CF;&#x4E0D;&#x5B9A;&#xFF0C;&#x5373;&#x4F7F;&#x7528;&#x961F;&#x5217;&#xFF0C;&#x5C06;&#x751F;&#x4EA7;&#x8005;&#x4E5F;&#x8D77;&#x4E00;&#x4E2A;&#x7EBF;&#x7A0B;&#xFF0C;&#x6D88;&#x8D39;&#x8005;&#x591A;&#x4E2A;&#x7EBF;&#x7A0B;</li>
 <li>&#x5982;&#x679C;&#x6267;&#x884C;&#x7684;&#x51FD;&#x6570;&#x7684;&#x53C2;&#x6570;&#x7531;&#x4E3B;&#x7EBF;&#x7A0B;&#x63D0;&#x4F9B;&#xFF0C;&#x6570;&#x91CF;&#x56FA;&#x5B9A;&#xFF0C;&#x5373;&#x4F7F;&#x7528;&#x7EBF;&#x7A0B;&#x6C60;&#xFF0C;&#x5C06;&#x603B;&#x53C2;&#x6570;&#x548C;&#x603B;&#x7EBF;&#x7A0B;&#x6570;&#x90FD;&#x653E;&#x5165;&#x7EBF;&#x7A0B;&#x6C60;&#x4E2D;&#xFF0C;&#x4ECE;&#x7EBF;&#x7A0B;&#x6C60;&#x4E2D;&#x53D6;&#x7EBF;&#x7A0B;&#x6267;&#x884C;&#x51FD;&#x6570;&#x3002;</li>
@@ -1012,7 +1343,8 @@ local = threading.local()
 <li>&#x5C06;&#x51FD;&#x6570;&#x653E;&#x5165;&#x7EBF;&#x7A0B;&#x6C60;&#x4E2D;&#x6267;&#x884C;&#xFF0C;&#x4ECE;&#x7EBF;&#x7A0B;&#x6C60;&#x4E2D;&#x53D6;&#x7ED3;&#x679C;&#xFF0C;&#x5BF9;&#x7ED3;&#x679C;&#x987A;&#x5E8F;&#x8981;&#x6C42;&#x4E0D;&#x5927;&#x7684;&#x53EF;&#x4EE5;&#x91C7;&#x7528;&#x7EBF;&#x7A0B;&#x6C60;</li>
 <li>&#x591A;&#x4E2A;&#x751F;&#x4EA7;&#x8005;&#x7684;&#x6267;&#x884C;&#x7ED3;&#x679C;&#x53D1;&#x5E03;&#x81F3;&#x6D88;&#x606F;&#x961F;&#x5217;&#xFF0C;&#x6D88;&#x8D39;&#x8005;&#x4ECE;&#x6D88;&#x606F;&#x961F;&#x5217;&#x4E2D;&#x76D1;&#x542C;&#x6570;&#x636E;&#x3002;</li>
 </ul>
-<h4 id="&#x591A;&#x7EBF;&#x7A0B;&#x7684;&#x7ED3;&#x675F;"><a name="&#x591A;&#x7EBF;&#x7A0B;&#x7684;&#x7ED3;&#x675F;" class="plugin-anchor" href="#&#x591A;&#x7EBF;&#x7A0B;&#x7684;&#x7ED3;&#x675F;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x591A;&#x7EBF;&#x7A0B;&#x7684;&#x7ED3;&#x675F;</h4>
+<p>&#x7EBF;&#x7A0B;&#x6C60;&#x53EF;&#x4EE5;&#x4F7F;&#x7528; Python &#x5B98;&#x65B9;&#x81EA;&#x5E26;&#x7684; <code>concurrent</code> &#x5E93;</p>
+<h3 id="&#x591A;&#x7EBF;&#x7A0B;&#x7684;&#x7ED3;&#x675F;"><a name="&#x591A;&#x7EBF;&#x7A0B;&#x7684;&#x7ED3;&#x675F;" class="plugin-anchor" href="#&#x591A;&#x7EBF;&#x7A0B;&#x7684;&#x7ED3;&#x675F;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x591A;&#x7EBF;&#x7A0B;&#x7684;&#x7ED3;&#x675F;</h3>
 <p>&#x5728;&#x591A;&#x7EBF;&#x7A0B;&#x4E2D;,&#x4F7F;&#x7528; <code>Ctrl + C</code> &#x4E00;&#x822C;&#x4E0D;&#x80FD;&#x7ED3;&#x675F;&#x5B50;&#x7EBF;&#x7A0B;&#xFF0C;&#x56E0;&#x4E3A;&#x53D1;&#x51FA;&#x7684; kill signal &#x53EA;&#x80FD;&#x591F;&#x88AB;&#x4E3B;&#x7EBF;&#x7A0B; main &#x63A5;&#x6536;&#x5230;&#xFF0C;&#x800C;&#x4E0D;&#x80FD;&#x591F;&#x88AB;&#x5B50;&#x7EBF;&#x7A0B;&#x63A5;&#x6536;&#x5230;&#xFF0C;&#x5728; Mac &#x4E0A;&#x53EF;&#x4EE5;&#x4F7F;&#x7528; <code>Ctrl + \</code> &#x7ED3;&#x675F;&#x5B50;&#x7EBF;&#x7A0B;&#xFF0C;&#x5F3A;&#x884C; quit &#x6389;</p>
 <p>&#x8FD9;&#x6837;&#x4E5F;&#x53EF;&#x4EE5;&#x7ED3;&#x675F;,&#x4F46;&#x662F;&#x611F;&#x89C9;&#x5F88;&#x5947;&#x602A;</p>
 <pre><code class="lang-python"><span class="hljs-comment">#!/usr/bin/env python</span>
@@ -1069,11 +1401,11 @@ local = threading.local()
 <span class="hljs-keyword">if</span> __name__ == <span class="hljs-string">&apos;__main__&apos;</span>:
    main()
 </code></pre>
-<h4 id="&#x591A;&#x7EBF;&#x7A0B;&#x7684;&#x5F02;&#x5E38;&#x8F93;&#x51FA;"><a name="&#x591A;&#x7EBF;&#x7A0B;&#x7684;&#x5F02;&#x5E38;&#x8F93;&#x51FA;" class="plugin-anchor" href="#&#x591A;&#x7EBF;&#x7A0B;&#x7684;&#x5F02;&#x5E38;&#x8F93;&#x51FA;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x591A;&#x7EBF;&#x7A0B;&#x7684;&#x5F02;&#x5E38;&#x8F93;&#x51FA;</h4>
+<h3 id="&#x591A;&#x7EBF;&#x7A0B;&#x7684;&#x5F02;&#x5E38;&#x8F93;&#x51FA;"><a name="&#x591A;&#x7EBF;&#x7A0B;&#x7684;&#x5F02;&#x5E38;&#x8F93;&#x51FA;" class="plugin-anchor" href="#&#x591A;&#x7EBF;&#x7A0B;&#x7684;&#x5F02;&#x5E38;&#x8F93;&#x51FA;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x591A;&#x7EBF;&#x7A0B;&#x7684;&#x5F02;&#x5E38;&#x8F93;&#x51FA;</h3>
 <p>&#x591A;&#x7EBF;&#x7A0B;&#x4E2D;&#x867D;&#x7136;&#x662F;&#x4E0E;&#x4E3B;&#x7EBF;&#x7A0B;&#x5171;&#x4EAB;&#x53D8;&#x91CF;&#xFF0C;&#x4F46;&#x662F;&#x6709;&#x81EA;&#x5DF1;&#x7684;&#x5806;&#x6808;&#xFF0C;&#x800C;&#x5B50;&#x7EBF;&#x7A0B;&#x5F02;&#x5E38;&#x4FE1;&#x606F;&#x662F;&#x4FDD;&#x5B58;&#x5728;&#x5806;&#x6808;&#x4E0A;&#xFF0C;&#x4E3B;&#x7EBF;&#x7A0B;&#x65E0;&#x6CD5;&#x8F93;&#x51FA;&#x3002;</p>
 <p>&#x6240;&#x4EE5;&#x5728;&#x67D0;&#x4E9B;&#x591A;&#x7EBF;&#x7A0B;&#x4E2D;&#x5B50;&#x7EBF;&#x7A0B;&#x5F02;&#x5E38;&#x662F;&#x65E0;&#x6CD5;&#x5BDF;&#x89C9;&#x5230;&#x7684;&#xFF0C;&#x6CA1;&#x6709;&#x62A5;&#x9519;&#x4FE1;&#x606F;&#xFF0C;&#x6084;&#x65E0;&#x58F0;&#x606F;&#x7684;&#x5C31;&#x6B7B;&#x6389;&#x4E86;&#x3002;</p>
-<p>&#x9700;&#x8981;&#x501F;&#x52A9;&#x4E00;&#x4E9B;&#x5B50;&#x7EBF;&#x7A0B;&#x548C;&#x4E3B;&#x7EBF;&#x7A0B;&#x6570;&#x636E;&#x6C9F;&#x901A;&#x7684;&#x65B9;&#x5F0F;&#x5C06;&#x5B50;&#x7EBF;&#x7A0B;&#x7684;&#x5F02;&#x5E38;&#x8F93;&#x51FA;&#x3002;</p>
-<h4 id="&#x7EBF;&#x7A0B;&#x5B9A;&#x65F6;&#x5668;"><a name="&#x7EBF;&#x7A0B;&#x5B9A;&#x65F6;&#x5668;" class="plugin-anchor" href="#&#x7EBF;&#x7A0B;&#x5B9A;&#x65F6;&#x5668;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x7EBF;&#x7A0B;&#x5B9A;&#x65F6;&#x5668;</h4>
+<p>&#x9700;&#x8981;&#x501F;&#x52A9;&#x4E00;&#x4E9B;&#x5B50;&#x7EBF;&#x7A0B;&#x548C;&#x4E3B;&#x7EBF;&#x7A0B;&#x6570;&#x636E;&#x6C9F;&#x901A;&#x7684;&#x65B9;&#x5F0F;&#x5C06;&#x5B50;&#x7EBF;&#x7A0B;&#x7684;&#x5F02;&#x5E38;&#x8F93;&#x51FA;&#xFF0C;&#x6216;&#x8005;&#x662F;&#x4F7F;&#x7528;&#x65E5;&#x5FD7;&#x8BB0;&#x5F55;&#x3002;</p>
+<h3 id="&#x7EBF;&#x7A0B;&#x5B9A;&#x65F6;&#x5668;"><a name="&#x7EBF;&#x7A0B;&#x5B9A;&#x65F6;&#x5668;" class="plugin-anchor" href="#&#x7EBF;&#x7A0B;&#x5B9A;&#x65F6;&#x5668;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x7EBF;&#x7A0B;&#x5B9A;&#x65F6;&#x5668;</h3>
 <p>&#x591A;&#x7EBF;&#x7A0B;&#x4E2D;&#x81EA;&#x5E26;&#x4E00;&#x4E2A;&#x5F02;&#x6B65;&#x7684;&#x5B9A;&#x65F6;&#x5668;&#xFF0C;&#x53EF;&#x4EE5;&#x6307;&#x5B9A;&#x7EBF;&#x7A0B;&#x5B9A;&#x65F6;&#x6267;&#x884C;&#xFF0C;&#x751A;&#x81F3;&#x53EF;&#x4EE5;&#x95F4;&#x9694;&#x6267;&#x884C;&#x3002;</p>
 <p>&#x9ED8;&#x8BA4;&#x5B9A;&#x65F6;&#x5668;&#x53EA;&#x6267;&#x884C;&#x4E00;&#x6B21;&#xFF0C;&#x5982;&#x679C;&#x9700;&#x8981;&#x95F4;&#x9694;&#x6267;&#x884C;&#xFF0C;&#x9700;&#x8981;&#x591A;&#x6B21;&#x8C03;&#x7528;&#x3002;</p>
 <pre><code class="lang-python"><span class="hljs-comment"># -*- coding: utf-8 -*-</span>
@@ -1097,7 +1429,7 @@ set_timer()
     <span class="hljs-keyword">print</span> <span class="hljs-string">&apos;sleep&apos;</span>, time.time()
 </code></pre>
 <footer class="page-footer"><span class="copyright">Copyright &#xA9; windard.com 2020 all right reserved&#xFF0C;powered by Gitbook</span><span class="footer-modification">&#x8BE5;&#x6587;&#x4EF6;&#x6700;&#x540E;&#x4FEE;&#x6539;&#x65F6;&#x95F4;&#xFF1A;
-2020-09-28 12:45:12
+2020-10-08 02:52:24
 </span></footer>
                                 
                                 </section>
@@ -1141,7 +1473,7 @@ set_timer()
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"threading","level":"1.2.8","depth":2,"next":{"title":"concurrent","level":"1.2.9","depth":2,"path":"official/concurrent.md","ref":"official/concurrent.md","articles":[]},"previous":{"title":"ply","level":"1.2.7","depth":2,"path":"official/ply.md","ref":"official/ply.md","articles":[]},"dir":"ltr"},"config":{"plugins":["-lunr","-search","-sharing","donate","github@2.0.0","github-buttons","rss","disqus@0.1.0","theme-default","theme-comscore","code","splitter","anchors","ga@1.0.1","anchor-navigation","sitemap","search-pro","back-to-top-button","pageview-count","chapter-fold","sharing-plus","expandable-chapters-small","insert-logo","favicon","lightbox","toc","tbfed-pagefooter"],"root":".","styles":{"ebook":"styles/ebook.css","epub":"styles/epub.css","mobi":"styles/mobi.css","pdf":"styles/pdf.css","print":"styles/print.css","website":"styles/website.css"},"pluginsConfig":{"tbfed-pagefooter":{"copyright":"Copyright &copy windard.com 2020","modify_label":"该文件最后修改时间：","modify_format":"YYYY-MM-DD HH:mm:ss"},"chapter-fold":{},"disqus":{"useIdentifier":false,"shortName":"windard-python-book"},"pluginsConfig":{"favicon":"/images/favicon.ico"},"github":{"url":"https://github.com/windard/python-book"},"splitter":{},"search-pro":{},"toc":{},"books":{"github_url":"https://github.com/windard/"},"sharing-plus":{"qq":false,"all":["facebook","google","twitter","instapaper","linkedin","pocket","stumbleupon"],"douban":false,"facebook":true,"weibo":false,"instapaper":false,"whatsapp":false,"hatenaBookmark":false,"twitter":true,"messenger":false,"line":false,"vk":false,"pocket":true,"google":false,"viber":false,"stumbleupon":false,"qzone":false,"linkedin":false},"anchor-navigation":{},"code":{"copyButtons":true},"donate":{"alipay":"https://i.niupic.com/images/2020/09/24/8IzJ.png","alipayText":"支付宝打赏","button":"打赏","title":"写的不错~ 👍","wechat":"https://i.niupic.com/images/2020/09/24/8IzV.png","wechatText":"微信打赏"},"fontsettings":{"theme":"white","family":"sans","size":2},"rss":{"categories":["gitbook","python"],"title":"Windard Python Book","description":"Python Library Book by Windard","author":"Windard Yang","feed_url":"https://python-book.windard.com/rss","site_url":"https://python-book.windard.com/","managingEditor":"windard@qq.com","webMaster":"windard@qq.com"},"highlight":{},"favicon":{"shortcut":"favicon.ico","bookmark":"favicon.ico"},"sitemap":{"hostname":"https://python-book.windard.com/"},"lightbox":{"jquery":true,"sameUuid":false},"theme-comscore":{},"back-to-top-button":{},"pageview-count":{},"github-buttons":{"buttons":[{"user":"windard","repo":"python-book","type":"star","size":"small"},{"user":"windard","type":"follow","width":"160","count":true,"size":"small"}]},"expandable-chapters-small":{},"ga":{"configuration":"auto","token":"UA-164926677-2"},"sharing":{"qq":true,"all":["douban","facebook","google","instapaper","linkedin","twitter","weibo","messenger","qq","qzone","viber","whatsapp"],"douban":true,"facebook":true,"weibo":true,"twitter":true,"pocket":false,"google":true,"qzone":true},"theme-default":{"showLevel":true,"styles":{"ebook":"styles/ebook.css","epub":"styles/epub.css","mobi":"styles/mobi.css","pdf":"styles/pdf.css","print":"styles/print.css","website":"styles/website.css"}},"anchors":{},"insert-logo":{"style":"background: none; max-height: 30px; min-height: 30px","url":"/images/python.png"}},"theme":"default","author":"Windard","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"Windard's Python Book","language":"zh-hans","gitbook":"3.2.3","description":"Python 学习的记录和总结"},"file":{"path":"official/threading.md","mtime":"2020-09-28T12:45:12.000Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2020-09-28T13:14:59.427Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"threading","level":"1.2.8","depth":2,"next":{"title":"concurrent","level":"1.2.9","depth":2,"path":"official/concurrent.md","ref":"official/concurrent.md","articles":[]},"previous":{"title":"ply","level":"1.2.7","depth":2,"path":"official/ply.md","ref":"official/ply.md","articles":[]},"dir":"ltr"},"config":{"plugins":["-lunr","-search","-sharing","donate","github@2.0.0","github-buttons","rss","disqus@0.1.0","theme-default","theme-comscore","code","splitter","anchors","ga@1.0.1","anchor-navigation","sitemap","search-pro","back-to-top-button","pageview-count","chapter-fold","sharing-plus","expandable-chapters-small","insert-logo","favicon","lightbox","toc","tbfed-pagefooter"],"root":".","styles":{"ebook":"styles/ebook.css","epub":"styles/epub.css","mobi":"styles/mobi.css","pdf":"styles/pdf.css","print":"styles/print.css","website":"styles/website.css"},"pluginsConfig":{"tbfed-pagefooter":{"copyright":"Copyright &copy windard.com 2020","modify_label":"该文件最后修改时间：","modify_format":"YYYY-MM-DD HH:mm:ss"},"chapter-fold":{},"disqus":{"useIdentifier":false,"shortName":"windard-python-book"},"pluginsConfig":{"favicon":"/images/favicon.ico"},"github":{"url":"https://github.com/windard/python-book"},"splitter":{},"search-pro":{},"toc":{},"books":{"github_url":"https://github.com/windard/"},"sharing-plus":{"qq":false,"all":["facebook","google","twitter","instapaper","linkedin","pocket","stumbleupon"],"douban":false,"facebook":true,"weibo":false,"instapaper":false,"whatsapp":false,"hatenaBookmark":false,"twitter":true,"messenger":false,"line":false,"vk":false,"pocket":true,"google":false,"viber":false,"stumbleupon":false,"qzone":false,"linkedin":false},"anchor-navigation":{},"code":{"copyButtons":true},"donate":{"alipay":"https://i.niupic.com/images/2020/09/24/8IzJ.png","alipayText":"支付宝打赏","button":"打赏","title":"写的不错~ 👍","wechat":"https://i.niupic.com/images/2020/09/24/8IzV.png","wechatText":"微信打赏"},"fontsettings":{"theme":"white","family":"sans","size":2},"rss":{"categories":["gitbook","python"],"title":"Windard Python Book","description":"Python Library Book by Windard","author":"Windard Yang","feed_url":"https://python-book.windard.com/rss","site_url":"https://python-book.windard.com/","managingEditor":"windard@qq.com","webMaster":"windard@qq.com"},"highlight":{},"favicon":{"shortcut":"favicon.ico","bookmark":"favicon.ico"},"sitemap":{"hostname":"https://python-book.windard.com/"},"lightbox":{"jquery":true,"sameUuid":false},"theme-comscore":{},"back-to-top-button":{},"pageview-count":{},"github-buttons":{"buttons":[{"user":"windard","repo":"python-book","type":"star","size":"small"},{"user":"windard","type":"follow","width":"160","count":true,"size":"small"}]},"expandable-chapters-small":{},"ga":{"configuration":"auto","token":"UA-164926677-2"},"sharing":{"qq":true,"all":["douban","facebook","google","instapaper","linkedin","twitter","weibo","messenger","qq","qzone","viber","whatsapp"],"douban":true,"facebook":true,"weibo":true,"twitter":true,"pocket":false,"google":true,"qzone":true},"theme-default":{"showLevel":true,"styles":{"ebook":"styles/ebook.css","epub":"styles/epub.css","mobi":"styles/mobi.css","pdf":"styles/pdf.css","print":"styles/print.css","website":"styles/website.css"}},"anchors":{},"insert-logo":{"style":"background: none; max-height: 30px; min-height: 30px","url":"/images/python.png"}},"theme":"default","author":"Windard","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"Windard's Python Book","language":"zh-hans","gitbook":"3.2.3","description":"Python 学习的记录和总结"},"file":{"path":"official/threading.md","mtime":"2020-10-08T02:52:24.000Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2020-10-08T02:55:08.141Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>
