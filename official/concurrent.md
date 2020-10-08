@@ -1,8 +1,8 @@
 ## concurrent
 
-python 中的异步库，集成 threading 和 multiprocessing 两个库。
+python 中的异步线程池库，集成 `threading` 和 `multiprocessing` 两个库。
 
-可以使用 `ThreadPoolExecutor` 和 `ProcessPoolExecutor` 来做线程和进程
+可以使用 `ThreadPoolExecutor` 和 `ProcessPoolExecutor` 来选择线程池和进程池
 
 ```python
 # -*- coding: utf-8 -*-
