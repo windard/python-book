@@ -4,7 +4,7 @@
         <description><![CDATA[Python Library Book by Windard]]></description>
         <link>https://python-book.windard.com/</link>
         <generator>RSS for Node</generator>
-        <lastBuildDate>Sun, 11 Oct 2020 12:08:20 GMT</lastBuildDate>
+        <lastBuildDate>Mon, 19 Oct 2020 02:15:44 GMT</lastBuildDate>
         <atom:link href="https://python-book.windard.com/rss" rel="self" type="application/rss+xml"/>
         <author><![CDATA[Windard Yang]]></author>
         <managingEditor><![CDATA[windard@qq.com]]></managingEditor>
@@ -120,6 +120,13 @@
             <description><![CDATA[比 xlwt 更强大的 Excel 处理库，没有 65535 行的限制。]]></description>
             <link>https://python-book.windard.com/third/openpyxl.html</link>
             <guid isPermaLink="true">https://python-book.windard.com/third/openpyxl.html</guid>
+            <dc:creator><![CDATA[Windard Yang]]></dc:creator>
+        </item>
+        <item>
+            <title><![CDATA[No title]]></title>
+            <description><![CDATA[一般我们在使用 logging 打印日志的时候，都要配置一大坨复杂的东西，输出格式，文件位置，日志分割之类的，使用 loguru 可以更快更方便的实现这些。]]></description>
+            <link>https://python-book.windard.com/third/loguru.html</link>
+            <guid isPermaLink="true">https://python-book.windard.com/third/loguru.html</guid>
             <dc:creator><![CDATA[Windard Yang]]></dc:creator>
         </item>
         <item>
