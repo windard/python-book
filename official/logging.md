@@ -4,13 +4,70 @@
 
 标准的输出日志库，比每次用 print 输出不知道高到哪里去了。
 
+## 基本使用
+
+```python
+# coding=utf-8
+
+import logging
+
+logging.info("hi, hello world")
+logging.error("oops, what's wrong?")
+
+logger = logging.getLogger(__name__)
+logger.info("I'm forgot")
+logger.error("What's see?")
+
+print(logger.level)
+print(logging.root.level)
+
+```
+
+运行查看
+
+```
+ERROR:root:oops, what's wrong?
+ERROR:__main__:What's see?
+0
+30
+```
+
+logging 默认是 warning 级别，也就是说如果没有任何配置，只能打印出警告和错误日志。
+
+
+```python
+#coding=utf-8
+
+import logging
+import sys
+
+LEVELS = {'debug': logging.DEBUG,
+          'info': logging.INFO,
+          'warning': logging.WARNING,
+          'error': logging.ERROR,
+          'critical': logging.CRITICAL}
+
+if len(sys.argv) > 1:
+    level_name = sys.argv[1]
+    level = LEVELS.get(level_name, logging.NOTSET)
+    logging.basicConfig(level=level)
+
+logging.debug('This is a debug message')
+logging.info('This is an info message')
+logging.warning('This is a warning message')
+logging.error('This is an error message')
+logging.critical('This is a critical error message')
+```
+
+logging 共分五个 log 等级，默认输出的 Level 为 warning 等级，可以设定为其他等级就可以将代码中的每一个等级大于等于 Level 的问题都输出。
+
 ## 常用配置
+
+使用 `logging` 的时候，如果没有配置，使用的是 warning 级别，输出的日志格式也不好看。
 
 使用日志模块，如果直接使用 `logging.info` 使用的是 `root_logger` ，最好是使用 `logging.getLogger(__name__)` 拿到一个当前的 `logger` 使用。
 
-无论是用 `root_logger` 还是 `current_logger` 如果不进行配置的话，默认是没有任何输出的。
-
-logging 如果不配置是没有数据输出的，但是如果不想写这么长的配置怎么办呢？直接使用 `logging.basicConfig()` 进行一个简单的基础配置。
+如果不想写这么长的配置怎么办呢？直接使用 `logging.basicConfig()` 进行一个简单的基础配置。
 
 ```text
 logging.basicConfig(
@@ -99,33 +156,7 @@ if __name__ == '__main__':
     main()
 ```
 
-## 简单使用
-
-```python
-#coding=utf-8
-
-import logging
-import sys
-
-LEVELS = {'debug': logging.DEBUG,
-          'info': logging.INFO,
-          'warning': logging.WARNING,
-          'error': logging.ERROR,
-          'critical': logging.CRITICAL}
-
-if len(sys.argv) > 1:
-    level_name = sys.argv[1]
-    level = LEVELS.get(level_name, logging.NOTSET)
-    logging.basicConfig(level=level)
-
-logging.debug('This is a debug message')
-logging.info('This is an info message')
-logging.warning('This is a warning message')
-logging.error('This is an error message')
-logging.critical('This is a critical error message')
-```
-
-logging 共分五个 log 等级，默认输出的 Level 为 warning 等级，可以设定为其他等级就可以将代码中的每一个等级大于等于 Level 的问题都输出。
+## 格式化
 
 ```python
 #coding=utf-8

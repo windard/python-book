@@ -18,6 +18,7 @@
     * [requests](third/requests.md)
     * [redis](third/redis.md)
     * [openpyxl](third/openpyxl.md)
+    * [loguru](third/loguru.md)
 * [私人库](private/README.md)
 * [其他](other_tools.md)
 * [附录](appendix.md)

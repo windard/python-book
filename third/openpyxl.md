@@ -2,7 +2,10 @@
 
 比 `xlwt` 更强大的 Excel 处理库，没有 65535 行的限制。
 
-> 垃圾 Mac ，Numbers 竟然也有限制 65535
+> 垃圾 Mac ，Numbers 竟然也有限制 65535  
+> 😂，不是 numbers 的限制，是 xls 的限制
+> xlsx 最多能用 104 万行，xls 最多就只能 65535 行
+
 
 ```
 # coding=utf-8
