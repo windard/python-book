@@ -26,7 +26,7 @@ pdb 中的命令
 2. `c`|`continue` 继续运行,没有断点则退出 pdb 调试
 3. `q`|`exit`|`quit` 报错退出
 4. `l`|`list` 列出上下文相关代码
-5. `w`|`where` 显示堆栈信息
+5. `w`|`where`|`bt` 显示堆栈信息
 6. `b`|`break [lineno]` 打断点
 8. `cl`|`clear` 清除所有断点
 9. `a`|`args` 当前环境变量

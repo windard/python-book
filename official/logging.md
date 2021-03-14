@@ -68,12 +68,13 @@ logging 共分五个 log 等级，默认输出的 Level 为 warning 等级，可
 使用日志模块，如果直接使用 `logging.info` 使用的是 `root_logger` ，最好是使用 `logging.getLogger(__name__)` 拿到一个当前的 `logger` 使用。
 
 如果不想写这么长的配置怎么办呢？直接使用 `logging.basicConfig()` 进行一个简单的基础配置。
+> 注意，在使用 `basicConfig` 需要最开始的位置进行初始化，否则随便一个日志打印函数都会调用这个方法，造成你的配置无效，日志无法打印。
 
 ```text
 logging.basicConfig(
     level=logging.INFO,
     format='%(name)-25s %(asctime)s %(levelname)-8s %(lineno)-4d %(message)s',
-    datefmt='[%Y %b %d %a %H:%M:%S]'
+    datefmt='[%Y-%m-%d %H:%M:%S]'
 )
 ```
 

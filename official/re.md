@@ -286,7 +286,9 @@ Out[6]: ('laal', '2')
 
 ### 常用正则
 
-对于常见的nginx日志配置格式
+#### 匹配 nginx 日志
+
+对于常见的 nginx 日志配置格式
 
 ```
 log_format  main  '$remote_addr - $remote_user [$time_local] "$request" '
@@ -301,7 +303,7 @@ obj = re.compile(r'(?P<ip>.*?)- - \[(?P<time>.*?)\] "(?P<request>.*?)" (?P<statu
 
 ```
 
-驼峰转下划线
+#### 驼峰转下划线
 
 ```python
 # -*- coding: utf-8 -*-
@@ -333,6 +335,20 @@ if __name__ == '__main__':
 
 ```
 
+#### 分割时忽略引号内的分隔符
+
+> [How to split but ignore separators in quoted strings, in python?](https://stackoverflow.com/questions/2785755/how-to-split-but-ignore-separators-in-quoted-strings-in-python)
+
+```python
+# coding=utf-8
+
+import re
+
+data = """part 1;"this is ; part 2;";'this is ; part 3';part 4;this "is ; part" 5"""
+print(re.split(r'''((?:[^;"']|"[^"]*"|'[^']*')+)''', data)[1::2])
+print(re.split(r''';(?=(?:[^'"]|'[^']*'|"[^"]*")*$)''', data))
+
+```
 ### 参考链接
 
 [正则表达式30分钟入门教程](http://deerchao.net/tutorials/regex/regex.htm)

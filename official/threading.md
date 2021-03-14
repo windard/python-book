@@ -417,37 +417,43 @@ Python 中还要一个较为基础的 `thread` 库，这个库里还需要我们
 
 在 `threading` 库中创建的子线程都是非守护线程，因为创建的子线程的 `Daemon` 属性继承父线程，而我们一般直接运行 Python 代码都是非守护线程的方式。
 
-对于非守护线程，主线程会等待子线程结束再结束。而如果是一个守护线程，主线程运行结束之后就会立即终止，并不关心子线程的运行情况。
+1. 对于非守护线程，主线程会等待全部线程结束再结束。
+2. 而如果是守护线程，主线程运行结束之后就会立即终止，并不关心子线程的运行情况,守护进程也被强行终止。
 
 我们可以通过 `threading.Thread.setDaemon(True)` 的方式来将子线程设置为守护线程
 
 ```python
-#coding=utf-8
+# -*- coding: utf-8 -*-
 
 import threading
-from time import ctime,sleep
+from time import ctime, sleep
 
-def loop(nloop,nsec):
-	print "loop",nloop," start at: ",ctime()
-	sleep(nsec)
-	print "loop",nloop,"end    at: ",ctime()
 
-print "all start at: ",ctime()
-loops = [4,2]
-threads = []
-nloops = range(len(loops))
+def loop(nloop, nsec):
+    print("loop", nloop, " start at: ", ctime())
+    sleep(nsec)
+    print("loop", nloop, "end    at: ", ctime())
 
-#创建两个线程
-for i in nloops:
-	t = threading.Thread(target=loop,args=(i,loops[i]))
-	t.setDaemon(True)
-	threads.append(t)
 
-#让两个线程同时开始
-for i in nloops:
-	threads[i].start()
+if __name__ == '__main__':
 
-print "all end   at: ",ctime()
+    print("all start at: ", ctime())
+    loops = [4, 2]
+    threads = []
+    nloops = range(len(loops))
+
+    # 创建两个线程
+    for i in nloops:
+        t = threading.Thread(target=loop, args=(i, loops[i]))
+        t.setDaemon(True)
+        threads.append(t)
+
+    # 让两个线程同时开始
+    for i in nloops:
+        threads[i].start()
+
+    print("all end   at: ", ctime())
+
 
 ```
 
@@ -465,7 +471,7 @@ loop 0loop 1  start at:  Thu Oct  8 10:28:57 2020
 > 在手动的将子线程加入(join)到主线程中后，主线程就会等待子线程全部结束才会继续之后的程序。    
 > 在 `join` 被加入到主线程之后，虽然主线程被阻塞，但是并不影响其他线程，其他线程可以继续 `join` 到主线程。  
 > 在未设置守护线程，未 `join` 到主线程中的时候，主线程会先运行结束，但是主程序未结束，等待子线程结束后程序才会结束。  
-> 守护线程的意思就是说这个线程独立于主线程，主线程可以先于守护线程结束而不用等候守护线程结束。  
+> 守护线程的意思就是说这个线程独立于主线程，主线程可以先于守护线程结束而不用等候守护线程结束，主进程结束，全部子进程都会结束。
 
 对于守护线程，也可以使用 `join` 方法，同样可以阻塞主线程。
 > 这里需要注意，只能对未启动(start)的子线程设置守护进程，对于已经启动子线程不能再设置为守护线程
@@ -857,6 +863,68 @@ if __name__ == '__main__':
     for i in xrange(10):
         print threading.enumerate(), len(threading.enumerate())
         time.sleep(1)
+
+```
+
+### 线程事件
+
+线程事件 event 像是一个线程间的共享变量，可以做并发控制。
+
+```python
+# -*- coding: utf-8 -*-
+
+import time
+import logging
+from threading import Thread, Event
+from logging.config import dictConfig
+
+
+logging_config = {
+    "version": 1,
+    "disable_existing_loggers": False,
+    "formatters": {"default": {"format": "%(asctime)s %(levelname)-8s %(filename)s:%(lineno)d %(message)s"}},
+    "handlers": {
+        "console": {"level": "INFO", "class": "logging.StreamHandler", "formatter": "default"},
+        "file_logger": {
+            "level": "INFO",
+            "class": "logging.FileHandler",
+            "formatter": "default",
+            "filename": "threading.log",
+        },
+    },
+    "root": {"handlers": ["file_logger", "console"], "level": "INFO"},
+}
+dictConfig(logging_config)
+stop_event = Event()
+
+
+def continue_thread_run():
+    logger = logging.getLogger(__name__)
+    while True:
+        if stop_event.is_set():
+            break
+        logger.info("wait for stop_event")
+        time.sleep(1)
+
+
+def wait_for_time():
+    logger = logging.getLogger(__name__)
+    while True:
+        if int(time.time()) > 1615711196:
+            stop_event.set()
+            break
+        logger.info("stop_event not ready:%d" % int(time.time()))
+        time.sleep(1)
+
+
+if __name__ == '__main__':
+    thread_list = [Thread(target=continue_thread_run), Thread(target=wait_for_time)]
+    for thread in thread_list:
+        # thread.setDaemon(True)
+        thread.start()
+
+    for thread in thread_list:
+        thread.join()
 
 ```
 
