@@ -1,0 +1,10 @@
+{
+  "dependencies": {
+    "canvas": "^2.6.1",
+    "gitbook-plugin-custom-favicon-fix": "^1.0.1",
+    "gitbook-plugin-custom-favicon-new": "^1.0.0",
+    "gitbook-plugin-donate": "^1.0.2",
+    "gitbook-plugin-favicon-custom": "^1.0.0",
+    "react-scripts": "^3.4.3"
+  }
+}
