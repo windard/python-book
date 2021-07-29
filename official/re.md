@@ -335,6 +335,31 @@ if __name__ == '__main__':
 
 ```
 
+#### 下划线转驼峰
+
+
+```
+# -*- coding: utf-8 -*-
+
+import re
+
+
+def camelize(word, upper_first_character=True):
+    # 这里的 `?:` 完全是为了炫技，其实不用也可以😂
+    if not upper_first_character:
+        return re.sub(r"(?:_)(.)", lambda m: m.group(1).upper(), word)
+    return re.sub(r"(?:^|_)(.)", lambda m: m.group(1).upper(), word)
+
+
+if __name__ == '__main__':
+    print(camelize("adv_id"))
+    print(camelize("advertiser_id"))
+    print(camelize("if_is_snake"))
+    print(camelize("python_lib"))
+    print(camelize("windard_blog"))
+
+```
+
 #### 分割时忽略引号内的分隔符
 
 > [How to split but ignore separators in quoted strings, in python?](https://stackoverflow.com/questions/2785755/how-to-split-but-ignore-separators-in-quoted-strings-in-python)
