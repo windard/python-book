@@ -20,7 +20,8 @@
         "splitter",
         "anchors",
         "ga@1.0.1",
-        "sitemap",
+        "anchors",
+        "sitemap-general",
         "search-pro",
         "back-to-top-button",
         "pageview-count",
@@ -99,8 +100,8 @@
         "ga": {
             "token": "UA-164926677-2"
         },
-        "sitemap": {
-            "hostname": "https://python-book.windard.com/"
+        "sitemap-general": {
+            "prefix": "https://python-book.windard.com/"
         },
         "github": {
           "url": "https://github.com/windard/python-book"
